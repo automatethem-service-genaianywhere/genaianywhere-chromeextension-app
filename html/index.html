@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title data-i18n="extensionName">생성형 애니웨어.Ai</title>
+    <style>
+      body {
+        width: calc(100% - 20px);
+        height: 100%;
+        overflow-y: auto;
+      }
+
+      /* 상단 메뉴 */
+
+      .logo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      /* 탭 */
+
+      .tab-buttons {
+        display: flex;
+        margin-bottom: 5px;
+      }
+
+      .tab-buttons a {
+        padding: 5px;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .memo-tab-content {
+        display: none;
+      }
+
+      .active {
+        display: block;
+      }
+
+      /* 챗 탭 */
+
+      .textarea-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap; /* Allow wrapping to a new line */
+        gap: 1px; /* Optional: space between each checkbox-label pair */
+      }
+
+      .textarea-container {
+        margin-bottom: 10px;
+      }
+
+      #prompt,
+      #input-text {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .help-box {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+        word-wrap: break-word;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .button-group {
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .button-group button {
+        margin-left: 5px;
+      }
+
+      #send-to-chatgpt-ai-button,
+      #send-to-wrtn-ai-button,
+      #send-to-claude-ai-button,
+      #send-to-gemini-ai-button,
+      #send-to-copilot-ai-button,
+      #send-to-ai-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 5px 5px;
+        margin: 0px 1px;
+        cursor: pointer;
+        font-size: 12px;
+        transition: background 0.3s;
+      }
+
+      #send-to-chatgpt-ai-button:hover,
+      #send-to-wrtn-ai-button:hover,
+      #send-to-claude-ai-button:hover,
+      #send-to-gemini-ai-button:hover,
+      #send-to-copilot-ai-button:hover,
+      #send-to-ai-button:hover {
+        background-color: #0056b3;
+      }
+
+      #result {
+        width: 100%;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow-x: auto;
+      }
+
+      /* 메모 탭 */
+
+      .memo {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 95%;
+        height: calc(100vh - 380px);
+        margin-bottom: 10px;
+        overflow-y: auto;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+
+      li {
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 상단 메뉴 시작 -->
+    <div class="logo-container">
+      <div>
+        <a href="#" id="left-tab" data-i18n="left_tab">&lbrack;</a>
+        <a href="#" id="right-tab" data-i18n="right_tab">&rbrack;</a>
+      </div>
+
+      <div>
+        <a href="#" id="full" data-i18n="full">큰창</a>
+      </div>
+    </div>
+
+    <div class="logo-container">
+      <div></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+        <a href="#" id="home-menu" data-i18n="home_menu">홈</a> | <a href="#" id="prompt-menu" data-i18n="prompt_menu">프롬프트 관리</a> |
+        <a href="#" id="realtime-popular-keyword-menu" data-i18n="realtime_popular_keyword_menu">실시간 인기 키워드</a> |
+        <a href="#" id="keyword-search-count-menu" data-i18n="keyword_search_count_menu">키워드 검색수</a> | 
+        <a href="#" id="keyword-search-trend-menu" data-i18n="keyword_search_trend_menu">키워드 검색 트렌드</a> |
+        <a href="#" id="mark-url-menu" data-i18n="mark_url_menu">마크 url 관리</a> | <a href="#" id="keyword-search-menu" data-i18n="keyword_search_menu">키워드 검색</a> |
+        <a href="#" id="search-engine-menu" data-i18n="search_engine_menu">검색엔진 관리</a> | <a href="#" id="link-menu" data-i18n="link_menu">링크 관리</a> |
+        <a href="#" id="price-menu" data-i18n="price_menu">가격</a> | 
+        <a href="#" id="ai-review-menu" data-i18n="ai_review_menu">생성형 Ai 리뷰</a> |
+        <a href="#" id="tistory-menu" data-i18n="tistory_menu">부업 정보와 생산성 앱 리뷰</a> |
+        <a href="#" id="naver-cafe-menu" data-i18n="naver_cafe_menu">네이버 카페</a> |
+        <a href="#" id="youtube-menu" data-i18n="youtube_menu">유튜브</a> |
+        <a href="#" id="github-menu"><img src="../images/github.svg" width="15" height="15"></a> 
+        <div id="admin-menu-separator">|</div>
+        <a href="#" id="admin-menu" data-i18n="admin_menu">관리</a> |
+        <a href="#" id="login-menu" data-i18n="login_menu">로그인/회원가입</a>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; margin-top: 5x; margin-bottom: 5px;">
+      <span data-i18n="tistory_search_label">부업 정보와 생산성 앱 리뷰 검색</span>: 
+      <input 
+        type="text" 
+        id="tistory-search-word" 
+        placeholder="검색어 입력..." 
+        data-i18n="search_placeholder"
+        style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 120px" 
+      />
+    </div>           
+  
+
+    <!-- 상단 메뉴 끝 -->
+
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <!-- 탭 시작 -->
+      <div class="tab-buttons">
+        <a href="#" class="tab-link" data-tab="chat-tab" data-i18n="chat_tab" style="cursor: pointer">채팅</a>
+        <a href="#" class="tab-link" data-tab="memo-tab" data-i18n="memo_tab" style="cursor: pointer">메모</a>
+        <a href="#" class="tab-link" data-tab="setting-tab" data-i18n="setting_tab" style="cursor: pointer">⚙️</a>
+      </div>
+    </div>
+
+    <!-- 탭 시작 -->
+
+    <!-- 챗 탭 시작 -->
+    <div id="chat-tab" class="tab-content">
+      <div style="margin-bottom: 5px">
+        <select id="prompts">
+          <option selected="" data-i18n="prompt_direct_input">프롬프트 직접 입력</option>
+        </select>
+      </div>
+
+      <div class="textarea-header">
+        <div class="checkbox-container">
+          <a id="prompt-direct-input" data-i18n="prompt_direct_input" style="margin-right: 4px; color: blue; text-decoration: underline; cursor: pointer;">프롬프트 직접 입력</a> | 
+          <a id="add-prompt" data-i18n="add_prompt" style="margin-right: 4px; color: blue; text-decoration: underline; cursor: pointer;">프롬프트 추가</a> |
+          <a id="copy-prompt" data-i18n="copy_prompt" style="margin-left: 4px; margin-right: 4px; color: blue; text-decoration: underline; cursor: pointer;">복사</a> |
+          <a id="clear-prompt" data-i18n="clear_prompt" style="margin-left: 4px; margin-right: 4px; color: blue; text-decoration: underline; cursor: pointer;">지우기</a> |
+          <a id="clear-all" data-i18n="clear_all" style="margin-left: 4px; margin-right: 4px; color: blue; text-decoration: underline; cursor: pointer;">모두 지우기</a> |
+          <a id="paste-prompt" data-i18n="paste_prompt" style="margin-left: 4px; margin-right: 4px; color: blue; text-decoration: underline; cursor: pointer;">붙여넣기</a> |
+          <img
+            id="toggle-recognition"
+            src="../images/speech-recognition-off.png"
+            alt="음성인식 시작"
+            width="18"
+            height="18"
+            style="cursor: pointer" />
+        </div>
+        <div></div>
+      </div>
+
+      <div class="textarea-container">
+        <textarea id="prompt" data-i18n="prompt_placeholder" rows="7" placeholder="프롬프트를 입력하세요..." style="border: 2px solid #8B008B;"></textarea>
+      </div>
+
+      <div id="help-box" class="help-box" data-i18n="help_box">도움말 없음</div>
+
+      <div class="textarea-header">
+        <div>
+          <a id="add-selected-text" data-i18n="add_selected_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">선택 텍스트 추가</a> | 
+          <a id="add-page-url" data-i18n="add_page_url" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 추가</a> | 
+          <a id="add-page-text" data-i18n="add_page_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 + 텍스트 추가</a> |
+          <a id="add-page-source" data-i18n="add_page_source" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 + 소스 추가</a> |
+          <a id="add-movie-script" data-i18n="add_movie_script" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 + 동영상 스크립트 추가</a>
+        </div>
+      </div>
+
+      <div class="textarea-header">
+        <div>
+          <a id="example-input-text" data-i18n="input_text_example" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">입력 텍스트 예</a> | 
+          <a id="copy-input-text" data-i18n="copy_input_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">복사</a> |
+          <a id="clear-input-text" data-i18n="clear_input_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">지우기</a> | 
+          <a id="paste-input-text" data-i18n="paste_input_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">붙여넣기</a> |
+          <img
+            id="toggle-speak"
+            src="../images/speak-off.png"
+            alt="말하기 시작"
+            width="18"
+            height="18"
+            style="cursor: pointer" />
+        </div>
+      </div>
+
+      <div class="textarea-container">
+        <textarea id="input-text" data-i18n="input_text_placeholder" rows="7" placeholder="입력 텍스트를 입력하세요..." style="border: 2px solid #8B008B;"></textarea>
+      </div>
+
+      <div class="textarea-header">
+        <div>
+          <div id="prompt-input-text-character-count" data-i18n="prompt_input_text_character_count">프롬프트 + 구분 + 입력 텍스트 글자 수: 0</div>
+        </div>
+      </div>
+
+      <div class="button-container" style="margin-bottom: 8px">
+        <div class="checkbox-container">
+          <input type="checkbox" id="attach-checkbox">
+          <label for="attach-checkbox" data-i18n="attach_checkbox">자료 첨부 대기 (제출 버튼 미클릭)</label> 
+          <a href="https://arxiv.org/pdf/1909.11573" target="_blank" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;" data-i18n="pdf_example">pdf 예시</a>
+          <a href="https://automatethem.tistory.com/317" target="_blank" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;" data-i18n="image_example">이미지 예시</a>
+          <a href="https://automatethem.tistory.com/308" target="_blank" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;" data-i18n="music_example">음악 예시</a>
+          <a href="https://automatethem.tistory.com/259" target="_blank" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;" data-i18n="movie_example">동영상 예시</a>
+        </div>
+      </div>
+
+      <div class="button-container" style="margin-bottom: 8px">
+        <div class="checkbox-container">
+          <div id="ai-list">
+          </div>
+
+          <div class="textarea-header">
+            <div id="more-ai-show" data-i18n="more_ai_show" style="margin-top: 8px; color: blue; text-decoration: underline; cursor: pointer;">더 많은 생성형 Ai...</div>
+          </div>
+          <div class="textarea-container">
+              <div id="more-ai"
+                style="display: none"
+              >  
+                <div id="more-ai-list">  
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="button-container" style="margin-bottom: 8px">
+        <div class="button-group">
+          <button id="send-to-ai-button" data-i18n="send_to_ai_button">생성형 Ai에게 보내기</button>
+        </div>
+      </div>
+
+      <div class="textarea-header">
+        <div id="result-example" data-i18n="result_example" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">결과 예</div>
+      </div>
+
+      <div class="textarea-container">
+        <textarea
+          id="result"
+          data-i18n="result_placeholder"
+          style="display: none; border: 2px solid #8B008B;"  /* 자주색 테두리 */
+          rows="7"
+          placeholder="샘플 입력 텍스트를 누르면 여기에 샘플 결과가 표시 됩니다."
+          readonly></textarea>
+      </div>
+    </div>
+    <!-- 챗 탭 끝 -->
+
+    <!-- 메모 탭 시작 -->
+    <div id="memo-tab" class="tab-content">
+      <div class="textarea-header">
+        <div>
+          <a id="add-selected-text-to-memo" data-i18n="add_selected_text_to_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">선택 텍스트 추가</a> | 
+          <a id="add-page-url-to-memo" data-i18n="add_page_url_to_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 추가</a> | 
+          <a id="add-page-text-to-memo" data-i18n="add_page_text_to_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 + 텍스트 추가</a> |
+          <a id="add-page-source-to-memo" data-i18n="add_page_source_to_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 + 소스 추가</a> |
+          <a id="add-movie-script-to-memo" data-i18n="add_movie_script_to_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 + 제목 + 동영상 스크립트 추가</a>
+        </div>
+      </div>
+      <div class="textarea-header">
+        <div>
+          <a id="copy-memo" data-i18n="copy_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">복사</a> | 
+          <a id="clear-memo" data-i18n="clear_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">지우기</a> |
+          <a id="paste-memo" data-i18n="paste_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">붙여넣기</a> |
+          <a id="download-memo" data-i18n="download_memo" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">다운로드</a>
+        </div>
+      </div>
+      <textarea id="memo" class="memo" data-i18n="memo_placeholder" placeholder="메모를 입력하세요..." style="border: 2px solid #8B008B;"></textarea>
+      <div class="textarea-header">
+        <div>
+          <div id="memo-character-count" data-i18n="memo_character_count">메모 글자 수: 0</div>
+        </div>
+      </div>
+    </div>
+    <!-- 메모 탭 끝 -->
+
+    <!-- 설정 탭 시작 -->
+    <div id="setting-tab" class="tab-content">
+      <div class="checkbox-container" style="margin-bottom: 8px">
+        <input type="checkbox" id="floating-icon-checkbox" checked="">
+        <label for="floating-icon-checkbox" data-i18n="floating_icon_checkbox">텍스트 선택시 메뉴 보이기</label>
+      </div>
+    </div>
+    <!-- 설정 탭 끝 -->
+
+    <div style="margin-bottom: 8px">
+      <span data-i18n="utility">유틸리티</span>:
+      <span>
+        <span data-i18n="selected_text">선택 텍스트</span> (<a id="mark" data-i18n="mark" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">마크</a>,
+        <a id="copy-selected-text" data-i18n="copy" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">복사</a>,
+        <a id="download-selected-text" data-i18n="download" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">다운로드</a>,
+        <a id="open-url-selected-text" data-i18n="open_url" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 열기</a>) |
+        <span data-i18n="search">검색</span>
+        <input type="radio" name="general-search-target" value="selected-text" checked/><span data-i18n="selected_text">선택 텍스트</span>
+        <input type="radio" name="general-search-target" value="search-word-input"/><span data-i18n="search_word_input">검색어 입력</span>
+        <input type="text" id="general-search-word" placeholder="검색어 입력..." data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 120px">
+        <span id="engine-list">Loading...</span> |
+        <a id="copy-page-url" data-i18n="copy_page_url" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">주소 복사</a> |
+        <a id="copy-page-referer" data-i18n="copy_page_referer" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">레퍼러 복사</a> |
+        <a id="disable-mouse-right-click-protection" data-i18n="disable_mouse_right_click_protection" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">마우스우클릭보호 해제</a> |
+        <a id="clipboard-download" data-i18n="clipboard_download" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">클립보드 다운로드</a> |
+        <a id="copy-prompt-division-input-text" data-i18n="copy_prompt_division_input_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">프롬프트 + 구분 + 입력 텍스트 복사</a> |
+        <a id="split-prompt-division-input-text" data-i18n="split_prompt_division_input_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">프롬프트 + 구분 + 입력 텍스트 분할</a> 
+        (<span data-i18n="split_character_count_per_generative_ai">분할 글자 수</span>: <input type="number" value="15000" id="split-character-count" style="width: 60px">)
+        <div id="split-parts"></div>
+      </span>     
+    </div>
+
+    <div>
+      <span data-i18n="link">링크</span>:
+      <span id="link-list" style="margin-bottom: 8px"></span>
+    </div>
+
+    <script src="i18n.js"></script>     
+    <script src="menu.js"></script>
+    <script src="index.js"></script>
+    <script src="sidepanel.js"></script>
+    <script src="speech-recognition.js"></script>
+    <script src="text-to-speech.js"></script>
+    <script src="prompt.js"></script>
+    <script src="input-text.js"></script>
+    <script src="result.js"></script>
+    <script src="memo.js"></script>
+    <script src="setting.js"></script>
+    <script src="utility.js"></script>
+    <script src="link.js"></script>
+    <script src="ai.js"></script>
+    <script src="login.js"></script>  
+  </body>
+</html>
