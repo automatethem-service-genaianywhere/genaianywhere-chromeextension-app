@@ -63,6 +63,11 @@ document.querySelector("#keyword-search-count-menu").addEventListener("click", a
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+document.querySelector("#keyword-combination-menu").addEventListener("click", async () => {
+  const url = "https://www.generativeaianywhere.ai/keyword-combination.html";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 document.querySelector("#keyword-search-trend-menu").addEventListener("click", async () => {
   const url = "https://www.generativeaianywhere.ai/keyword-search-trend.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });

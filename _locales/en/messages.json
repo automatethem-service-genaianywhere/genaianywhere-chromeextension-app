@@ -5,6 +5,7 @@
   "prompt_menu": { "message": "Prompt management" },
   "realtime_popular_keyword_menu": { "message": "Real-time popular keywords" },
   "keyword_search_count_menu": { "message": "Keyword search count" },
+  "keyword_combination_menu": { "message": "Keyword combination" },
   "keyword_search_trend_menu": { "message": "Keyword search trend" },
   "mark_url_menu": { "message": "Mark url management" },
   "keyword_search_menu": { "message": "Keyword search" },

@@ -5,6 +5,7 @@
   "prompt_menu": { "message": "프롬프트 관리" },
   "realtime_popular_keyword_menu": { "message": "실시간 인기 키워드" },
   "keyword_search_count_menu": { "message": "키워드 검색 수" },
+  "keyword_combination_menu": { "message": "키워드 조합" },
   "keyword_search_trend_menu": { "message": "키워드 검색 트렌드" },
   "mark_url_menu": { "message": "마크 url 관리" },
   "keyword_search_menu": { "message": "키워드 검색" },
