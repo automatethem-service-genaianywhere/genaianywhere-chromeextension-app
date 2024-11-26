@@ -48,7 +48,7 @@ const fetchSearchEngines = async () => {
 
     engineLink.addEventListener("click", async () => {
       const searchTarget = document.querySelector('input[name="general-search-target"]:checked').value;
-      console.log(searchTarget);
+      //console.log(searchTarget);
 
       let query = "";
 
@@ -78,6 +78,38 @@ const fetchSearchEngines = async () => {
    }
  });
 };
+
+// Add keydown event listener to the input box for Enter key
+document.querySelector("#general-search-word").addEventListener("keydown", async (event) => {
+  if (event.key === "Enter") {
+    const searchTarget = document.querySelector('input[name="general-search-target"]:checked').value;
+    //console.log(searchTarget);
+
+    let query = "";
+
+    if (searchTarget === "selected-text") {
+      query = await chrome.runtime.sendMessage({ action: "getSelectedText" });
+      if (!query) {
+        //alert("선택된 텍스트가 없습니다.");
+        return;
+      }
+    } else if (searchTarget === "search-word-input") {
+      query = document.querySelector("#general-search-word").value.trim();
+      if (!query) {
+        //alert("검색어를 입력하세요.");
+        return;
+      }
+    }
+
+    if (searchEngines.length > 0) {
+      const firstEngine = searchEngines[searchEngines.length -1]; // Get the first search engine
+      if (firstEngine) {
+        const searchUrl = firstEngine.url.replace("{query}", encodeURIComponent(query));
+        await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+      }
+    }
+  }
+});
 
 (async () => {
   const { splitCharacterCountValue } = await chrome.storage.local.get("splitCharacterCountValue");
@@ -241,4 +273,3 @@ document.querySelector("#split-character-count").addEventListener("change", asyn
   const splitCharacterCountValue = document.querySelector("#split-character-count").value;
   await chrome.storage.local.set({ splitCharacterCountValue: splitCharacterCountValue });
 });
-
