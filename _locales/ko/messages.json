@@ -13,6 +13,7 @@
   "price_menu": { "message": "가격" },
   "ai_review_menu": { "message": "생성형 Ai 리뷰" },
   "tistory_menu": { "message": "부업 정보와 생산성 앱 리뷰" },
+  "naver_blog_menu": { "message": "네이버 블로그" },
   "naver_cafe_menu": { "message": "네이버 카페" },
   "youtube_menu": { "message": "유튜브" },
   "admin_menu": { "message": "관리" },

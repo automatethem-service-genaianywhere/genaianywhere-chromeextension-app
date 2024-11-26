@@ -117,6 +117,11 @@ document.querySelector("#tistory-search-word").addEventListener("keydown", (even
   }
 });
 
+document.querySelector("#naver-blog-menu").addEventListener("click", async () => {
+  const url = "https://blog.naver.com/automatethem";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 document.querySelector("#naver-cafe-menu").addEventListener("click", async () => {
   const url = "https://cafe.naver.com/automatethem";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
