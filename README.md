@@ -10,7 +10,7 @@ English
 
 ## 크롬 스토어에서 설치
 
-스토어 등록중 입니다 등록되는대로 링크 걸어 놓겠습니다.
+https://chromewebstore.google.com/detail/%EC%83%9D%EC%84%B1%ED%98%95-ai-%EC%95%A0%EB%8B%88%EC%9B%A8%EC%96%B4/dmhapkamaakgininoknmmfppojbeekdb
 
 ## 개발자 모드에서 설치
 
