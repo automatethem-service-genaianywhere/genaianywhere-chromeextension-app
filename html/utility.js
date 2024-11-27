@@ -25,58 +25,65 @@ document.querySelector("#general-search-word").addEventListener("input", async (
 });
 
 const fetchSearchEngines = async () => {
- //
-  
- // Fetch available search engines
- /*
- let searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
- if (searchEngines.length === 0) {
-   await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
-   searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
- }
- */
- await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
- searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
-
  // Populate the search engines list
  document.querySelector("#engine-list").innerHTML = ""; // Clear loading text
- searchEngines.forEach((engine, index) => {
-   const engineLink = document.createElement("a");
-   engineLink.textContent = engine.name;
-   //engineLink.style.cssText = "margin: 0 5px; color: blue; cursor: pointer; text-decoration: underline;";
-   engineLink.style.cssText = "color: blue; cursor: pointer; text-decoration: underline;";
+  let { userId } = await chrome.storage.local.get(["userId"]);
+  userId = userId ? userId : "";
+  if (userId) {
+    // Select the element
+    const searchPart = document.getElementById('search-part');
+    // Method 1: Show by updating the style
+    searchPart.style.display = 'block';
 
-    engineLink.addEventListener("click", async () => {
-      const searchTarget = document.querySelector('input[name="general-search-target"]:checked').value;
-      //console.log(searchTarget);
+    // Fetch available search engines
+    /*
+    let searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
+    if (searchEngines.length === 0) {
+      await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
+      searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
+    }
+    */
+    await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
+    searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
 
-      let query = "";
+    searchEngines.forEach((engine, index) => {
+      const engineLink = document.createElement("a");
+      engineLink.textContent = engine.name;
+      //engineLink.style.cssText = "margin: 0 5px; color: blue; cursor: pointer; text-decoration: underline;";
+      engineLink.style.cssText = "color: blue; cursor: pointer; text-decoration: underline;";
 
-      if (searchTarget === "selected-text") {
-        query = await chrome.runtime.sendMessage({ action: "getSelectedText" });
-        if (!query) {
-          //alert("선택된 텍스트가 없습니다.");
-          return;
+      engineLink.addEventListener("click", async () => {
+        const searchTarget = document.querySelector('input[name="general-search-target"]:checked').value;
+        //console.log(searchTarget);
+
+        let query = "";
+
+        if (searchTarget === "selected-text") {
+          query = await chrome.runtime.sendMessage({ action: "getSelectedText" });
+          if (!query) {
+            //alert("선택된 텍스트가 없습니다.");
+            return;
+          }
+        } else if (searchTarget === "search-word-input") {
+          query = document.querySelector("#general-search-word").value.trim();
+          if (!query) {
+            //alert("검색어를 입력하세요.");
+            return;
+          }
         }
-      } else if (searchTarget === "search-word-input") {
-        query = document.querySelector("#general-search-word").value.trim();
-        if (!query) {
-          //alert("검색어를 입력하세요.");
-          return;
-        }
+
+        const searchUrl = engine.url.replace("{query}", encodeURIComponent(query));
+        await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+      });  
+
+      document.querySelector("#engine-list").appendChild(engineLink);
+
+      // Add comma between links except the last one
+      if (index < searchEngines.length - 1) {
+        document.querySelector("#engine-list").append(", ");
       }
-
-      const searchUrl = engine.url.replace("{query}", encodeURIComponent(query));
-      await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
-    });  
-
-   document.querySelector("#engine-list").appendChild(engineLink);
-
-   // Add comma between links except the last one
-   if (index < searchEngines.length - 1) {
-    document.querySelector("#engine-list").append(", ");
-   }
- });
+    });
+  };
 };
 
 // Add keydown event listener to the input box for Enter key

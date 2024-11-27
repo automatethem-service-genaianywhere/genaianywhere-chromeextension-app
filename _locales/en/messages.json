@@ -14,7 +14,6 @@
   "price_menu": { "message": "Price" },
   "tistory_menu": { "message": "Side job info and productivity app review" },
   "ai_review_menu": { "message": "Generative Ai review" },
-  "naver_blog_menu": { "message": "Naver blog" },
   "naver_cafe_menu": { "message": "Naver cafe" },
   "youtube_menu": { "message": "Youtube" },
   "admin_menu": { "message": "Admin" },

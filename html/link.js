@@ -28,6 +28,11 @@ const fetchLinks = async () => {
   let { userId } = await chrome.storage.local.get(["userId"]);
   userId = userId ? userId : "";
   if (userId) {
+    // Select the element
+    const linkSection = document.getElementById('link-section');
+    // Method 1: Show by updating the style
+    linkSection.style.display = 'block';
+
     let languageCode = chrome.i18n.getUILanguage();
     //console.log(languageCode); //en //ko //en-US 
     if (languageCode.includes("-")) {
