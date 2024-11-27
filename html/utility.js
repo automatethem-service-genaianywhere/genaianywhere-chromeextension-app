@@ -273,3 +273,15 @@ document.querySelector("#split-character-count").addEventListener("change", asyn
   const splitCharacterCountValue = document.querySelector("#split-character-count").value;
   await chrome.storage.local.set({ splitCharacterCountValue: splitCharacterCountValue });
 });
+
+//
+
+document.getElementById("screen-capture-full").addEventListener("click", async function() {
+  const response = await chrome.runtime.sendMessage({ action: "captureVisibleScreen" });
+  console.log(response);
+});
+
+document.getElementById("screen-capture-scroll").addEventListener("click", async function() {
+  const response = await chrome.runtime.sendMessage({ action: "captureFullScreen" });
+  console.log(response);
+});

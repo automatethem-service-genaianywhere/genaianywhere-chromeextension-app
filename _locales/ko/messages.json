@@ -93,5 +93,10 @@
 
   "tistory_search_label": { "message": "부업 정보와 생산성 앱 리뷰 검색" },
   "search_placeholder": { "message": "검색어 입력..." }, 
-  "search_word_input": { "message": "검색어 입력" }
+  "search_word_input": { "message": "검색어 입력" },
+
+  "screen_capture": { "message": "화면캡처" },
+  "screen_capture_full": { "message": "전체" },
+  "screen_capture_scroll": { "message": "스크롤" }
+  
 }

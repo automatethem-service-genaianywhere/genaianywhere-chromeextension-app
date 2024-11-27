@@ -1,3 +1,5 @@
+import { sleep, todayStr, capturePartialScreen, captureVisibleScreen, captureFullScreen } from './screen-capture-util.js';
+
 const getSelectedText = async () => {
   const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
   const currentTab = currentTabs[0];
@@ -250,5 +252,75 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       sendResponse("disableRightClickProtection response");
     })();
     return true;
+  }
+});
+
+//screen capture
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.action === "capturePartialScreen") {
+      (async function() {
+          const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+          const tab = tabs[0]; 
+          
+          await chrome.tabs.update(tab.id, { url: "https://www.naver.com/" });
+          await sleep(2000);            
+
+          //const filename = 'outputs/capturePartialScreen.png';
+          const filename = 'capturePartialScreen.png';
+          const dataUrl = await capturePartialScreen(tab, '#shortcutArea > ul > li:nth-child(1) > a');
+          await chrome.downloads.download({ url: dataUrl, filename: filename });
+
+          sendResponse('capturePartialScreen response');
+      })();
+      return true;
+  }
+  else if (request.action === "captureVisibleScreen") {
+      (async function() {
+          const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+          const tab = tabs[0];
+          //const filename = 'outputs/captureVisibleScreen.png';
+          const filename = 'captureVisibleScreen.png';
+          const dataUrl = await captureVisibleScreen(tab);
+          await chrome.downloads.download({ url: dataUrl, filename: filename });
+          
+          sendResponse('captureVisibleScreen response');
+      })();
+      return true;
+  }
+  else if (request.action === "captureFullScreen") {
+      (async function() {
+          // 작업 시작 시 "작업중" 뱃지 표시
+          chrome.action.setBadgeText({ text: "작업중" });
+          chrome.action.setBadgeBackgroundColor({ color: "yellow" }); // 노란색 배경
+        
+          const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+          const tab = tabs[0];
+          //const filename = 'outputs/captureFullScreen.png';
+          const filename = 'captureFullScreen.png';
+          const dataUrl = await captureFullScreen(tab);
+          await chrome.downloads.download({ url: dataUrl, filename: filename });
+
+          // 작업 완료 후 뱃지 제거
+          chrome.action.setBadgeText({ text: "" });
+
+          sendResponse('captureFullScreen response');
+      })();
+      return true;
+  }
+});
+
+//captureFullScreen 함수 사용을 위헤 background.js 에 아래 코드 추가 필요
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  if (request.action === "captureVisibleTab") {
+      (async function() {
+          const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+          const tab = tabs[0];
+          const dataUrl = await chrome.tabs.captureVisibleTab(tab.windowId, { format: 'png' });
+          //const dataUrl = await chrome.tabs.captureVisibleTab(null, { format: 'png' });
+          //const dataUrl = await chrome.tabs.captureVisibleTab({ format: 'png' });
+          sendResponse(dataUrl);
+      })();
+      return true;
   }
 });
