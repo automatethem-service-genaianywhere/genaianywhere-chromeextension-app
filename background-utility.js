@@ -1,4 +1,4 @@
-import { sleep, todayStr, capturePartialScreen, captureFullScreen, captureScrollScreen } from './screen-capture-util.js';
+import { sleep, todayStr, capturePartialScreen, captureFullScreen, captureScrollScreen } from './capture-screen-util.js';
 
 const getSelectedText = async () => {
   const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
