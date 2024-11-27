@@ -255,7 +255,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-//screen capture
+//capture screen
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === "capturePartialScreen") {
