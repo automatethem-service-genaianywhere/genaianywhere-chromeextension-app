@@ -33,7 +33,7 @@ export async function capturePartialScreen(tab, elementOrSelector) {
   return dataUrl;
 }
 
-export async function captureVisibleScreen(tab) {
+export async function captureFullScreen(tab) {
   try {
     //https://developer.chrome.com/docs/extensions/reference/api/tabs?hl=ko#method-captureVisibleTab
     const dataUrl = await chrome.tabs.captureVisibleTab(tab.windowId, { format: 'png' });
@@ -47,7 +47,7 @@ export async function captureVisibleScreen(tab) {
 }
 
 /*
-//captureFullScreen 함수 사용을 위헤 background.js 에 아래 코드 추가 필요
+//captureScrollScreen 함수 사용을 위헤 background.js 에 아래 코드 추가 필요
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === "captureVisibleTab") {
       (async function() {
@@ -63,7 +63,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 });
 */
 //파이썬 버전: https://github.com/automatethem/selenium-supporter/blob/main/selenium_supporter/utils.py#L120
-export async function captureFullScreen(tab) {
+export async function captureScrollScreen(tab) {
   const [{ result: finalDataUrl }] = await chrome.scripting.executeScript({
     target: { tabId: tab.id },
     args: [tab],

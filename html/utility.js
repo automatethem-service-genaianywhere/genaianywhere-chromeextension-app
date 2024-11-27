@@ -283,12 +283,12 @@ document.querySelector("#split-character-count").addEventListener("change", asyn
 
 //
 
-document.getElementById("screen-capture-full").addEventListener("click", async function() {
-  const response = await chrome.runtime.sendMessage({ action: "captureVisibleScreen" });
+document.getElementById("capture-full-screen").addEventListener("click", async function() {
+  const response = await chrome.runtime.sendMessage({ action: "captureFullScreen" });
   console.log(response);
 });
 
-document.getElementById("screen-capture-scroll").addEventListener("click", async function() {
-  const response = await chrome.runtime.sendMessage({ action: "captureFullScreen" });
+document.getElementById("capture-scroll-screen").addEventListener("click", async function() {
+  const response = await chrome.runtime.sendMessage({ action: "captureScrollScreen" });
   console.log(response);
 });

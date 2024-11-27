@@ -1,4 +1,4 @@
-import { sleep, todayStr, capturePartialScreen, captureVisibleScreen, captureFullScreen } from './screen-capture-util.js';
+import { sleep, todayStr, capturePartialScreen, captureFullScreen, captureScrollScreen } from './screen-capture-util.js';
 
 const getSelectedText = async () => {
   const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -266,8 +266,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
           await chrome.tabs.update(tab.id, { url: "https://www.naver.com/" });
           await sleep(2000);            
 
-          //const filename = 'outputs/capturePartialScreen.png';
-          const filename = 'capturePartialScreen.png';
+          //const filename = 'outputs/partial-screen.png';
+          const filename = 'partial-screen.png';
           const dataUrl = await capturePartialScreen(tab, '#shortcutArea > ul > li:nth-child(1) > a');
           await chrome.downloads.download({ url: dataUrl, filename: filename });
 
@@ -275,20 +275,20 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       })();
       return true;
   }
-  else if (request.action === "captureVisibleScreen") {
+  else if (request.action === "captureFullScreen") {
       (async function() {
           const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
           const tab = tabs[0];
-          //const filename = 'outputs/captureVisibleScreen.png';
-          const filename = 'captureVisibleScreen.png';
-          const dataUrl = await captureVisibleScreen(tab);
+          //const filename = 'outputs/full-screen.png';
+          const filename = 'full-screen.png';
+          const dataUrl = await captureFullScreen(tab);
           await chrome.downloads.download({ url: dataUrl, filename: filename });
           
-          sendResponse('captureVisibleScreen response');
+          sendResponse('captureFullScreen response');
       })();
       return true;
   }
-  else if (request.action === "captureFullScreen") {
+  else if (request.action === "captureScrollScreen") {
       (async function() {
           // 작업 시작 시 "작업중" 뱃지 표시
           chrome.action.setBadgeText({ text: "작업중" });
@@ -296,21 +296,21 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         
           const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
           const tab = tabs[0];
-          //const filename = 'outputs/captureFullScreen.png';
-          const filename = 'captureFullScreen.png';
-          const dataUrl = await captureFullScreen(tab);
+          //const filename = 'outputs/scroll-screen.png';
+          const filename = 'scroll-screen.png';
+          const dataUrl = await captureScrollScreen(tab);
           await chrome.downloads.download({ url: dataUrl, filename: filename });
 
           // 작업 완료 후 뱃지 제거
           chrome.action.setBadgeText({ text: "" });
 
-          sendResponse('captureFullScreen response');
+          sendResponse('captureScrollScreen response');
       })();
       return true;
   }
 });
 
-//captureFullScreen 함수 사용을 위헤 background.js 에 아래 코드 추가 필요
+//captureScrollScreen 함수 사용을 위헤 background.js 에 아래 코드 추가 필요
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   if (request.action === "captureVisibleTab") {
       (async function() {

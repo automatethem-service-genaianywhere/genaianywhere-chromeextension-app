@@ -94,7 +94,7 @@
   "search_placeholder": { "message": "Enter search word..." },
   "search_word_input": { "message": "Enter search word" },
 
-  "screen_capture": { "message": "Screen capture" },
-  "screen_capture_full": { "message": "Full" },
-  "screen_capture_scroll": { "message": "Scroll" }
+  "capture_screen": { "message": "Capture screen " },
+  "capture_full_screen": { "message": "Full" },
+  "capture_scroll_screen": { "message": "Scroll" }
 }
