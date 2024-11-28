@@ -98,7 +98,7 @@ document.querySelector("#price-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#ai-review-menu").addEventListener("click", async () => {
+document.querySelector("#ai-review-collection-menu").addEventListener("click", async () => {
   const url = "https://automatethem.tistory.com/377";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
