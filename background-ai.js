@@ -39,12 +39,20 @@ const aiServices = [
 ];
 
 const moreAiServices = [
+  { id: "gazet", name: "가제트 (텍스트 (블로그 글쓰기))", en: "Gazet (text (blog writing))", urls: ["https://gazet.ai/"], rootUrl: null, simple: true },
+
   { id: "playground", name: "플레이그라운드 (이미지)", en: "Playground (image)", urls: ["https://playground.com/design"], rootUrl: "https://playground.com/", simple: true },
   { id: "fabric", name: "페브릭 (이미지, 영어 입력)", en: "Fabric (image, english input)", urls: ["https://huggingface.co/spaces/dvruette/fabric"], rootUrl: null, simple: true },  
 
-  { id: "keeneat", name: "키닛 (음악)", en: "Keeneat (music)", urls: ["https://keeneat.com/partner/compose"], rootUrl: "https://keeneat.com/", simple: true },
+  { id: "askup", name: "아숙업 (텍스트, 이미지, 안드로이드, iOs)", en: "Askup (text, image, android, iOs)", urls: ["https://pf.kakao.com/_BhxkWxj"], rootUrl: null, simple: true },  
 
   { id: "runwayml", name: "런웨이Gen-3 (동영상)", en: "RunwayGen-3 (video)", urls: ["https://app.runwayml.com/dashboard"], rootUrl: "https://app.runwayml.com/", simple: true },
+  
+  { id: "keeneat", name: "키닛 (음악)", en: "Keeneat (music)", urls: ["https://keeneat.com/partner/compose"], rootUrl: "https://keeneat.com/", simple: true },
+
+  { id: "typecast", name: "타입캐스트 (음성)", en: "Typecast (music)", urls: ["https://typecast.ai/"], rootUrl: null, simple: true },
+
+  { id: "beautiful", name: "뷰티플 (프리젠테이션)", en: "Beautiful (presentation)", urls: ["https://www.beautiful.ai/"], rootUrl: null, simple: true },
 
   { id: "cursor", name: "커서 (코드 에디터, 앱 제작)", en: "Cursor (code editor)", urls: ["https://www.cursor.com/"], rootUrl: null, simple: true }
 
