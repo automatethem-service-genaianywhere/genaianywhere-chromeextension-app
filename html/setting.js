@@ -7,7 +7,8 @@
 
 //
 
-document.querySelector("#floating-icon-checkbox").addEventListener("change", async () => {
-  const isChecked = this.checked;
+document.querySelector("#floating-icon-checkbox").addEventListener("change", async (event) => {
+  const self = event.target;
+  const isChecked = self.checked;
   await chrome.storage.local.set({ floatingIconCheckboxChecked: isChecked });
 });

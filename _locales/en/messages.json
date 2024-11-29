@@ -84,11 +84,11 @@
   "add_page_source": { "message": "Add title + url + source" },
   "add_movie_script": { "message": "Add title + url + movie script" },
    
-  "add_selected_text_to_memo": { "message": "Add selected text" },
-  "add_page_url_to_memo": { "message": "Add title + url" },
-  "add_page_text_to_memo": { "message": "Add title + url + text" },
-  "add_page_source_to_memo": { "message": "Add title + url + source" },
-  "add_movie_script_to_memo": { "message": "Add title + url + movie script" },
+  "add_selected_text_to_memo": { "message": "Add selected text to memo" },
+  "add_page_url_to_memo": { "message": "Add title + url to memo" },
+  "add_page_text_to_memo": { "message": "Add title + url + text to memo" },
+  "add_page_source_to_memo": { "message": "Add title + url + source to memo" },
+  "add_movie_script_to_memo": { "message": "Add title + url + movie script to memo" },
 
   "tistory_search_label": { "message": "Search side job info and productivity app review" },
   "search_placeholder": { "message": "Enter search word..." },

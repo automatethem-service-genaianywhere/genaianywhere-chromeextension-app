@@ -141,10 +141,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
         closeDropdown.style.display = "none";
         closeDropdownCreated = false; // Reset the flag so it can be recreated
       }
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
-      }
     });
 
     //
@@ -178,10 +174,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
       if (closeDropdown && closeDropdownCreated) {
         closeDropdown.style.display = "none";
         closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
       }
     });
 
@@ -217,10 +209,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
         closeDropdown.style.display = "none";
         closeDropdownCreated = false; // Reset the flag so it can be recreated
       }
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
-      }
     });
 
     //
@@ -254,264 +242,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
       if (closeDropdown && closeDropdownCreated) {
         closeDropdown.style.display = "none";
         closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
-    const copyIcon = document.createElement("button");
-    copyIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/copy.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    copyIcon.addEventListener("mouseover", () => {
-      copyIcon.style.border = "2px solid black";
-    });
-
-    copyIcon.addEventListener("mouseout", () => {
-      copyIcon.style.border = "1px solid black";
-    });
-
-    copyIcon.addEventListener("click", async () => {
-      await navigator.clipboard.writeText(selectedText);
-
-      //
-
-      if (closeDropdown && closeDropdownCreated) {
-        closeDropdown.style.display = "none";
-        closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
-    const downloadIcon = document.createElement("button");
-    downloadIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/download.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    downloadIcon.addEventListener("mouseover", () => {
-      downloadIcon.style.border = "2px solid black";
-    });
-
-    downloadIcon.addEventListener("mouseout", () => {
-      downloadIcon.style.border = "1px solid black";
-    });
-
-    downloadIcon.addEventListener("click", async () => {
-      const blob = new Blob([selectedText], { type: "text/plain" });
-      const url = URL.createObjectURL(blob);
-
-      // 백그라운드 스크립트로 메시지 전송
-      chrome.runtime.sendMessage({
-        action: "download",
-        url: url,
-        filename: "text.txt"
-      });
-
-      //
-
-      if (closeDropdown && closeDropdownCreated) {
-        closeDropdown.style.display = "none";
-        closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
-    const openUrlIcon = document.createElement("button");
-    openUrlIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/open-url.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    openUrlIcon.addEventListener("mouseover", () => {
-      openUrlIcon.style.border = "2px solid black";
-    });
-
-    openUrlIcon.addEventListener("mouseout", () => {
-      openUrlIcon.style.border = "1px solid black";
-    });
-
-    openUrlIcon.addEventListener("click", async () => {
-      let url = selectedText;
-      if (!url.startsWith("http://") && !url.startsWith("https://")) {
-        url = "https://www.google.com/search?q={query}";
-        url = url.replace("{query}", encodeURIComponent(selectedText));
-      }
-      await chrome.runtime.sendMessage({ action: "openTab", url: url });
-
-      if (closeDropdown && closeDropdownCreated) {
-        closeDropdown.style.display = "none";
-        closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
-    // Search Icon
-    const searchIcon = document.createElement("button");
-    searchIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/search.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    searchIcon.addEventListener("mouseover", () => {
-      searchIcon.style.border = "2px solid black";
-    });
-
-    searchIcon.addEventListener("mouseout", () => {
-      searchIcon.style.border = "1px solid black";
-    });
-
-    //
-
-    // Track if dropdown is created and ensure it can be recreated
-    let searchDropdownCreated = false;
-    let searchDropdown = null;
-
-    // Create dropdown for search when mouse enters (only once)
-    searchIcon.addEventListener("click", async () => {
-      const { email } = await chrome.storage.local.get(["email"]);
-      if (!email) {
-        const url = "https://www.google.co.kr/search?q={query}";
-        const searchUrl = url.replace("{query}", encodeURIComponent(selectedText));
-        await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
-      } else {
-        if (!searchDropdownCreated) {
-          searchDropdown = document.createElement("div");
-          searchDropdown.style.cssText = `
-            display: none;
-            position: absolute;
-            background-color: white;
-            border: 1px solid #ccc;
-            z-index: 1001;
-            width: 120px;
-            padding: 0;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-          `;
-
-          // Fetch search engine data
-          let searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
-          if (searchEngines.length == 0) {
-            await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
-            searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
-          }
-
-          // Populate dropdown with fetched search data
-          searchEngines.forEach((searchEngine) => {
-            const option = document.createElement("button");
-            option.textContent = searchEngine.name;
-            option.style.cssText = `
-              padding: 10px;
-              width: 100%;
-              text-align: left;
-              background-color: white;
-              cursor: pointer;
-              border: none;
-              border-bottom: 1px solid #ccc;
-            `;
-            option.addEventListener("mouseover", () => {
-              option.style.backgroundColor = "#f0f0f0";
-            });
-            option.addEventListener("mouseout", () => {
-              option.style.backgroundColor = "#fff";
-            });
-            option.addEventListener("click", async () => {
-              const searchUrl = searchEngine.url.replace("{query}", encodeURIComponent(selectedText));
-              await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
-
-              // Hide dropdown after selection
-              searchDropdown.style.display = "none";
-              searchDropdownCreated = false;
-
-              // Remove the icon container
-              document.body.removeChild(iconContainer);
-            });
-            searchDropdown.appendChild(option);
-          });
-
-          searchIcon.appendChild(searchDropdown);
-
-          if (searchEngines.length > 0) {
-            // Show the dropdown when mouse is over the search icon
-            searchDropdown.style.display = "block";
-          }
-
-          // Hide dropdown when mouse leaves the search area and the dropdown
-          const hideDropdown = (event) => {
-            if (!searchIcon.contains(event.relatedTarget) && !searchDropdown.contains(event.relatedTarget)) {
-              searchDropdown.style.display = "none";
-              searchDropdownCreated = false; // Reset the flag so it can be recreated
-            }
-          };
-
-          //searchIcon.addEventListener('mouseout', hideDropdown);
-          //searchDropdown.addEventListener('mouseout', hideDropdown);
-
-          // Position dropdown relative to the search icon
-          searchIcon.style.position = "relative";
-          searchDropdown.style.left = "0";
-          searchDropdown.style.top = "22px"; // Space between icon and dropdown
-
-          searchDropdownCreated = true; // Set flag to true once the dropdown is created
-        } else {
-          searchDropdown.style.display = "none";
-          searchDropdownCreated = false; // Reset the flag so it can be recreated
-        }
-
-        //
-
-        if (closeDropdown) {
-          closeDropdown.style.display = "none";
-          closeDropdownCreated = false; // Reset the flag so it can be recreated
-        }
       }
     });
 
@@ -586,11 +316,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
           iconContainer.removeChild(addIcon);
           iconContainer.removeChild(memoAddIcon);
           iconContainer.removeChild(markIcon);
-          iconContainer.removeChild(copyIcon);
-          iconContainer.removeChild(downloadIcon);
-          //iconContainer.removeChild(memoInputIcon);
-          iconContainer.removeChild(openUrlIcon);
-          iconContainer.removeChild(searchIcon);
           iconContainer.removeChild(closeIcon);
           document.body.removeChild(iconContainer);
 
@@ -625,11 +350,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
           iconContainer.removeChild(addIcon);
           iconContainer.removeChild(memoAddIcon);
           iconContainer.removeChild(markIcon);
-          iconContainer.removeChild(copyIcon);
-          iconContainer.removeChild(downloadIcon);
-          //iconContainer.removeChild(memoInputIcon);
-          iconContainer.removeChild(openUrlIcon);
-          iconContainer.removeChild(searchIcon);
           iconContainer.removeChild(closeIcon);
           document.body.removeChild(iconContainer);
 
@@ -665,13 +385,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
         closeDropdown.style.display = "none";
         closeDropdownCreated = false; // Reset the flag so it can be recreated
       }
-
-      //
-
-      if (searchDropdown && searchDropdownCreated) {
-        searchDropdown.style.display = "none";
-        searchDropdownCreated = false; // Reset the flag so it can be recreated
-      }
     });
 
     //
@@ -681,11 +394,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
     iconContainer.appendChild(addIcon);
     iconContainer.appendChild(memoAddIcon);
     iconContainer.appendChild(markIcon);
-    iconContainer.appendChild(copyIcon);
-    iconContainer.appendChild(downloadIcon);
-    //iconContainer.appendChild(memoInputIcon);
-    iconContainer.appendChild(openUrlIcon);
-    iconContainer.appendChild(searchIcon);
     iconContainer.appendChild(closeIcon);
 
     // Add container to the document body
@@ -698,7 +406,8 @@ const handleSelection = async (pageX, pageY, controlA) => {
       }
 
       iconContainer.style.left = `${containerLeft + window.scrollX}px`;
-      iconContainer.style.top = `${pageY + 10 + window.scrollY}px`;
+      //iconContainer.style.top = `${pageY + 10 + window.scrollY}px`;
+      iconContainer.style.top = `${pageY - 40 + window.scrollY}px`;
     } else {
       const containerWidth = iconContainer.offsetWidth; // 아이콘 컨테이너의 가로 너비 계산
       let containerLeft = pageX - containerWidth / 2; // 아이콘의 수평 중앙을 마우스 X 좌표에 맞춤
@@ -710,7 +419,8 @@ const handleSelection = async (pageX, pageY, controlA) => {
 
       const selectionRange = window.getSelection().getRangeAt(0); // 선택된 텍스트의 범위 가져오기
       const selectionRect = selectionRange.getBoundingClientRect(); // 선택된 텍스트의 경계 계산
-      iconContainer.style.top = `${selectionRect.bottom + 10 + window.scrollY}px`; // 선택된 텍스트의 하단에 맞게 배치
+      //iconContainer.style.top = `${selectionRect.bottom + 10 + window.scrollY}px`; // 선택된 텍스트의 하단에 맞게 배치
+      iconContainer.style.top = `${selectionRect.top - 40 + window.scrollY}px`; // 선택된 텍스트의 상단에 맞게 배치
     }
 
     // Close the container when clicking outside of it
@@ -722,12 +432,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
         if (iconContainer.contains(addIcon)) iconContainer.removeChild(addIcon);
         if (iconContainer.contains(memoAddIcon)) iconContainer.removeChild(memoAddIcon);
         if (iconContainer.contains(markIcon)) iconContainer.removeChild(markIcon);
-        if (iconContainer.contains(copyIcon)) iconContainer.removeChild(copyIcon);
-        if (iconContainer.contains(downloadIcon)) iconContainer.removeChild(downloadIcon);
-        //if (iconContainer.contains(memoInputIcon))
-        //  iconContainer.removeChild(memoInputIcon);
-        if (iconContainer.contains(openUrlIcon)) iconContainer.removeChild(openUrlIcon);
-        if (iconContainer.contains(searchIcon)) iconContainer.removeChild(searchIcon);
         if (iconContainer.contains(closeIcon)) iconContainer.removeChild(closeIcon);
         if (document.body.contains(iconContainer)) document.body.removeChild(iconContainer);
       }
@@ -747,7 +451,11 @@ document.addEventListener("keydown", async (event) => {
 document.addEventListener("mouseup", async (event) => {
   if (event.button === 0) {
     //왼쪽 마우스
-    await handleSelection(event.pageX, event.pageY);
+    try {
+      await handleSelection(event.pageX, event.pageY);      // Continue with your logic
+    } catch (error) {
+      console.error(error);
+    }
   }
 });
 //*/
@@ -769,19 +477,6 @@ document.addEventListener('selectionchange', async () => {
   }
 });
 */
-
-//백그라운드로 메시지 보낵
-//컨텍스트 메뉴 - 검색 - 검색 하위 메뉴 생성
-document.addEventListener("mouseup", (event) => {
-  if (event.button === 0) {
-    //왼쪽 마우스
-    const selectedText = window.getSelection().toString().trim();
-    if (selectedText.length > 0) {
-      // Send a message to the background script to create the search sub-menus
-      chrome.runtime.sendMessage({ action: "createSearchSubMenus" });
-    }
-  }
-});
 
 let xForControlA = 0;
 let yForControlA = 0;

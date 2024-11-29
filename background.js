@@ -9,7 +9,7 @@ import "./background-utility.js";
 // 확장 프로그램 설치 또는 업데이트 시 실행
 // 다른 곳은 브라우저를 시작하거나 확장이 리로드될 때마다 실행
 chrome.runtime.onInstalled.addListener(async (details) => {
-  await chrome.storage.local.set({ floatingIconCheckboxChecked: false });
+  await chrome.storage.local.set({ floatingIconCheckboxChecked: true });
   await chrome.storage.local.set({ attachChecked: false });
   await chrome.storage.local.set({ chatgptAiCheckboxChecked: true });
 
@@ -52,7 +52,7 @@ chrome.runtime.onStartup.addListener(() => {
   });
   
   chrome.contextMenus.create({
-    id: "separator2",
+    id: "separator2-1",
     parentId: parentId,
     type: "separator",
     contexts: ["page"]
@@ -67,12 +67,27 @@ chrome.runtime.onStartup.addListener(() => {
   });
   
   chrome.contextMenus.create({
+    id: "separator2-2",
+    parentId: parentId,
+    type: "separator",
+    contexts: ["selection"]
+  });
+
+  chrome.contextMenus.create({
     id: "add-to-memo",
     parentId: parentId,
     //title: "메모에 추가",
     title: chrome.i18n.getMessage("add_to_memo"),
     contexts: ["selection"]
   });
+
+  chrome.contextMenus.create({
+    id: "separator2-3",
+    parentId: parentId,
+    type: "separator",
+    contexts: ["selection"]
+  });
+
   
   chrome.contextMenus.create({
     id: "mark",
@@ -82,45 +97,13 @@ chrome.runtime.onStartup.addListener(() => {
     contexts: ["selection"]
   });
   
-  chrome.contextMenus.create({
-    id: "copy",
-    parentId: parentId,
-    //title: "복사",
-    title: chrome.i18n.getMessage("copy"),
-    contexts: ["selection"]
-  });
-  
-  chrome.contextMenus.create({
-    id: "download",
-    parentId: parentId,
-    //title: "다운로드",
-    title: chrome.i18n.getMessage("download"),
-    contexts: ["selection"]
-  });
-  
-  chrome.contextMenus.create({
-    id: "open-url",
-    parentId: parentId,
-    //title: "주소 열기",
-    title: chrome.i18n.getMessage("open_url"),
-    contexts: ["selection"]
-  });
-  
-  const searchMenuId = chrome.contextMenus.create({
-    id: "search",
-    parentId: parentId,
-    //title: "검색",
-    title: chrome.i18n.getMessage("search"),
-    contexts: ["selection"]
-  });
-  
   //
   
   chrome.contextMenus.create({
     id: "title-url-add",
     parentId: parentId,
     //title: "제목 + 주소 추가",
-    title: chrome.i18n.getMessage("add_page_url_to_memo"),
+    title: chrome.i18n.getMessage("add_page_url"),
     contexts: ["page"]
   });
   
@@ -197,9 +180,7 @@ chrome.runtime.onStartup.addListener(() => {
 //
 
 chrome.contextMenus.onClicked.addListener(async (info, tab) => {
-  if (info.menuItemId === "openPanel") {
-    await toggleSidePanel();
-  } else if (info.menuItemId === "add") {
+  if (info.menuItemId === "add") {
     let selectedText = info.selectionText;
     // 예시: 문장 끝 구두점 뒤에 개행 추가
     // . 또는 ! 또는 ? 뒤에 개행 문자 추가
@@ -237,71 +218,8 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     });
   } else if (info.menuItemId === "mark") {
     await chrome.tabs.sendMessage(tab.id, { action: "mark" });
-  } else if (info.menuItemId === "copy") {
-    let selectedText = info.selectionText;
-    // 예시: 문장 끝 구두점 뒤에 개행 추가
-    // . 또는 ! 또는 ? 뒤에 개행 문자 추가
-    selectedText = selectedText.replace(/([.!?])\s*/g, "$1\n");
-    // 인위적으로 개행이 추가된 텍스트를 저장하거나 패널로 전송
-    await chrome.storage.local.set({ selectedText });
-
-    const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    const currentTab = currentTabs[0];
-
-    await chrome.scripting.executeScript({
-      target: { tabId: currentTab.id },
-      args: [selectedText],
-      function: async (selectedText) => {
-        await navigator.clipboard.writeText(selectedText);
-      }
-    });
-  } else if (info.menuItemId === "download") {
-    let selectedText = info.selectionText;
-    // 예시: 문장 끝 구두점 뒤에 개행 추가
-    // . 또는 ! 또는 ? 뒤에 개행 문자 추가
-    selectedText = selectedText.replace(/([.!?])\s*/g, "$1\n");
-    // 인위적으로 개행이 추가된 텍스트를 저장하거나 패널로 전송
-    await chrome.storage.local.set({ selectedText });
-
-    const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
-    const currentTab = currentTabs[0];
-
-    await chrome.scripting.executeScript({
-      target: { tabId: currentTab.id },
-      args: [selectedText],
-      function: async (selectedText) => {
-        const blob = new Blob([selectedText], { type: "text/plain" });
-        const url = URL.createObjectURL(blob);
-
-        // 백그라운드 스크립트로 메시지 전송
-        chrome.runtime.sendMessage({
-          action: "download",
-          url: url,
-          filename: "text.txt"
-        });
-      }
-    });
-  } else if (info.menuItemId === "open-url") {
-    let selectedText = info.selectionText;
-    let url = selectedText;
-    if (!url.startsWith("http://") && !url.startsWith("https://")) {
-      url = "https://www.google.com/search?q={query}";
-      url = url.replace("{query}", encodeURIComponent(selectedText));
-    }
-    //await chrome.runtime.sendMessage({ action: 'openTab', url: url });
-    await openTab(url);
-  } else if (info.menuItemId === "search") {
-    let selectedText = info.selectionText;
-    const { email } = await chrome.storage.local.get(["email"]);
-    if (!email) {
-      const url = "https://www.google.co.kr/search?q={query}";
-      const searchUrl = url.replace("{query}", encodeURIComponent(selectedText));
-      await chrome.tabs.create({ url: searchUrl });
-    }
-  } 
-
   //
-  else if (info.menuItemId === "title-url-add") {
+  } else if (info.menuItemId === "title-url-add") {
     const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
     const currentTab = currentTabs[0];
 
@@ -366,10 +284,8 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
         await add("chat-tab", text);
       }
     });
-  }
-
   //
-  else if (info.menuItemId === "title-url-add-to-memo") {
+  } else if (info.menuItemId === "title-url-add-to-memo") {
     const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
     const currentTab = currentTabs[0];
 
