@@ -51,6 +51,9 @@ const fetchLinks = async () => {
     while (linkList.firstChild) {
       linkList.removeChild(linkList.firstChild);
     }
+
+    const linkSection = document.getElementById('link-section');
+    linkSection.style.display = 'none';
   }
 };
 

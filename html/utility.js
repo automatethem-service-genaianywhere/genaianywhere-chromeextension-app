@@ -83,7 +83,11 @@ const fetchSearchEngines = async () => {
         document.querySelector("#engine-list").append(", ");
       }
     });
-  };
+  }
+  else {
+    const searchPart = document.getElementById('search-part');
+    searchPart.style.display = 'none';
+  }
 };
 
 // Add keydown event listener to the input box for Enter key
