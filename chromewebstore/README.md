@@ -1,19 +1,4 @@
-```
-Generative Ai Anywhere
-Generative Ai Anywhere is a chrome extension app supporting for you to question or requestion about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.) to multiple generative Ais conveniently.
-
-Open source chrome extension
-Github: https://github.com/automatethem/generativeaianywhere
-```
-```
-생성형 Ai 애니웨어
-생성형 Ai 애니웨어는 여러개의 웹페이지 컨텐츠(텍스트, 소스, 동영상 스크립트, pdf, 이미지, 음악, 동영상 등)에 대해 여러개의 생성형 Ai에게 편리하게 질문 혹은 재질문 할 수 있게 도와주는 크롬확장 앱입니다.
-
-오픈 소스 크롬 확장
-지텁: https://github.com/automatethem/generativeaianywhere
-```
-
-
+<pre>
 전용 목적:
 Supports for you to question or requestion about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.) to multiple generative Ais conveniently.
 
@@ -57,3 +42,4 @@ Download selected text, memo, clipboard.
 
 호스트 권한 사용 근거
 Access web page for marking url in the setting (https://www.generativeaianywhere.ai/), disable blocking right click and extract youtube script.
+</pre>
