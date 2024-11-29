@@ -1,6 +1,6 @@
 <pre>
 전용 목적:
-Supports for you to question or requestion about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.) to multiple generative Ais conveniently.
+Lets you use generative Ai anywhere on a webpage.
 
 권한 요청 이유:
 
