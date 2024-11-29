@@ -57,8 +57,9 @@ document.querySelector("#download-memo").addEventListener("click", async () => {
 
 //
 
-document.querySelector("#add-selected-text-to-memo").addEventListener("click", async (event) => {
-  const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
+//document.querySelector("#add-selected-text-to-memo").addEventListener("click", async (event) => { //not work
+document.querySelector("#add-selected-text-to-memo").addEventListener("click", async function() {
+    const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
   const currentTab = currentTabs[0];
 
   let [{ result: text }] = await chrome.scripting.executeScript({

@@ -55,8 +55,9 @@ document.querySelector("#paste-input-text").addEventListener("click", async (eve
 
 //
 
-document.querySelector("#add-selected-text").addEventListener("click", async (event) => {
-  const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
+//document.querySelector("#add-selected-text").addEventListener("click", async (event) => { //not work
+document.querySelector("#add-selected-text").addEventListener("click", async function() {
+    const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
   const currentTab = currentTabs[0];
 
   let [{ result: text }] = await chrome.scripting.executeScript({
