@@ -13,7 +13,7 @@
   "link_menu": { "message": "Link management" },
   "price_menu": { "message": "Price" },
   "tistory_menu": { "message": "Side job info and productivity app review" },
-  "ai_review_collection_menu": { "message": "Generative Ai review collection" },
+  "ai_collection_menu": { "message": "Generative Ai collection" },
   "naver_cafe_menu": { "message": "Naver cafe" },
   "youtube_menu": { "message": "Youtube" },
   "admin_menu": { "message": "Admin" },
