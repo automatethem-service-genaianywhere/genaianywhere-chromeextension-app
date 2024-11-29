@@ -2,8 +2,8 @@ https://www.generativeaianywhere.ai/
 
 Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage.<br/>
 <br/>
-- You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
-- You can ask or re-question questions to multiple generative Ai.<br/>
+-You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
+-You can ask or re-question questions to multiple generative Ai.<br/>
 <br/>
 It also provides the following additional features:<br/>
 Mark (Highlighter): Mark webpages with a highlighter.<br/>
