@@ -89,7 +89,7 @@
   "add_page_source_to_memo": { "message": "제목 + 주소 + 소스 추가" },
   "add_movie_script_to_memo": { "message": "제목 + 주소 + 동영상 스크립트 추가" },
 
-  "tistory_search_label": { "message": "부업 정보와 생산성 앱 리뷰" },
+  "tistory_search_label": { "message": "부업 정보와 생산성 앱 리뷰 검색" },
   "search_placeholder": { "message": "검색어 입력..." }, 
   "search_word_input": { "message": "검색어 입력" },
 
