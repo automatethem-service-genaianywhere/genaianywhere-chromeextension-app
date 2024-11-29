@@ -98,6 +98,11 @@ document.querySelector("#price-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+document.querySelector("#how-to-use-menu").addEventListener("click", async () => {
+  const url = "https://automatethem.tistory.com/category/%EC%83%9D%EC%84%B1%ED%98%95%20Ai%20%EC%95%A0%EB%8B%88%EC%9B%A8%EC%96%B4";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
   const url = "https://automatethem.tistory.com/377";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
