@@ -4,8 +4,8 @@ https://www.generativeaianywhere.ai/
 
 생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai 를 사용할 수 있게 해주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다.<br/>
 <br/>
--- 여러개의 웹페이지 컨텐츠(텍스트, 소스, 동영상 스크립트, pdf, 이미지, 음악, 동영상 등)에 대해 질문 혹은 재질문 할 수 있습니다.<br/>
--- 여러개의 생성형 Ai에게 질문 혹은 재질문 할 수 있습니다.<br/>
+여러개의 웹페이지 컨텐츠(텍스트, 소스, 동영상 스크립트, pdf, 이미지, 음악, 동영상 등)에 대해 질문 혹은 재질문 할 수 있습니다.<br/>
+여러개의 생성형 Ai에게 질문 혹은 재질문 할 수 있습니다.<br/>
 <br/>
 또한 아래 추가 기능을 제공 합니다:<br/>
 마크 (형광펜): 웹페이지에 형광펜으로 표시.<br/>
@@ -21,8 +21,8 @@ https://www.generativeaianywhere.ai/
 
 Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage.<br/>
 <br/>
-- You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
-- You can ask or re-question questions to multiple generative Ai.<br/>
+You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
+You can ask or re-question questions to multiple generative Ai.<br/>
 <br/>
 It also provides the following additional features:<br/>
 Mark (Highlighter): Mark webpages with a highlighter.<br/>
