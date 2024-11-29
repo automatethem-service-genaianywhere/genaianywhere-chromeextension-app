@@ -69,9 +69,6 @@ document.querySelector("#add-selected-text-to-memo").addEventListener("click", a
       return selection ? selection.toString() : "";
     },
   });
-  // 예시: 문장 끝 구두점 뒤에 개행 추가
-  // . 또는 ! 또는 ? 뒤에 개행 문자 추가
-  text = text.replace(/([.!?])\s*/g, "$1\n");
 
   await chrome.storage.local.set({ selectedText: text });
 
