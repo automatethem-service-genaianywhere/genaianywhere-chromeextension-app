@@ -54,8 +54,10 @@ const moreAiServices = [
 
   { id: "beautiful", name: "뷰티플 (프리젠테이션)", en: "Beautiful (presentation)", urls: ["https://www.beautiful.ai/"], rootUrl: null, simple: true },
 
-  { id: "cursor", name: "커서 (코드 에디터, 앱 제작)", en: "Cursor (code editor)", urls: ["https://www.cursor.com/"], rootUrl: null, simple: true }
+  { id: "cursor", name: "커서 (코드 에디터, 앱 제작)", en: "Cursor (code editor)", urls: ["https://www.cursor.com/"], rootUrl: null, simple: true },
+  { id: "suggest", name: "추가할 생성형 Ai 를 제안해 주세요.", en: "Suggest additional Generative Ai.", urls: ["https://docs.google.com/forms/d/e/1FAIpQLScReSafo0K3E0LqRLEoe5aA6yBP_C9PrefBHMNk96YBVkdLHA/viewform"], rootUrl: null, simple: true }
 
+  
 ];
 
 //
