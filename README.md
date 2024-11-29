@@ -1,5 +1,43 @@
 https://www.generativeaianywhere.ai/
 
+## 생성형 Ai 애니웨어
+
+생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai 를 사용할 수 있게 해주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다.<br/>
+<br/>
+-여러개의 웹페이지 컨텐츠(텍스트, 소스, 동영상 스크립트, pdf, 이미지, 음악, 동영상 등)에 대해 질문 혹은 재질문 할 수 있습니다.<br/>
+-여러개의 생성형 Ai에게 질문 혹은 재질문 할 수 있습니다.<br/>
+<br/>
+또한 아래 추가 기능을 제공 합니다:<br/>
+마크 (형광펜): 웹페이지에 형광펜으로 표시.<br/>
+동영상 스크립트 추출: 유튜브 동영상 자막 데이터를 텍스트로 추출.<br/>
+키워드 분석: 실시간 키워드 검색량 및 트렌드 파악.<br/>
+키워드 조합: 키워드 조합 기능 제공, 특히 지도 키워드 마이닝시 유용.<br/>
+마우스 우클릭 보호 해제: 복마우스 우클릭 보호된 페이지 해제로 콘텐츠 자유롭게 복사 .<br/>
+글자수 세기: 콘텐츠 글자수를 실시간으로 확인.<br/>
+스크롤 화면 캡처: 긴 페이지를 스크롤 캡처해 저장.<br/>
+프롬프트 분할: 프롬프트가 길 경우 작은 프롬프트들로 잘라 생성형 Ai에게 질문.<br/>
+<br/>
+지텁: <a href="https://github.com/automatethem/generativeaianywhere" target="_blank">https://github.com/automatethem/generativeaianywhere</a>
+
+## Generative Ai Anywhere
+
+Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage.<br/>
+<br/>
+-You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
+-You can ask or re-question questions to multiple generative Ai.<br/>
+<br/>
+It also provides the following additional features:<br/>
+Mark (Highlighter): Mark webpages with a highlighter.<br/>
+Video Script Extraction: Extract YouTube video subtitle data as text.<br/>
+Keyword Analysis: Understand real-time keyword search volume and trends.<br/>
+Keyword Combination: Provides keyword combination function, especially useful for map keyword mining.<br/>
+Right-click Unprotect: Freely copy content by right-clicking and releasing protected pages.<br/>
+Character Count: Check the number of characters in content in real time.<br/>
+Scroll Screen Capture: Scroll and capture long pages to save them.<br/>
+Split Prompt: If the prompt is long, break it into smaller prompts and ask the generative AI questions.<br/>
+<br/>
+Github: <a href="https://github.com/automatethem/generativeaianywhere" target="_blank">https://github.com/automatethem/generativeaianywhere</a>
+
 ## 화면 캡처 (Screen Capture)
 
 한국어
