@@ -1,5 +1,7 @@
 https://www.generativeaianywhere.ai/
 
+## 생성형 Ai 애니웨어
+
 생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai 를 사용할 수 있게 해주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다.<br/>
 <br/>
 - 여러개의 웹페이지 컨텐츠(텍스트, 소스, 동영상 스크립트, pdf, 이미지, 음악, 동영상 등)에 대해 질문 혹은 재질문 할 수 있습니다.<br/>
@@ -14,6 +16,8 @@ https://www.generativeaianywhere.ai/
 글자수 세기: 콘텐츠 글자수를 실시간으로 확인.<br/>
 스크롤 화면 캡처: 긴 페이지를 스크롤 캡처해 저장.<br/>
 프롬프트 분할: 프롬프트가 길 경우 작은 프롬프트들로 잘라 생성형 Ai에게 질문.
+
+## Generative Ai Anywhere
 
 Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage.<br/>
 <br/>
