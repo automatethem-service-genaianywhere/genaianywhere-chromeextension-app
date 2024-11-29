@@ -1,5 +1,20 @@
 https://www.generativeaianywhere.ai/
 
+Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage.<br/>
+<br/>
+- You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
+- You can ask or re-question questions to multiple generative Ai.<br/>
+<br/>
+It also provides the following additional features:<br/>
+Mark (Highlighter): Mark webpages with a highlighter.<br/>
+Video Script Extraction: Extract YouTube video subtitle data as text.<br/>
+Keyword Analysis: Understand real-time keyword search volume and trends.<br/>
+Keyword Combination: Provides keyword combination function, especially useful for map keyword mining.<br/>
+Right-click Unprotect: Freely copy content by right-clicking and releasing protected pages.<br/>
+Character Count: Check the number of characters in content in real time.<br/>
+Scroll Screen Capture: Scroll and capture long pages to save them.<br/>
+Split Prompt: If the prompt is long, break it into smaller prompts and ask the generative AI questions.
+
 ## 화면 캡처 (Screen Capture)
 
 한국어
