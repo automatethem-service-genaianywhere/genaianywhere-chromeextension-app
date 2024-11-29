@@ -17,18 +17,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
 
   // 확장 프로그램이 제거될 때 특정 URL로 이동
   chrome.runtime.setUninstallURL("https://docs.google.com/forms/d/e/1FAIpQLSeK13vZbukS5N8OAdNe4j4JgotbloUYvVLA94rjYOU9d1kBIA/viewform?usp=sf_link");
-});
 
-//
-
-// 브라우저 시작 시 다국어 리소스 변경을 위해 크롬 확장 리로드
-chrome.runtime.onStartup.addListener(() => {
-  chrome.runtime.reload();
-});
-
-//
-
-(() => {
   const parentId = chrome.contextMenus.create({
     id: "ai",
     //title: "Ai에게 보내기",
@@ -174,7 +163,20 @@ chrome.runtime.onStartup.addListener(() => {
     title: chrome.i18n.getMessage("add_movie_script_to_memo"),
     contexts: ["page"],
     documentUrlPatterns: ["*://www.youtube.com/watch?v=*"] // 유튜브 동영상 URL 패턴
-  });  
+  }); 
+});
+
+//
+
+// 브라우저 시작 시 다국어 리소스 변경을 위해 크롬 확장 리로드
+chrome.runtime.onStartup.addListener(() => {
+  chrome.runtime.reload();
+});
+
+//
+
+(() => {
+ 
 })();
 
 //
