@@ -407,7 +407,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
 
       iconContainer.style.left = `${containerLeft + window.scrollX}px`;
       //iconContainer.style.top = `${pageY + 10 + window.scrollY}px`;
-      iconContainer.style.top = `${pageY - 40 + window.scrollY}px`;
+      iconContainer.style.top = `${pageY - 35 + window.scrollY}px`;
     } else {
       const containerWidth = iconContainer.offsetWidth; // 아이콘 컨테이너의 가로 너비 계산
       let containerLeft = pageX - containerWidth / 2; // 아이콘의 수평 중앙을 마우스 X 좌표에 맞춤
@@ -420,7 +420,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
       const selectionRange = window.getSelection().getRangeAt(0); // 선택된 텍스트의 범위 가져오기
       const selectionRect = selectionRange.getBoundingClientRect(); // 선택된 텍스트의 경계 계산
       //iconContainer.style.top = `${selectionRect.bottom + 10 + window.scrollY}px`; // 선택된 텍스트의 하단에 맞게 배치
-      iconContainer.style.top = `${selectionRect.top - 40 + window.scrollY}px`; // 선택된 텍스트의 상단에 맞게 배치
+      iconContainer.style.top = `${selectionRect.top - 35 + window.scrollY}px`; // 선택된 텍스트의 상단에 맞게 배치
     }
 
     // Close the container when clicking outside of it
