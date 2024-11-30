@@ -54,7 +54,7 @@ document.querySelector("#prompt-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#realtime-popular-keyword-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/realtime-popular-keyword.html";
+  const url = "https://www.generativeaianywhere.ai/realtime-popular-search-word.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
