@@ -3,7 +3,7 @@
   "extensionDescription": { "message": "Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage." },
   "home_menu": { "message": "Home" },
   "prompt_menu": { "message": "Prompt management" },
-  "realtime_popular_keyword_menu": { "message": "Real-time popular search word" },
+  "realtime_popular_search_word_menu": { "message": "Real-time popular search word" },
   "keyword_search_count_menu": { "message": "Keyword search count" },
   "keyword_combination_menu": { "message": "Keyword combination" },
   "keyword_search_trend_menu": { "message": "Keyword search trend" },

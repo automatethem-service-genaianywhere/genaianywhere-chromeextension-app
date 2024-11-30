@@ -3,7 +3,7 @@
   "extensionDescription": { "message": "생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai 를 사용할 수 있게 해주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다." },
   "home_menu": { "message": "홈" },
   "prompt_menu": { "message": "프롬프트 관리" },
-  "realtime_popular_keyword_menu": { "message": "실시간 인기 검색어" },
+  "realtime_popular_search_word_menu": { "message": "실시간 인기 검색어" },
   "keyword_search_count_menu": { "message": "키워드 검색 수" },
   "keyword_combination_menu": { "message": "키워드 조합" },
   "keyword_search_trend_menu": { "message": "키워드 검색 트렌드" },
