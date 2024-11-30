@@ -93,8 +93,8 @@ document.querySelector("#link-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#webutility-menu").addEventListener("click", async () => {
-  const url = "https://webutility.generativeaianywhere.ai/";
+document.querySelector("#utility-menu").addEventListener("click", async () => {
+  const url = "https://utility.generativeaianywhere.ai/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
