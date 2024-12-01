@@ -104,17 +104,17 @@ document.querySelector("#price-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#how-to-use-menu").addEventListener("click", async () => {
-  const url = "https://blog.marketinganywhere.ai/5";
+  const url = "https://marketinganywhere.tistory.com/5";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
-  const url = "https://blog.marketinganywhere.ai/6";
+  const url = "https://marketinganywhere.tistory.com/6";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#tistory-menu").addEventListener("click", async () => {
-  const url = "https://blog.marketinganywhere.ai/";
+  const url = "https://marketinganywhere.tistory.com/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
