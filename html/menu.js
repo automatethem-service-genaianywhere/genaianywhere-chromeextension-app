@@ -138,7 +138,7 @@ document.querySelector("#naver-cafe-menu").addEventListener("click", async () =>
 });
 
 document.querySelector("#youtube-menu").addEventListener("click", async () => {
-  const url = "https://www.youtube.com/@automatethem";
+  const url = "https://www.youtube.com/@marketinganywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
