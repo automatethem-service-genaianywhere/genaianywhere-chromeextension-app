@@ -1,8 +1,8 @@
 서비스 페이지 (Service page): https://www.marketinganywhere.ai/
 
-## 생성형 Ai 애니웨어
+## 마케팅 애니웨어
 
-생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai 를 사용할 수 있게 해주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다.<br/>
+마케팅 애니웨어는 웹페이지 어디서나 마케팅 관련 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다.<br/>
 <br/>
 -여러개의 웹페이지 컨텐츠(텍스트, 소스, 동영상 스크립트, pdf, 이미지, 음악, 동영상 등)에 대해 질문 혹은 재질문 할 수 있습니다.<br/>
 -여러개의 생성형 Ai에게 질문 혹은 재질문 할 수 있습니다.<br/>
@@ -17,11 +17,11 @@
 스크롤 화면 캡처: 긴 페이지를 스크롤 캡처해 저장.<br/>
 프롬프트 분할: 프롬프트가 길 경우 작은 프롬프트들로 잘라 생성형 Ai에게 질문.<br/>
 <br/>
-지텁: <a href="https://github.com/automatethem/generativeaianywhere" target="_blank">https://github.com/automatethem/generativeaianywhere</a>
+지텁: <a href="https://github.com/automatethem/marketinganywhere" target="_blank">https://github.com/automatethem/marketinganywhere</a>
 
-## Generative Ai Anywhere
+## Marketing Anywhere
 
-Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage.<br/>
+Marketing Anywhere is a free, open source meta-generative Ai Chrome extension that helps you easily perform marketing-related tasks on any webpage.<br/>
 <br/>
 -You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
 -You can ask or re-question questions to multiple generative Ai.<br/>
@@ -36,7 +36,7 @@ Character Count: Check the number of characters in content in real time.<br/>
 Scroll Screen Capture: Scroll and capture long pages to save them.<br/>
 Split Prompt: If the prompt is long, break it into smaller prompts and ask the generative AI questions.<br/>
 <br/>
-Github: <a href="https://github.com/automatethem/generativeaianywhere" target="_blank">https://github.com/automatethem/generativeaianywhere</a>
+Github: <a href="https://github.com/automatethem/marketinganywhere" target="_blank">https://github.com/automatethem/marketinganywhere</a>
 
 ## 화면 캡처 (Screen Capture)
 
