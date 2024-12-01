@@ -44,77 +44,77 @@
 //
 
 document.querySelector("#home-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/";
+  const url = "https://www.marketinganywhere.ai/";
   await chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#prompt-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/prompt.html";
+  const url = "https://www.marketinganywhere.ai/prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#realtime-popular-search-word-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/realtime-popular-search-word.html";
+  const url = "https://www.marketinganywhere.ai/realtime-popular-search-word.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-count-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/keyword-search-count.html";
+  const url = "https://www.marketinganywhere.ai/keyword-search-count.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-combination-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/keyword-combination.html";
+  const url = "https://www.marketinganywhere.ai/keyword-combination.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-trend-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/keyword-search-trend.html";
+  const url = "https://www.marketinganywhere.ai/keyword-search-trend.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#mark-url-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/mark-url.html";
+  const url = "https://www.marketinganywhere.ai/mark-url.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/keyword-search.html";
+  const url = "https://www.marketinganywhere.ai/keyword-search.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#search-engine-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/search-engine.html";
+  const url = "https://www.marketinganywhere.ai/search-engine.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#link-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/link.html";
+  const url = "https://www.marketinganywhere.ai/link.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#utility-menu").addEventListener("click", async () => {
-  const url = "https://utility.generativeaianywhere.ai/";
+  const url = "https://utility.marketinganywhere.ai/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#price-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/price.html";
+  const url = "https://www.marketinganywhere.ai/price.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#how-to-use-menu").addEventListener("click", async () => {
-  const url = "https://automatethem.tistory.com/category/%EC%83%9D%EC%84%B1%ED%98%95%20Ai%20%EC%95%A0%EB%8B%88%EC%9B%A8%EC%96%B4";
+  const url = "https://blog.marketinganywhere.ai/5";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
-  const url = "https://automatethem.tistory.com/377";
+  const url = "https://blog.marketinganywhere.ai/6";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#tistory-menu").addEventListener("click", async () => {
-  const url = "https://automatethem.tistory.com/";
+  const url = "https://blog.marketinganywhere.ai/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -124,7 +124,7 @@ document.querySelector("#tistory-search-word").addEventListener("keydown", (even
     const query = document.querySelector("#tistory-search-word").value.trim();
 
     if (query) {
-      const searchUrl = `https://automatethem.tistory.com/search/${encodeURIComponent(query)}`;
+      const searchUrl = `http://blog.marketinganywhere.ai/search/${encodeURIComponent(query)}`;
       chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
     } else {
       alert("검색어를 입력하세요.");
@@ -133,7 +133,7 @@ document.querySelector("#tistory-search-word").addEventListener("keydown", (even
 });
 
 document.querySelector("#naver-cafe-menu").addEventListener("click", async () => {
-  const url = "https://cafe.naver.com/automatethem";
+  const url = "https://cafe.naver.com/marketinganywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -148,14 +148,14 @@ document.querySelector("#github-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#admin-menu").addEventListener("click", async () => {
-  const url = "https://www.generativeaianywhere.ai/admin/";
+  const url = "https://www.marketinganywhere.ai/admin/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 //
 
 const openLoginLinkTab = async () => {
-  const chatUrl = "https://www.generativeaianywhere.ai/";
+  const chatUrl = "https://www.marketinganywhere.ai/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -213,7 +213,7 @@ const openLoginLinkTab = async () => {
 };
 
 const openLogoutLinkTab = async () => {
-  const chatUrl = "https://www.generativeaianywhere.ai/";
+  const chatUrl = "https://www.marketinganywhere.ai/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -236,11 +236,11 @@ const openLogoutLinkTab = async () => {
     // 이미 열려 있는 탭을 찾으면 해당 탭을 활성화
     await chrome.windows.update(foundTab.windowId, { focused: true });
     await chrome.tabs.update(foundTab.id, { active: true });
-    const url = "https://www.generativeaianywhere.ai/login/chromeextension/logout.html";
+    const url = "https://www.marketinganywhere.ai/login/chromeextension/logout.html";
     await chrome.tabs.update(foundTab.id, { active: true, url: url }); //
   } else {
     // If no ai tab is open, create a new tab
-    const url = "https://www.generativeaianywhere.ai/login/chromeextension/logout.html";
+    const url = "https://www.marketinganywhere.ai/login/chromeextension/logout.html";
     let newTab = await chrome.tabs.create({ url: url });
   }
 };

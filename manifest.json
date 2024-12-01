@@ -21,14 +21,14 @@
       "run_at": "document_end"
     },
     {
-     "matches": ["https://www.generativeaianywhere.ai/",
-                 "https://www.generativeaianywhere.ai/index.html"],
+     "matches": ["https://www.marketinganywhere.ai/",
+                 "https://www.marketinganywhere.ai/index.html"],
       "js": ["content-script-login.js"],
       "run_at": "document_end"
     },
     {
       "type": "module",
-      "matches": ["https://www.generativeaianywhere.ai/keyword-search.html*"],
+      "matches": ["https://www.marketinganywhere.ai/keyword-search.html*"],
       "js": ["content-script-keyword-search.js"],
       "run_at": "document_end"
     },

@@ -9,7 +9,7 @@ const fetchPrompts = async () => {
     if (languageCode.includes("-")) {
       languageCode = languageCode.split("-")[0]
     }
-    const url = `https://www.generativeaianywhere.ai/api/prompt?userId=${userId}&languageCode=${languageCode}`;
+    const url = `https://www.marketinganywhere.ai/api/prompt?userId=${userId}&languageCode=${languageCode}`;
     try {
       const response = await fetch(url);
       //console.log(response);
@@ -100,7 +100,7 @@ document.querySelector("#prompt-direct-input").addEventListener("click", async (
 });
 
 document.querySelector("#add-prompt").addEventListener("click", async (event) => {
-  const url = "https://www.generativeaianywhere.ai/prompt.html";
+  const url = "https://www.marketinganywhere.ai/prompt.html";
   await chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 

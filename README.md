@@ -1,4 +1,4 @@
-서비스 페이지 (Service page): https://www.generativeaianywhere.ai/
+서비스 페이지 (Service page): https://www.marketinganywhere.ai/
 
 ## 생성형 Ai 애니웨어
 

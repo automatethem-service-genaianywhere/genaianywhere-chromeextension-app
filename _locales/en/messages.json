@@ -1,6 +1,6 @@
 {
-  "extensionName": { "message": "Generative Ai Anywhere" },
-  "extensionDescription": { "message": "Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that lets you use generative Ai anywhere on a webpage." },
+  "extensionName": { "message": "Marketing Anywhere" },
+  "extensionDescription": { "message": "Marketing Anywhere is a free, open source meta-generative Ai Chrome extension that helps you easily perform marketing-related tasks on any webpage." },
   "home_menu": { "message": "Home" },
   "prompt_menu": { "message": "Prompt management" },
   "realtime_popular_search_word_menu": { "message": "Real-time popular search word" },
@@ -14,9 +14,9 @@
   "utility_menu": { "message": "Utility" },
   "how_to_use_menu": { "message": "How to use" },
   "price_menu": { "message": "Price" },
-  "tistory_menu": { "message": "Side job info and productivity app review" },
+  "tistory_menu": { "message": "Blog" },
   "ai_collection_menu": { "message": "Generative Ai collection" },
-  "naver_cafe_menu": { "message": "Naver cafe" },
+  "naver_cafe_menu": { "message": "Community" },
   "youtube_menu": { "message": "Youtube" },
   "admin_menu": { "message": "Admin" },
   "login_menu": { "message": "Login/Register" },
@@ -91,7 +91,7 @@
   "add_page_source_to_memo": { "message": "Add title + url + source to memo" },
   "add_movie_script_to_memo": { "message": "Add title + url + movie script to memo" },
 
-  "tistory_search_label": { "message": "Search side job info and productivity app review" },
+  "tistory_search_label": { "message": "Search in blog" },
   "search_placeholder": { "message": "Enter search word..." },
   "search_word_input": { "message": "Enter search word" },
 

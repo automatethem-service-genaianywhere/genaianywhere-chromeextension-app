@@ -1,6 +1,6 @@
 {
-  "extensionName": { "message": "생성형 Ai 애니웨어" },
-  "extensionDescription": { "message": "생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai 를 사용할 수 있게 해주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다." },
+  "extensionName": { "message": "마케팅 애니웨어" },
+  "extensionDescription": { "message": "마케팅 애니웨어는 웹페이지 어디서나 마케팅 관련 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다." },
   "home_menu": { "message": "홈" },
   "prompt_menu": { "message": "프롬프트 관리" },
   "realtime_popular_search_word_menu": { "message": "실시간 인기 검색어" },
@@ -15,8 +15,8 @@
   "how_to_use_menu": { "message": "사용 방법" },
   "price_menu": { "message": "가격" },
   "ai_collection_menu": { "message": "생성형 Ai 모음" },
-  "tistory_menu": { "message": "부업 정보와 생산성 앱 리뷰" },
-  "naver_cafe_menu": { "message": "네이버 카페" },
+  "tistory_menu": { "message": "블로그" },
+  "naver_cafe_menu": { "message": "커뮤니티" },
   "youtube_menu": { "message": "유튜브" },
   "admin_menu": { "message": "관리" },
   "login_menu": { "message": "로그인/회원가입" },
@@ -91,7 +91,7 @@
   "add_page_source_to_memo": { "message": "메모에 제목 + 주소 + 소스 추가" },
   "add_movie_script_to_memo": { "message": "메모에 제목 + 주소 + 동영상 스크립트 추가" },
 
-  "tistory_search_label": { "message": "부업 정보와 생산성 앱 리뷰 검색" },
+  "tistory_search_label": { "message": "블로그 검색" },
   "search_placeholder": { "message": "검색어 입력..." }, 
   "search_word_input": { "message": "검색어 입력" },
 
