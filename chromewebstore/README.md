@@ -1,6 +1,6 @@
 <pre>
 전용 목적:
-Lets you use generative Ai anywhere on a webpage.
+Lets you use Marketing anywhere on a webpage.
 
 권한 요청 이유:
 
