@@ -21,7 +21,7 @@
 
 ## Marketing Anywhere
 
-Marketing Anywhere is a free, open source meta-generative Ai Chrome extension that helps you easily perform marketing-related tasks on any webpage.<br/>
+Marketing Anywhere is a free, open source meta-generative Ai Chrome extension app that helps you easily perform marketing-related tasks on any webpage.<br/>
 <br/>
 -You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
 -You can ask or re-question questions to multiple generative Ai.<br/>
