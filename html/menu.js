@@ -124,7 +124,7 @@ document.querySelector("#tistory-search-word").addEventListener("keydown", (even
     const query = document.querySelector("#tistory-search-word").value.trim();
 
     if (query) {
-      const searchUrl = `http://blog.marketinganywhere.ai/search/${encodeURIComponent(query)}`;
+      const searchUrl = `https://marketinganywhere.tistory.com/search/${encodeURIComponent(query)}`;
       chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
     } else {
       alert("검색어를 입력하세요.");
