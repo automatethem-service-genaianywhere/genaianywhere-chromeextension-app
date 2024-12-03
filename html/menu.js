@@ -118,6 +118,11 @@ document.querySelector("#tistory-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+document.querySelector("#user-open-chatting-menu").addEventListener("click", async () => {
+  const url = "https://open.kakao.com/o/g2eIyY2g";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 // 검색 박스에서 Enter 키를 눌렀을 때 검색 실행
 document.querySelector("#tistory-search-word").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
