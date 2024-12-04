@@ -2,7 +2,7 @@
 
 ## 마케팅 애니웨어
 
-마케팅 애니웨어는 웹페이지 어디서나 마케팅 관련 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다.<br/>
+마케팅 애니웨어는 웹페이지 어디서나 마케팅 부업등 모든 부업 관련 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다.<br/>
 <br/>
 -여러개의 웹페이지 컨텐츠(텍스트, 소스, 동영상 스크립트, pdf, 이미지, 음악, 동영상 등)에 대해 질문 혹은 재질문 할 수 있습니다.<br/>
 -여러개의 생성형 Ai에게 질문 혹은 재질문 할 수 있습니다.<br/>
@@ -21,7 +21,7 @@
 
 ## Marketing Anywhere
 
-Marketing Anywhere is a free, open source meta-generative Ai Chrome extension app that helps you easily perform marketing-related tasks on any webpage.<br/>
+Marketing Anywhere is a free, open-source, meta-generating Ai Chrome extension app that helps you easily perform all side job related tasks, such as marketing side job, anywhere on the webpage.<br/>
 <br/>
 -You can ask or re-question questions about multiple webpage contents (text, source, video script, pdf, image, music, video, etc.).<br/>
 -You can ask or re-question questions to multiple generative Ai.<br/>

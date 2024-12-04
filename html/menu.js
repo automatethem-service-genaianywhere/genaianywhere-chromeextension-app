@@ -118,8 +118,13 @@ document.querySelector("#tistory-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#user-open-chatting-menu").addEventListener("click", async () => {
-  const url = "https://open.kakao.com/o/g2eIyY2g";
+document.querySelector("#blog-management-agency-menu").addEventListener("click", async () => {
+  const url = "https://marketinganywhere.tistory.com/28";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
+document.querySelector("#map-management-agency-menu").addEventListener("click", async () => {
+  const url = "https://marketinganywhere.tistory.com/29";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
