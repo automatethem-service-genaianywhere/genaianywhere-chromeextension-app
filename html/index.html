@@ -381,7 +381,7 @@
     <!-- 설정 탭 끝 -->
 
     <div style="margin-bottom: 8px">
-      <span data-i18n="tool">도구</span>:
+      <b><span data-i18n="built_in_tool">내장 도구</span></b>:
       <span>
         <span data-i18n="selected_text">선택 텍스트</span> (<a id="mark" data-i18n="mark" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">마크</a>,
         <a id="copy-selected-text" data-i18n="copy" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">복사</a>,
@@ -408,8 +408,19 @@
       </span>     
     </div>
 
+    <div style="margin-bottom: 8px">
+      <b><span data-i18n="external_tool">외부 도구</span></b>:
+      <span>
+        <a id="web-tool" data-i18n="web_tool" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">웹 도구</a>,
+        <a id="chromeextension-tool" data-i18n="chromeextension_tool" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">크롬확장 도구</a>,
+        <a id="bookmarklet-tool" data-i18n="bookmarklet_tool" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">북마크릿 도구</a>,
+        <a id="desktop-tool" data-i18n="desktop_tool" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">데스크톱 도구</a>,
+        <a id="mobile-tool" data-i18n="mobile_tool" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">모바일 도구</a>
+      </span>     
+    </div>
+
     <div id="link-section" style="display: none;">
-      <span data-i18n="link">링크</span>:
+      <b><span data-i18n="link">링크</span></b>:
       <span id="link-list" style="margin-bottom: 8px"></span>
     </div>
 
@@ -424,7 +435,7 @@
     <script src="result.js"></script>
     <script src="memo.js"></script>
     <script src="setting.js"></script>
-    <script src="utility.js"></script>
+    <script src="tool.js"></script>
     <script src="link.js"></script>
     <script src="ai.js"></script>
     <script src="login.js"></script>  

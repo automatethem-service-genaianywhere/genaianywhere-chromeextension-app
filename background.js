@@ -4,7 +4,7 @@ import "./background-keyword-search.js";
 import "./background-login.js";
 import { toggleSidePanel } from "./background-sidepanel.js";
 import "./background-ai.js";
-import "./background-utility.js";
+import "./background-tool.js";
 
 // 확장 프로그램 설치 또는 업데이트 시 실행
 // 다른 곳은 브라우저를 시작하거나 확장이 리로드될 때마다 실행
