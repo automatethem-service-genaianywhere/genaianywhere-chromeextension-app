@@ -152,6 +152,11 @@ document.querySelector("#youtube-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+document.querySelector("#friend-menu").addEventListener("click", async () => {
+  const url = "https://cafe.naver.com/ArticleList.nhn?search.clubid=31338419&search.menuid=44&search.boardtype=L";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 document.querySelector("#github-menu").addEventListener("click", async () => {
   const url = "https://github.com/automatethem/generativeaianywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
