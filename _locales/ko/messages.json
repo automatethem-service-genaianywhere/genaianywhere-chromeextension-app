@@ -16,7 +16,7 @@
   "price_menu": { "message": "가격" },
   "ai_collection_menu": { "message": "생성형 Ai 모음" },
   "tistory_menu": { "message": "블로그" },
-  "blog_management_agency_menu": { "message": "블로그 관리 대행" },
+  "blog_management_agency_menu": { "message": "브랜드 블로그 관리 대행" },
   "map_management_agency_menu": { "message": "지도 관리 대행" },
   "naver_cafe_menu": { "message": "커뮤니티" },
   "youtube_menu": { "message": "유튜브" },
