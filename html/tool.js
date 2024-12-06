@@ -273,8 +273,10 @@ const createButtonForAi = async (parts) => {
 
 document.querySelector("#split-prompt-division-input-text").addEventListener("click", async () => {
   const prompt = document.querySelector("#prompt");
-  const text = prompt.value + "\n\n----------\n\n" + document.querySelector("#input-text").value;
+  //const text = prompt.value + "\n\n----------\n\n" + document.querySelector("#input-text").value;
+  const text = document.querySelector("#input-text").value;
   const parts = splitText(text, parseInt(document.querySelector("#split-character-count").value, 10));
+  parts.push(prompt.value);
   console.log(parts);
 
   await createButtonForAi(parts);
