@@ -1,6 +1,6 @@
 {
   "extensionName": { "message": "마케팅 애니웨어" },
-  "extensionDescription": { "message": "마케팅 애니웨어는 웹페이지 어디서나 마케팅 관련 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다." },
+  "extensionDescription": { "message": "마케팅 애니웨어는 웹페이지 어디서나 마케팅 부업에서 시작해 모든 부업 관련 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장 앱입니다." },
   "home_menu": { "message": "홈" },
   "prompt_menu": { "message": "프롬프트 관리" },
   "realtime_popular_search_word_menu": { "message": "실시간 인기 검색어" },
