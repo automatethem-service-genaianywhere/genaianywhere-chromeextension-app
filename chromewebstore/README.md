@@ -42,4 +42,8 @@ Download selected text, memo, clipboard.
 
 호스트 권한 사용 근거
 Access web page for marking url in the setting (https://www.marketinganywhere.ai/), disable blocking right click and extract youtube script.
+
+프로모션 동영상:
+
+https://www.youtube.com/watch?v=rOihK4mrKJk  
 </pre>
