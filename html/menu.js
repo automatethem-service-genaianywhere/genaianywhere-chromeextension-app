@@ -139,7 +139,7 @@ document.querySelector("#map-management-agency-menu").addEventListener("click", 
 });
 
 document.querySelector("#real-user-marketing-agency-menu").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/40";
+  const url = "https://www.marketinganywhere.ai/real-user-marketing-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
