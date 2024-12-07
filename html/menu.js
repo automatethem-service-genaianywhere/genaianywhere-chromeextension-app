@@ -119,12 +119,12 @@ document.querySelector("#tistory-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#blog-management-agency-menu").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/28";
+  const url = "https://www.marketinganywhere.ai/blog-management-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#map-management-agency-menu").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/29";
+  const url = "https://www.marketinganywhere.ai/map-management-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
