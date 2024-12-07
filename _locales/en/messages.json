@@ -2,6 +2,8 @@
   "extensionName": { "message": "Marketing Anywhere" },
   "extensionDescription": { "message": "Marketing Anywhere is a free, open-source, meta-generating Ai Chrome extension app that helps you easily perform all side job related tasks, starting from marketing side job, anywhere on the webpage." },
   "home_menu": { "message": "Home" },
+  "public_prompt_list_menu": { "message": "Public prompt list" },
+  "private_shared_prompt_list_menu": { "message": "Private shared prompt list" },
   "prompt_menu": { "message": "Prompt management" },
   "realtime_popular_search_word_menu": { "message": "Real-time popular search word" },
   "keyword_search_count_menu": { "message": "Keyword search count" },

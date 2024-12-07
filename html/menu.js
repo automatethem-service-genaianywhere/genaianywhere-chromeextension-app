@@ -48,6 +48,16 @@ document.querySelector("#home-menu").addEventListener("click", async () => {
   await chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+document.querySelector("#public-prompt-list-menu").addEventListener("click", async () => {
+  const url = "https://www.marketinganywhere.ai/public-prompt-list.html";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
+document.querySelector("#private-shared-prompt-list-menu").addEventListener("click", async () => {
+  const url = "https://www.marketinganywhere.ai/private-shared-prompt-list.html";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 document.querySelector("#prompt-menu").addEventListener("click", async () => {
   const url = "https://www.marketinganywhere.ai/prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
