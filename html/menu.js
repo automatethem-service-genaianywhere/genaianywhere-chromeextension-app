@@ -49,12 +49,12 @@ document.querySelector("#home-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#public-prompt-list-menu").addEventListener("click", async () => {
-  const url = "https://www.marketinganywhere.ai/public-prompt-list.html";
+  const url = "https://www.marketinganywhere.ai/public-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#private-shared-prompt-list-menu").addEventListener("click", async () => {
-  const url = "https://www.marketinganywhere.ai/private-shared-prompt-list.html";
+  const url = "https://www.marketinganywhere.ai/private-shared-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
