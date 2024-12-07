@@ -73,3 +73,10 @@ https://chromewebstore.google.com/detail/%EC%83%9D%EC%84%B1%ED%98%95-ai-%EC%95%A
 편리한 사용을 위해 핀을 고정합니다. (Secure the pin for easy use.)
 
 ![](attach-files/5.png)
+
+## 버전 히스토리 (Version history)
+
+```
+0.0.24 프롬프트 + 구분 + 입력 텍스트 분할 버그 수정
+0.0.24 Prompt + separator + input text splitting bug fixed
+```
