@@ -114,7 +114,7 @@ document.querySelector("#price-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/6";
+  const url = "https://www.marketinganywhere.ai/generative-ai-collection.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -154,11 +154,6 @@ document.querySelector("#naver-cafe-menu").addEventListener("click", async () =>
 
 document.querySelector("#youtube-menu").addEventListener("click", async () => {
   const url = "https://www.youtube.com/@marketinganywhere";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#friend-menu").addEventListener("click", async () => {
-  const url = "https://cafe.naver.com/marketinganywhere?iframe_url=/ArticleList.nhn%3Fsearch.clubid=31338419%26search.menuid=44%26search.boardtype=L";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
