@@ -113,11 +113,6 @@ document.querySelector("#price-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#how-to-use-menu").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/5";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
   const url = "https://marketinganywhere.tistory.com/6";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
@@ -173,7 +168,7 @@ document.querySelector("#friend-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#github-menu").addEventListener("click", async () => {
-  const url = "https://github.com/automatethem/generativeaianywhere";
+  const url = "https://github.com/automatethem/marketinganywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 

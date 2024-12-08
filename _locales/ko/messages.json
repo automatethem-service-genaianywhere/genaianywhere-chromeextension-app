@@ -14,7 +14,6 @@
   "search_engine_menu": { "message": "검색 엔진 관리" },
   "link_menu": { "message": "링크 관리" },
   "utility_menu": { "message": "유틸리티" },
-  "how_to_use_menu": { "message": "사용 방법" },
   "price_menu": { "message": "가격" },
   "ai_collection_menu": { "message": "생성형 Ai 모음" },
   "tistory_menu": { "message": "블로그" },

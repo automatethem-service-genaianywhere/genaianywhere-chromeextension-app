@@ -14,7 +14,6 @@
   "search_engine_menu": { "message": "Search engine management" },
   "link_menu": { "message": "Link management" },
   "utility_menu": { "message": "Utility" },
-  "how_to_use_menu": { "message": "How to use" },
   "price_menu": { "message": "Price" },
   "ai_collection_menu": { "message": "Generative Ai collection" },
   "tistory_menu": { "message": "Blog" },
