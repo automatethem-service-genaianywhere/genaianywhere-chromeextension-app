@@ -133,11 +133,6 @@ document.querySelector("#map-management-agency-menu").addEventListener("click", 
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#real-user-marketing-agency-menu").addEventListener("click", async () => {
-  const url = "https://www.marketinganywhere.ai/real-user-marketing-agency.html";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
 // 검색 박스에서 Enter 키를 눌렀을 때 검색 실행
 document.querySelector("#tistory-search-word").addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -163,7 +158,7 @@ document.querySelector("#youtube-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#friend-menu").addEventListener("click", async () => {
-  const url = "https://cafe.naver.com/ArticleList.nhn?search.clubid=31338419&search.menuid=44&search.boardtype=L";
+  const url = "https://cafe.naver.com/marketinganywhere?iframe_url=/ArticleList.nhn%3Fsearch.clubid=31338419%26search.menuid=44%26search.boardtype=L";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
