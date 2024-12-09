@@ -102,7 +102,7 @@
   "add_movie_script_to_memo": { "message": "메모에 제목 + 주소 + 동영상 스크립트 추가" },
 
   "tistory_search_label": { "message": "블로그 검색" },
-  "search_placeholder": { "message": "검색어 입력..." }, 
+  "search_placeholder": { "message": "선풀기, 난로" }, 
   "search_word_input": { "message": "검색어 입력" },
 
   "capture_screen": { "message": "화면 캡처" },

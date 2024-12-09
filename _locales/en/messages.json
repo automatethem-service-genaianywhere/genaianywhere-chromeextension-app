@@ -102,7 +102,7 @@
   "add_movie_script_to_memo": { "message": "Add title + url + movie script to memo" },
 
   "tistory_search_label": { "message": "Search in blog" },
-  "search_placeholder": { "message": "Enter search word..." },
+  "search_placeholder": { "message": "fan, heater" },
   "search_word_input": { "message": "Enter search word" },
 
   "capture_screen": { "message": "Capture screen " },
