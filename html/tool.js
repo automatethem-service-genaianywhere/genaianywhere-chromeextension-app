@@ -62,12 +62,16 @@ const fetchSearchEngines = async () => {
           query = await chrome.runtime.sendMessage({ action: "getSelectedText" });
           if (!query) {
             //alert("선택된 텍스트가 없습니다.");
+            const searchUrl = engine.url.replace("{query}", "");
+            await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
             return;
           }
         } else if (searchTarget === "search-word-input") {
           query = document.querySelector("#general-search-word").value.trim();
           if (!query) {
             //alert("검색어를 입력하세요.");
+            const searchUrl = engine.url.replace("{query}", "");
+            await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
             return;
           }
         }
