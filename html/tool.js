@@ -72,8 +72,21 @@ const fetchSearchEngines = async () => {
           }
         }
 
-        const searchUrl = engine.url.replace("{query}", encodeURIComponent(query));
-        await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+        if (query.includes(",")) {
+          const splitQueries = query.split(",").map(q => q.trim()); // Split and trim each part
+          let i = 0;
+          for (const splitQuery of splitQueries) {
+            const searchUrl = engine.url.replace("{query}", encodeURIComponent(splitQuery));
+            await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+            if (i != splitQueries.length - 1) {
+              await sleep(1000);
+            }
+            i++;
+          }
+        } else {
+          const searchUrl = engine.url.replace("{query}", encodeURIComponent(query));
+          await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+        }        
       });  
 
       document.querySelector("#engine-list").appendChild(engineLink);
