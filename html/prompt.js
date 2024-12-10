@@ -61,15 +61,15 @@ const updatePromptInputTextCharacterCount = () => {
 
   await fetchPrompts();
 
-  let key = "prompt_direct_input";
+  let key = "prompt_direct_input_option";
   const { email } = await chrome.storage.local.get(["email"]);
   if (email) {
-    key = "prompt_direct_input_after_login";
+    key = "prompt_direct_input_option_after_login";
   }
   const label = chrome.i18n.getMessage(key);  
 
   document.querySelector("#prompts").innerHTML =
-    `<option data-i18n="prompt_direct_input" value="0">${label}</option>` +
+    `<option data-i18n="prompt_direct_input_option" value="0">${label}</option>` +
     promptList.map((prompt) => `<option value="${prompt.id}">${prompt.name}</option>`).join("");
 
   if (id == 0) {
