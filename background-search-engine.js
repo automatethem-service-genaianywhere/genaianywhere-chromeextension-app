@@ -14,7 +14,7 @@ const fetchSearchEngines = async () => {
   }
   //
   const url = `https://www.marketinganywhere.ai/api/search-engine?userId=${userId}&languageCode=${languageCode}`;
-  
+
   try {
     const response = await fetch(url);
     searchEngines = await response.json();

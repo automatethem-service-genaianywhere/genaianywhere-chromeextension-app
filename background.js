@@ -395,6 +395,7 @@ const openLinkTab = async (url, include = false) => {
   } else {
     //console.log(url);
     // 동일한 URL이 열려 있지 않으면 새 탭을 열기
+
     await chrome.tabs.create({ url: url });
   }
 };
