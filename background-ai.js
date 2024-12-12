@@ -1,5 +1,5 @@
 const aiServices = [
-  { id: "chatgpt", name: "챗지피티 (텍스트, 이미지)", en: "Chatgpt (text, image)", urls: ["https://chatgpt.com/", "https://chatgpt.com/c/*"], rootUrl: null, simple: false },
+  { id: "chatgpt", name: "챗지피티 (텍스트, 이미지)", en: "Chatgpt (text, image)", urls: ["https://chatgpt.com/", "https://chatgpt.com/c/*", "https://chatgpt.com/g/*"], rootUrl: null, simple: false },
   { id: "wrtn", name: "뤼튼 (텍스트, 이미지)", en: "Wrtn (text, image)", urls: ["https://wrtn.ai/", "https://wrtn.ai/chat/u/*"], rootUrl: null, simple: false },
   { id: "copilot", name: "코파일럿 (텍스트, 이미지)", en: "Copilot (text, image)", urls: ["https://copilot.microsoft.com/", "https://copilot.microsoft.com/chats/*"], rootUrl: null, simple: false },
   { id: "gemini", name: "제미니 (텍스트, 이미지)", en: "Gemini (text, image)", urls: ["https://gemini.google.com/app", "https://gemini.google.com/app/*"], rootUrl: "https://gemini.google.com/", simple: false },
