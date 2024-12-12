@@ -62,16 +62,28 @@ const fetchSearchEngines = async () => {
           query = await chrome.runtime.sendMessage({ action: "getSelectedText" });
           if (!query) {
             //alert("선택된 텍스트가 없습니다.");
-            const searchUrl = engine.url.replace("{query}", "");
-            await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+            let searchUrl = '';
+            if (engine.homeUrl) {
+              searchUrl = engine.homeUrl;
+            }
+            else {
+              searchUrl = engine.url.replace("{query}", "");
+            }
+            await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
             return;
           }
         } else if (searchTarget === "search-word-input") {
           query = document.querySelector("#general-search-word").value.trim();
           if (!query) {
             //alert("검색어를 입력하세요.");
-            const searchUrl = engine.url.replace("{query}", "");
-            await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+            let searchUrl = '';
+            if (engine.homeUrl) {
+              searchUrl = engine.homeUrl;
+            }
+            else {
+              searchUrl = engine.url.replace("{query}", "");
+            }
+            await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
             return;
           }
         }
@@ -81,7 +93,7 @@ const fetchSearchEngines = async () => {
           let i = 0;
           for (const splitQuery of splitQueries) {
             const searchUrl = engine.url.replace("{query}", encodeURIComponent(splitQuery));
-            await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+            await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
             if (i != splitQueries.length - 1) {
               await sleep(1000);
             }
@@ -89,7 +101,7 @@ const fetchSearchEngines = async () => {
           }
         } else {
           const searchUrl = engine.url.replace("{query}", encodeURIComponent(query));
-          await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
+          await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
         }        
       });  
 
