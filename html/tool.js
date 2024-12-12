@@ -142,7 +142,8 @@ document.querySelector("#general-search-word").addEventListener("keydown", async
     }
 
     if (searchEngines.length > 0) {
-      const firstEngine = searchEngines[searchEngines.length -1]; // Get the first search engine
+      //const firstEngine = searchEngines[searchEngines.length -1]; // Get the first search engine
+      const firstEngine = searchEngines[0]; // Get the first search engine
       if (firstEngine) {
         const searchUrl = firstEngine.url.replace("{query}", encodeURIComponent(query));
         await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
