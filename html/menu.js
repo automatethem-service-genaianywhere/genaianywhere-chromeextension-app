@@ -133,33 +133,6 @@ document.querySelector("#map-management-agency-menu").addEventListener("click", 
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-// 검색 박스에서 Enter 키를 눌렀을 때 검색 실행
-document.querySelector("#tistory-search-word").addEventListener("keydown", async (event) => {
-  if (event.key === "Enter") {
-    const query = document.querySelector("#tistory-search-word").value.trim();
-
-    if (query) {
-      if (query.includes(",")) {
-        const splitQueries = query.split(",").map(q => q.trim()); // Split and trim each part
-        let i = 0;
-        for (const splitQuery of splitQueries) {
-          const searchUrl = `https://marketinganywhere.tistory.com/search/${encodeURIComponent(splitQuery)}`;
-          await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
-          if (i != splitQueries.length - 1) {
-            await sleep(1000); // Wait 1 second between searches
-          }
-          i++;
-        }
-      } else {
-        const searchUrl = `https://marketinganywhere.tistory.com/search/${encodeURIComponent(query)}`;
-        await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
-      }
-    } else {
-      alert("검색어를 입력하세요.");
-    }
-  }
-});
-
 document.querySelector("#naver-cafe-menu").addEventListener("click", async () => {
   const url = "https://cafe.naver.com/marketinganywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });

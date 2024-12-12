@@ -2,9 +2,9 @@
   let { generalSearchTargetValue, generalSearchWordValue } = await chrome.storage.local.get(["generalSearchTargetValue", "generalSearchWordValue"]);
 
   // Set the initial checked state for the radio buttons
-  document.querySelector(`input[name="general-search-target"][value="${generalSearchTargetValue || "selected-text"}"]`).checked = true;
+  document.querySelector(`input[name="general-search-target"][value="${generalSearchTargetValue || "search-word-input"}"]`).checked = true;
   // Trigger an input event to update related states
-  document.querySelector(`input[name="general-search-target"][value="${generalSearchTargetValue || "selected-text"}"]`).dispatchEvent(new Event("input"));
+  document.querySelector(`input[name="general-search-target"][value="${generalSearchTargetValue || "search-word-input"}"]`).dispatchEvent(new Event("input"));
 
   document.querySelector("#general-search-word").value = generalSearchWordValue ? generalSearchWordValue : "";
 })();

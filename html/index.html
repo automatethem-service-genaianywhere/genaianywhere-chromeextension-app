@@ -202,16 +202,14 @@
     </div>
 
     <div style="display: flex; align-items: center; margin-top: 5x; margin-bottom: 5px;">
-      <span data-i18n="tistory_search_label">블로그 검색</span>: 
-      <input 
-        type="text" 
-        id="tistory-search-word" 
-        placeholder="선풍기, 난로" 
-        data-i18n="search_placeholder"
-        style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 100px" 
-      />
+      <span id="search-part" style="display: none;">
+        <b><span data-i18n="search">검색</span></b>
+        <label><input type="radio" name="general-search-target" value="search-word-input" checked/><span data-i18n="search_word_input">검색어 입력</span></label>
+        <label><input type="radio" name="general-search-target" value="selected-text"/><span data-i18n="selected_text">선택 텍스트</span></label>
+        <br/><input type="text" id="general-search-word" placeholder="선풍기, 난로" data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 100px">
+        <span id="engine-list">Loading...</span> 
+      </span>
     </div>           
-  
 
     <!-- 상단 메뉴 끝 -->
 
@@ -401,14 +399,6 @@
         <a id="split-prompt-division-input-text" data-i18n="split_prompt_division_input_text" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">프롬프트 + 구분 + 입력 텍스트 분할</a> 
         (<span data-i18n="split_character_count_per_generative_ai">분할 글자 수</span>: <input type="number" value="15000" id="split-character-count" style="width: 60px">)
         <span id="split-parts"></span> 
-        <span id="search-part" style="display: none;"> |
-          <span data-i18n="search">검색</span>
-          <label><input type="radio" name="general-search-target" value="selected-text" checked/><span data-i18n="selected_text">선택 텍스트</span></label>
-          <label><input type="radio" name="general-search-target" value="search-word-input"/><span data-i18n="search_word_input">검색어 입력</span></label>
-          <input type="text" id="general-search-word" placeholder="선풍기, 난로" data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 100px">
-          <span id="engine-list">Loading...</span> 
-        </span>
-
       </span>     
     </div>
 
