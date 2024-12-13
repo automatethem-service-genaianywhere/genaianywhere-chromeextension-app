@@ -123,7 +123,6 @@ document.querySelector("#tistory-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-/*
 document.querySelector("#blog-management-agency-menu").addEventListener("click", async () => {
   const url = "https://www.marketinganywhere.ai/blog-management-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
@@ -133,7 +132,6 @@ document.querySelector("#map-management-agency-menu").addEventListener("click", 
   const url = "https://www.marketinganywhere.ai/map-management-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
-*/
 
 document.querySelector("#naver-cafe-menu").addEventListener("click", async () => {
   const url = "https://cafe.naver.com/marketinganywhere";
