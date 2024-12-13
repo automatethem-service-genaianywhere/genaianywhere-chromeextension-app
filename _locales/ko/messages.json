@@ -16,7 +16,7 @@
   "utility_menu": { "message": "유틸리티" },
   "price_menu": { "message": "가격" },
   "ai_collection_menu": { "message": "생성형 Ai 모음" },
-  "tistory_menu": { "message": "부업 정보" },
+  "tistory_menu": { "message": "마케팅 부업 정보" },
   "blog_management_agency_menu": { "message": "블로그 대행" },
   "map_management_agency_menu": { "message": "지도 대행" },
   "naver_cafe_menu": { "message": "커뮤니티" },
