@@ -143,6 +143,11 @@ document.querySelector("#youtube-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+document.querySelector("#friend-menu").addEventListener("click", async () => {
+  const url = "https://cafe.naver.com/marketinganywhere?iframe_url=/ArticleList.nhn%3Fsearch.clubid=31338419%26search.menuid=44%26search.boardtype=L";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 document.querySelector("#github-menu").addEventListener("click", async () => {
   const url = "https://github.com/automatethem/marketinganywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
