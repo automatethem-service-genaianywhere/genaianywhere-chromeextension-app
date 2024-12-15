@@ -19,7 +19,7 @@
   "blog_menu": { "message": "Blog" },
   "blog_management_agency_menu": { "message": "Blog agency" },
   "map_management_agency_menu": { "message": "Map agency" },
-  "wordpress_setting_menu": { "message": "Wordpress setting" }, 
+  "wordpress_setting_agency_menu": { "message": "Wordpress setting agency" }, 
   "naver_cafe_menu": { "message": "Cafe" },
   "youtube_menu": { "message": "Youtube" },
   "admin_menu": { "message": "Admin" },

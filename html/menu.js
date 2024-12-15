@@ -134,8 +134,8 @@ document.querySelector("#map-management-agency-menu").addEventListener("click", 
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#wordpress-setting-menu").addEventListener("click", async () => {
-  const url = "https://www.marketinganywhere.ai/wordpress-setting.html";
+document.querySelector("#wordpress-setting-agency-menu").addEventListener("click", async () => {
+  const url = "https://www.marketinganywhere.ai/wordpress-setting-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 

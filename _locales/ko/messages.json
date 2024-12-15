@@ -19,7 +19,7 @@
   "blog_menu": { "message": "블로그" },
   "blog_management_agency_menu": { "message": "블로그 대행" },
   "map_management_agency_menu": { "message": "지도 대행" },
-  "wordpress_setting_menu": { "message": "워드프레스 세팅" },  
+  "wordpress_setting_agency_menu": { "message": "워드프레스 세팅 대행" },  
   "naver_cafe_menu": { "message": "카페" },
   "youtube_menu": { "message": "유튜브" },
   "admin_menu": { "message": "관리" },
