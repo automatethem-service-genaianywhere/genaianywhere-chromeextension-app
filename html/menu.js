@@ -44,82 +44,82 @@
 //
 
 document.querySelector("#home-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/";
+  const url = "http://www.marketinganywhere.ai/";
   await chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#public-prompt-list-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/public-prompt.html";
+  const url = "http://www.marketinganywhere.ai/public-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#private-shared-prompt-list-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/private-shared-prompt.html";
+  const url = "http://www.marketinganywhere.ai/private-shared-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#prompt-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/prompt.html";
+  const url = "http://www.marketinganywhere.ai/prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#realtime-popular-search-word-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/realtime-popular-search-word.html";
+  const url = "http://www.marketinganywhere.ai/realtime-popular-search-word.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-count-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/keyword-search-count.html";
+  const url = "http://www.marketinganywhere.ai/keyword-search-count.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-combination-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/keyword-combination.html";
+  const url = "http://www.marketinganywhere.ai/keyword-combination.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-trend-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/keyword-search-trend.html";
+  const url = "http://www.marketinganywhere.ai/keyword-search-trend.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#blog-index-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/blog-index.html";
+  const url = "http://www.marketinganywhere.ai/blog-index.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#mark-url-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/mark-url.html";
+  const url = "http://www.marketinganywhere.ai/mark-url.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/keyword-search.html";
+  const url = "http://www.marketinganywhere.ai/keyword-search.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#search-engine-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/search-engine.html";
+  const url = "http://www.marketinganywhere.ai/search-engine.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#bookmark-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/bookmark.html";
+  const url = "http://www.marketinganywhere.ai/bookmark.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#utility-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/utility/";
+  const url = "http://www.marketinganywhere.ai/utility/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#price-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/price.html";
+  const url = "http://www.marketinganywhere.ai/price.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/generative-ai-collection.html";
+  const url = "http://www.marketinganywhere.ai/generative-ai-collection.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -129,17 +129,17 @@ document.querySelector("#blog-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#blog-management-agency-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/blog-management-agency.html";
+  const url = "http://www.marketinganywhere.ai/blog-management-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#map-management-agency-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/map-management-agency.html";
+  const url = "http://www.marketinganywhere.ai/map-management-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#wordpress-setting-agency-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/wordpress-setting-agency.html";
+  const url = "http://www.marketinganywhere.ai/wordpress-setting-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -159,14 +159,14 @@ document.querySelector("#github-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#admin-menu").addEventListener("click", async () => {
-  const url = "http://www.marketinganywhere.info/admin/";
+  const url = "http://www.marketinganywhere.ai/admin/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 //
 
 const openLoginLinkTab = async () => {
-  const chatUrl = "http://www.marketinganywhere.info/";
+  const chatUrl = "http://www.marketinganywhere.ai/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -205,7 +205,7 @@ const openLoginLinkTab = async () => {
     let newTab = await chrome.tabs.create({ url: chatUrl });
 
     // Listen for the tab update to ensure it's fully loaded before interacting with it
-    chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
+    const onUpdated = (tabId, changeInfo) => {
       if (tabId === newTab.id && changeInfo.status === "complete") {
         chrome.scripting.executeScript({
           target: { tabId: newTab.id },
@@ -219,12 +219,13 @@ const openLoginLinkTab = async () => {
         // Remove the listener after the tab is updated
         chrome.tabs.onUpdated.removeListener(onUpdated);
       }
-    });
+    };
+    chrome.tabs.onUpdated.addListener(onUpdated);
   }
 };
 
 const openLogoutLinkTab = async () => {
-  const chatUrl = "http://www.marketinganywhere.info/";
+  const chatUrl = "http://www.marketinganywhere.ai/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -247,11 +248,11 @@ const openLogoutLinkTab = async () => {
     // 이미 열려 있는 탭을 찾으면 해당 탭을 활성화
     await chrome.windows.update(foundTab.windowId, { focused: true });
     await chrome.tabs.update(foundTab.id, { active: true });
-    const url = "http://www.marketinganywhere.info/login/chromeextension/logout.html";
+    const url = "http://www.marketinganywhere.ai/login/chromeextension/logout.html";
     await chrome.tabs.update(foundTab.id, { active: true, url: url }); //
   } else {
     // If no ai tab is open, create a new tab
-    const url = "http://www.marketinganywhere.info/login/chromeextension/logout.html";
+    const url = "http://www.marketinganywhere.ai/login/chromeextension/logout.html";
     let newTab = await chrome.tabs.create({ url: url });
   }
 };

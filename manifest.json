@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",  
-  "version": "0.0.43",
+  "version": "0.0.44",
   "description": "__MSG_extensionDescription__",
   "default_locale": "ko",    
   "icons": {
@@ -21,16 +21,14 @@
       "run_at": "document_end"
     },
     {
-     "matches": ["http://marketinganywhere.info/",
-                 "http://marketinganywhere.info/index.html",
-                 "http://www.marketinganywhere.info/",
-                 "http://www.marketinganywhere.info/index.html"],
-      "js": ["content-script-login.js"],
-      "run_at": "document_end"
-    },
+      "matches": ["https://www.marketinganywhere.ai/",
+                  "https://www.marketinganywhere.ai/index.html"],
+       "js": ["content-script-login.js"],
+       "run_at": "document_end"
+     },
     {
       "type": "module",
-      "matches": ["http://www.marketinganywhere.info/keyword-search.html*"],
+      "matches": ["http://www.marketinganywhere.ai/keyword-search.html*"],
       "js": ["content-script-keyword-search.js"],
       "run_at": "document_end"
     },

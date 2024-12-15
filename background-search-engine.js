@@ -13,7 +13,7 @@ const fetchSearchEngines = async () => {
     languageCode = languageCode.split("-")[0]
   }
   //
-  const url = `http://www.marketinganywhere.info/api/search-engine?userId=${userId}&languageCode=${languageCode}`;
+  const url = `http://www.marketinganywhere.ai/api/search-engine?userId=${userId}&languageCode=${languageCode}`;
 
   try {
     const response = await fetch(url);

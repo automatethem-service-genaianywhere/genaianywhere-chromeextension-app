@@ -376,7 +376,7 @@
 
     <div style="display: flex; align-items: center; margin-top: 5x; margin-bottom: 5px;">
       <span id="search-part" style="display: none;">
-        <b><span data-i18n="search">검색</span></b>:<br/>
+        <b><span data-i18n="search" style="margin-bottom: 6px;">검색</span></b>:<br/>
         <label><input type="radio" name="general-search-target" value="search-word-input" checked/><span data-i18n="search_word_input">검색어 입력</span></label>
         <label><input type="radio" name="general-search-target" value="selected-text"/><span data-i18n="selected_text">선택 텍스트</span></label>
         <input type="text" id="general-search-word" placeholder="선풍기, 난로" data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 100px">
@@ -386,7 +386,9 @@
 
 
     <div style="margin-bottom: 8px">
+      <div style="margin-bottom: 6px">
       <b><span data-i18n="tool">도구</span></b>:
+      </div>
       <span style="display: flex; flex-wrap: wrap; gap: 4px;">
         <span data-i18n="selected_text">선택 텍스트</span> (<a id="mark" data-i18n="mark" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">마크</a>,
         <a id="copy-selected-text" data-i18n="copy" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">복사</a>,
@@ -406,7 +408,9 @@
     </div>
 
     <div id="link-section" style="display: none;">
-      <b><span data-i18n="bookmark">북마크</span></b>:
+      <div style="margin-bottom: 6px">
+      <b><span data-i18n="bookmark" style="margin-bottom: 6px;">북마크</span></b>:
+      </div>
       <span id="link-list" style="display: flex; flex-wrap: wrap; gap: 4px;"></span>
     </div>
 

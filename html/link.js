@@ -43,7 +43,7 @@ const fetchLinks = async () => {
     if (languageCode.includes("-")) {
       languageCode = languageCode.split("-")[0]
     }
-    const url = `http://www.marketinganywhere.info/api/link?userId=${userId}&languageCode=${languageCode}`;
+    const url = `http://www.marketinganywhere.ai/api/link?userId=${userId}&languageCode=${languageCode}`;
     try {
       const response = await fetch(url);
       linkList = await response.json(); // Get the list of links
