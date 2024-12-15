@@ -109,7 +109,7 @@ document.querySelector("#bookmark-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#utility-menu").addEventListener("click", async () => {
-  const url = "https://utility.marketinganywhere.ai/";
+  const url = "http://www.marketinganywhere.info/utility/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
