@@ -202,16 +202,6 @@
       </div>
     </div>
 
-    <div style="display: flex; align-items: center; margin-top: 5x; margin-bottom: 5px;">
-      <span id="search-part" style="display: none;">
-        <b><span data-i18n="search">검색</span></b>
-        <label><input type="radio" name="general-search-target" value="search-word-input" checked/><span data-i18n="search_word_input">검색어 입력</span></label>
-        <label><input type="radio" name="general-search-target" value="selected-text"/><span data-i18n="selected_text">선택 텍스트</span></label>
-        <input type="text" id="general-search-word" placeholder="선풍기, 난로" data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 100px">
-        <br/><span id="engine-list" style="display: flex; flex-wrap: wrap; gap: 4px;">Loading...</span> 
-      </span>
-    </div>           
-
     <!-- 상단 메뉴 끝 -->
 
     <div style="display: flex; justify-content: space-between; align-items: center">
@@ -382,6 +372,18 @@
       </div>
     </div>
     <!-- 설정 탭 끝 -->
+
+
+    <div style="display: flex; align-items: center; margin-top: 5x; margin-bottom: 5px;">
+      <span id="search-part" style="display: none;">
+        <b><span data-i18n="search">검색</span></b>:<br/>
+        <label><input type="radio" name="general-search-target" value="search-word-input" checked/><span data-i18n="search_word_input">검색어 입력</span></label>
+        <label><input type="radio" name="general-search-target" value="selected-text"/><span data-i18n="selected_text">선택 텍스트</span></label>
+        <input type="text" id="general-search-word" placeholder="선풍기, 난로" data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 100px">
+        <br/><span id="engine-list" style="display: flex; flex-wrap: wrap; gap: 4px;">Loading...</span> 
+      </span>
+    </div>           
+
 
     <div style="margin-bottom: 8px">
       <b><span data-i18n="tool">도구</span></b>:
