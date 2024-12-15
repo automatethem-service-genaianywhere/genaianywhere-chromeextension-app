@@ -21,14 +21,16 @@
       "run_at": "document_end"
     },
     {
-     "matches": ["https://www.marketinganywhere.ai/",
-                 "https://www.marketinganywhere.ai/index.html"],
+     "matches": ["http://marketinganywhere.info/",
+                 "http://marketinganywhere.info/index.html",
+                 "http://www.marketinganywhere.info/",
+                 "http://www.marketinganywhere.info/index.html"],
       "js": ["content-script-login.js"],
       "run_at": "document_end"
     },
     {
       "type": "module",
-      "matches": ["https://www.marketinganywhere.ai/keyword-search.html*"],
+      "matches": ["http://www.marketinganywhere.info/keyword-search.html*"],
       "js": ["content-script-keyword-search.js"],
       "run_at": "document_end"
     },
