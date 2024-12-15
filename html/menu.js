@@ -125,7 +125,7 @@ document.querySelector("#ai-collection-menu").addEventListener("click", async ()
 
 document.querySelector("#blog-menu").addEventListener("click", async () => {
   //const url = "https://blog.marketinganywhere.ai/";
-  const url = "https://mablog.mycafe24.com/";
+  const url = "https://blog.marketinganywhere.info/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
