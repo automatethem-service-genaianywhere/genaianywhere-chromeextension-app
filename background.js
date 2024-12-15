@@ -86,6 +86,52 @@ chrome.runtime.onInstalled.addListener(async (details) => {
     contexts: ["selection"]
   });
   
+  chrome.contextMenus.create({
+    id: "separator2-4",
+    parentId: parentId,
+    type: "separator",
+    contexts: ["selection"]
+  });
+
+  chrome.contextMenus.create({
+    id: "copy",
+    parentId: parentId,
+    //title: "복사",
+    title: chrome.i18n.getMessage("copy"),
+    contexts: ["selection"]
+  });
+  
+  chrome.contextMenus.create({
+    id: "separator2-5",
+    parentId: parentId,
+    type: "separator",
+    contexts: ["selection"]
+  });
+
+  chrome.contextMenus.create({
+    id: "download",
+    parentId: parentId,
+    //title: "다운로드",
+    title: chrome.i18n.getMessage("download"),
+    contexts: ["selection"]
+  });
+  
+  chrome.contextMenus.create({
+    id: "separator2-6",
+    parentId: parentId,
+    type: "separator",
+    contexts: ["selection"]
+  });
+
+  chrome.contextMenus.create({
+    id: "open-url",
+    parentId: parentId,
+    //title: "주소 열기",
+    title: chrome.i18n.getMessage("open_url"),
+    contexts: ["selection"]
+  });
+
+
   //
   
   chrome.contextMenus.create({
@@ -220,6 +266,59 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
     });
   } else if (info.menuItemId === "mark") {
     await chrome.tabs.sendMessage(tab.id, { action: "mark" });
+  } else if (info.menuItemId === "copy") {
+    let selectedText = info.selectionText;
+    // 예시: 문장 끝 구두점 뒤에 개행 추가
+    // . 또는 ! 또는 ? 뒤에 개행 문자 추가
+    selectedText = selectedText.replace(/([.!?])\s*/g, "$1\n");
+    // 인위적으로 개행이 추가된 텍스트를 저장하거나 패널로 전송
+    await chrome.storage.local.set({ selectedText });
+
+    const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    const currentTab = currentTabs[0];
+
+    await chrome.scripting.executeScript({
+      target: { tabId: currentTab.id },
+      args: [selectedText],
+      function: async (selectedText) => {
+        await navigator.clipboard.writeText(selectedText);
+      }
+    });
+  } else if (info.menuItemId === "download") {
+    let selectedText = info.selectionText;
+    // 예시: 문장 끝 구두점 뒤에 개행 추가
+    // . 또는 ! 또는 ? 뒤에 개행 문자 추가
+    selectedText = selectedText.replace(/([.!?])\s*/g, "$1\n");
+    // 인위적으로 개행이 추가된 텍스트를 저장하거나 패널로 전송
+    await chrome.storage.local.set({ selectedText });
+
+    const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    const currentTab = currentTabs[0];
+
+    await chrome.scripting.executeScript({
+      target: { tabId: currentTab.id },
+      args: [selectedText],
+      function: async (selectedText) => {
+        const blob = new Blob([selectedText], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+
+        // 백그라운드 스크립트로 메시지 전송
+        chrome.runtime.sendMessage({
+          action: "download",
+          url: url,
+          filename: "text.txt"
+        });
+      }
+    });
+  } else if (info.menuItemId === "open-url") {
+    let selectedText = info.selectionText;
+    let url = selectedText;
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+      url = "https://www.google.com/search?q={query}";
+      url = url.replace("{query}", encodeURIComponent(selectedText));
+    }
+    ////await chrome.runtime.sendMessage({ action: 'openTab', url: url });
+    await openTab(url);
   //
   } else if (info.menuItemId === "title-url-add") {
     const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });

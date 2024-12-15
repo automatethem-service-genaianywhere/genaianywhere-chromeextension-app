@@ -98,8 +98,8 @@ document.querySelector("#search-engine-menu").addEventListener("click", async ()
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#link-menu").addEventListener("click", async () => {
-  const url = "https://www.marketinganywhere.ai/link.html";
+document.querySelector("#bookmark-menu").addEventListener("click", async () => {
+  const url = "https://www.marketinganywhere.ai/bookmark.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
