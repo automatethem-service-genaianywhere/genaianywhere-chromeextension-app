@@ -50,7 +50,7 @@ const fetchSearchEngines = async () => {
       const engineLink = document.createElement("a");
       engineLink.textContent = engine.name;
       //engineLink.style.cssText = "margin: 0 5px; color: blue; cursor: pointer; text-decoration: underline;";
-      engineLink.style.cssText = "color: blue; cursor: pointer; text-decoration: underline;";
+      engineLink.style.cssText = "color: blue; cursor: pointer; text-decoration: underline; margin: 2px;";
 
       engineLink.addEventListener("click", async () => {
         const searchTarget = document.querySelector('input[name="general-search-target"]:checked').value;
@@ -109,7 +109,8 @@ const fetchSearchEngines = async () => {
 
       // Add comma between links except the last one
       if (index < searchEngines.length - 1) {
-        document.querySelector("#engine-list").append(", ");
+        //document.querySelector("#engine-list").append(", ");
+        document.querySelector("#engine-list").append(" | ");
       }
     });
   }

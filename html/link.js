@@ -6,7 +6,7 @@ const createLinks = (links) => {
   while (linkList.firstChild) {
     linkList.removeChild(linkList.firstChild);
   }
-  links.forEach((link) => {
+  links.forEach((link, index) => {
     const aTag = document.createElement("a");
     aTag.textContent = link.name; // Set the button name to link's name
     //aTag.setAttribute("href", "#");
@@ -21,6 +21,11 @@ const createLinks = (links) => {
       chrome.runtime.sendMessage({ action: "openLinkTab", url: link.url });
     });
     linkList.appendChild(aTag); // Add button to the container
+
+    // Add '|' between links except the last one
+    if (index < links.length - 1) {
+      linkList.append(" | ");
+    }
   });
 };
 
