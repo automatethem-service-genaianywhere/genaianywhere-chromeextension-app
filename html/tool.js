@@ -329,30 +329,3 @@ document.getElementById("capture-scroll-screen").addEventListener("click", async
   const response = await chrome.runtime.sendMessage({ action: "captureScrollScreen" });
   console.log(response);
 });
-
-//
-
-document.querySelector("#web-tool").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/category/%EC%9B%B9%20%EB%8F%84%EA%B5%AC";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#chromeextension-tool").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/category/%ED%81%AC%EB%A1%AC%ED%99%95%EC%9E%A5%20%EB%8F%84%EA%B5%AC";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#bookmarklet-tool").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/category/%EB%B6%81%EB%A7%88%ED%81%AC%EB%A6%BF%20%EB%8F%84%EA%B5%AC";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#desktop-tool").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/category/%EB%8D%B0%EC%8A%A4%ED%81%AC%ED%86%B1%20%EB%8F%84%EA%B5%AC";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#mobile-tool").addEventListener("click", async () => {
-  const url = "https://marketinganywhere.tistory.com/category/%EB%AA%A8%EB%B0%94%EC%9D%BC%20%EB%8F%84%EA%B5%AC";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
