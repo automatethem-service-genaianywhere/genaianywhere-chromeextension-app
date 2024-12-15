@@ -9,6 +9,7 @@
   "keyword_search_count_menu": { "message": "키워드 검색 수" },
   "keyword_combination_menu": { "message": "키워드 조합" },
   "keyword_search_trend_menu": { "message": "키워드 검색 트렌드" },
+  "blog_index_menu": { "message": "블로그 지수" },
   "mark_url_menu": { "message": "마크 url 관리" },
   "keyword_search_menu": { "message": "키워드 검색" },
   "search_engine_menu": { "message": "검색 엔진 관리" },

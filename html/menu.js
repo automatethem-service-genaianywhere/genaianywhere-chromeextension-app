@@ -83,6 +83,11 @@ document.querySelector("#keyword-search-trend-menu").addEventListener("click", a
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+document.querySelector("#blog-index-menu").addEventListener("click", async () => {
+  const url = "https://www.marketinganywhere.ai/blog-index.html";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
 document.querySelector("#mark-url-menu").addEventListener("click", async () => {
   const url = "https://www.marketinganywhere.ai/mark-url.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });

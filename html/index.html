@@ -172,7 +172,6 @@
     </div>
 
     <div class="logo-container">
-      <div></div>
       <div style="display: flex; flex-wrap: wrap; gap: 4px;">
         <a href="#" id="home-menu" data-i18n="home_menu">홈</a> |
         <a href="#" id="public-prompt-list-menu" data-i18n="public_prompt_menu">공개 프롬프트 리스트</a> |
@@ -182,6 +181,7 @@
         <a href="#" id="keyword-search-count-menu" data-i18n="keyword_search_count_menu">키워드 검색수</a> | 
         <a href="#" id="keyword-combination-menu" data-i18n="keyword_combination_menu">키워드 조합</a> | 
         <a href="#" id="keyword-search-trend-menu" data-i18n="keyword_search_trend_menu">키워드 검색 트렌드</a> |
+        <a href="#" id="blog-index-menu" data-i18n="blog_index_menu">블로그 지수</a> |
         <a href="#" id="keyword-search-menu" data-i18n="keyword_search_menu">키워드 검색</a> |
         <a href="#" id="search-engine-menu" data-i18n="search_engine_menu">검색엔진 관리</a> | 
         <a href="#" id="mark-url-menu" data-i18n="mark_url_menu">마크 url 관리</a> | 
@@ -208,7 +208,7 @@
         <label><input type="radio" name="general-search-target" value="search-word-input" checked/><span data-i18n="search_word_input">검색어 입력</span></label>
         <label><input type="radio" name="general-search-target" value="selected-text"/><span data-i18n="selected_text">선택 텍스트</span></label>
         <input type="text" id="general-search-word" placeholder="선풍기, 난로" data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-left: 5px; margin-right: 5px; width: 100px">
-        <br/><span id="engine-list">Loading...</span> 
+        <br/><span id="engine-list" style="display: flex; flex-wrap: wrap; gap: 4px;">Loading...</span> 
       </span>
     </div>           
 
@@ -385,7 +385,7 @@
 
     <div style="margin-bottom: 8px">
       <b><span data-i18n="tool">도구</span></b>:
-      <span>
+      <span style="display: flex; flex-wrap: wrap; gap: 4px;">
         <span data-i18n="selected_text">선택 텍스트</span> (<a id="mark" data-i18n="mark" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">마크</a>,
         <a id="copy-selected-text" data-i18n="copy" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">복사</a>,
         <a id="download-selected-text" data-i18n="download" style="margin: 2px; color: blue; text-decoration: underline; cursor: pointer;">다운로드</a>,
@@ -405,7 +405,7 @@
 
     <div id="link-section" style="display: none;">
       <b><span data-i18n="bookmark">북마크</span></b>:
-      <span id="link-list" style="margin-bottom: 8px"></span>
+      <span id="link-list" style="display: flex; flex-wrap: wrap; gap: 4px;"></span>
     </div>
 
     <script src="i18n.js"></script>     
