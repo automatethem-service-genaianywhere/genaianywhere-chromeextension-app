@@ -123,11 +123,6 @@ document.querySelector("#ai-collection-menu").addEventListener("click", async ()
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#blog-menu").addEventListener("click", async () => {
-  const url = "https://blog.marketinganywhere.info/";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
 document.querySelector("#blog-management-agency-menu").addEventListener("click", async () => {
   const url = "http://www.marketinganywhere.ai/blog-management-agency.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
