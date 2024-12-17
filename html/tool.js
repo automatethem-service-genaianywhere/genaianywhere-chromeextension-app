@@ -48,7 +48,7 @@ const fetchSearchEngines = async () => {
 
     searchEngines.forEach((engine, index) => {
       const engineLink = document.createElement("a");
-      engineLink.textContent = engine.name;
+      engineLink.innerHTML = engine.name;
       //engineLink.style.cssText = "margin: 0 5px; color: blue; cursor: pointer; text-decoration: underline;";
       engineLink.style.cssText = "color: blue; cursor: pointer; text-decoration: underline; margin: 2px;";
 
