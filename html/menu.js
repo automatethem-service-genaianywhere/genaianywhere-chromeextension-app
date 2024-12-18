@@ -108,8 +108,8 @@ document.querySelector("#bookmark-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#real-life-utility-menu").addEventListener("click", async () => {
-  const url = "http://reallifeutility.marketinganywhere.info/";
+document.querySelector("#life-utility-menu").addEventListener("click", async () => {
+  const url = "http://lifeutility.marketinganywhere.info/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
