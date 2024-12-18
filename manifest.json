@@ -28,7 +28,7 @@
      },
     {
       "type": "module",
-      "matches": ["http://www.marketinganywhere.ai/keyword-search.html*"],
+      "matches": ["http://app.marketinganywhere.info/keyword-search.html*"],
       "js": ["content-script-keyword-search.js"],
       "run_at": "document_end"
     },

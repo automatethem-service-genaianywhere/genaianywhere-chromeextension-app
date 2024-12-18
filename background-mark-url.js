@@ -13,7 +13,7 @@ const fetchMarkUrls = async () => {
     languageCode = languageCode.split("-")[0]
   }
   //
-  const apiUrl = `http://www.marketinganywhere.ai/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
+  const apiUrl = `http://app.marketinganywhere.info/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
 
   try {
     const response = await fetch(apiUrl);
@@ -46,7 +46,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
           languageCode = languageCode.split("-")[0]
         }   
         //
-        const url = `http://www.marketinganywhere.ai/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
+        const url = `http://app.marketinganywhere.info/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
         //console.log(url);
 
         try {
