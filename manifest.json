@@ -21,8 +21,8 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["https://www.marketinganywhere.ai/",
-                  "https://www.marketinganywhere.ai/index.html"],
+      "matches": ["https://app.marketinganywhere.info/",
+                  "https://app.marketinganywhere.info/index.html"],
        "js": ["content-script-login.js"],
        "run_at": "document_end"
      },
