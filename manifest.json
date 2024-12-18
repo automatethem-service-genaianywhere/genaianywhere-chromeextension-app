@@ -21,14 +21,14 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["https://app.marketinganywhere.info/",
-                  "https://app.marketinganywhere.info/index.html"],
+      "matches": ["https://ma.marketinganywhere.info/",
+                  "https://ma.marketinganywhere.info/index.html"],
        "js": ["content-script-login.js"],
        "run_at": "document_end"
      },
     {
       "type": "module",
-      "matches": ["http://app.marketinganywhere.info/keyword-search.html*"],
+      "matches": ["https://ma.marketinganywhere.info/keyword-search.html*"],
       "js": ["content-script-keyword-search.js"],
       "run_at": "document_end"
     },
