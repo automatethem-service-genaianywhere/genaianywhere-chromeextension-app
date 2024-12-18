@@ -14,7 +14,7 @@
   "keyword_search_menu": { "message": "Keyword search" },
   "search_engine_menu": { "message": "Search engine management" },
   "bookmark_menu": { "message": "Bookmark management" },
-  "life_utility_menu": { "message": "Life utility" },
+  "life_tool_menu": { "message": "Life tool" },
   "price_menu": { "message": "Price" },
   "ai_collection_menu": { "message": "Generative Ai collection" },
   "community_menu": { "message": "Cranberry marketing" },
