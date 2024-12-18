@@ -44,82 +44,82 @@
 //
 
 document.querySelector("#home-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/";
+  const url = "https://ma.marketinganywhere.info/";
   await chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#public-prompt-list-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/public-prompt.html";
+  const url = "https://ma.marketinganywhere.info/public-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#private-shared-prompt-list-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/private-shared-prompt.html";
+  const url = "https://ma.marketinganywhere.info/private-shared-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#prompt-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/prompt.html";
+  const url = "https://ma.marketinganywhere.info/prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#realtime-popular-search-word-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/realtime-popular-search-word.html";
+  const url = "https://ma.marketinganywhere.info/realtime-popular-search-word.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-count-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/keyword-search-count.html";
+  const url = "https://ma.marketinganywhere.info/keyword-search-count.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-combination-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/keyword-combination.html";
+  const url = "https://ma.marketinganywhere.info/keyword-combination.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-trend-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/keyword-search-trend.html";
+  const url = "https://ma.marketinganywhere.info/keyword-search-trend.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#blog-index-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/blog-index.html";
+  const url = "https://ma.marketinganywhere.info/blog-index.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#mark-url-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/mark-url.html";
+  const url = "https://ma.marketinganywhere.info/mark-url.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#keyword-search-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/keyword-search.html";
+  const url = "https://ma.marketinganywhere.info/keyword-search.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#search-engine-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/search-engine.html";
+  const url = "https://ma.marketinganywhere.info/search-engine.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#bookmark-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/bookmark.html";
+  const url = "https://ma.marketinganywhere.info/bookmark.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#utility-menu").addEventListener("click", async () => {
-  const url = "http://utility.marketinganywhere.info/";
+document.querySelector("#real-life-utility-menu").addEventListener("click", async () => {
+  const url = "http://reallifeutility.marketinganywhere.info/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#price-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/price.html";
+  const url = "https://ma.marketinganywhere.info/price.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/generative-ai-collection.html";
+  const url = "https://ma.marketinganywhere.info/generative-ai-collection.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -139,14 +139,14 @@ document.querySelector("#github-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#admin-menu").addEventListener("click", async () => {
-  const url = "http://app.marketinganywhere.info/admin/";
+  const url = "https://ma.marketinganywhere.info/admin/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 //
 
 const openLoginLinkTab = async () => {
-  const chatUrl = "http://app.marketinganywhere.info/";
+  const chatUrl = "https://ma.marketinganywhere.info/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -205,7 +205,7 @@ const openLoginLinkTab = async () => {
 };
 
 const openLogoutLinkTab = async () => {
-  const chatUrl = "http://app.marketinganywhere.info/";
+  const chatUrl = "https://ma.marketinganywhere.info/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -228,11 +228,11 @@ const openLogoutLinkTab = async () => {
     // 이미 열려 있는 탭을 찾으면 해당 탭을 활성화
     await chrome.windows.update(foundTab.windowId, { focused: true });
     await chrome.tabs.update(foundTab.id, { active: true });
-    const url = "http://app.marketinganywhere.info/login/chromeextension/logout.html";
+    const url = "https://ma.marketinganywhere.info/login/chromeextension/logout.html";
     await chrome.tabs.update(foundTab.id, { active: true, url: url }); //
   } else {
     // If no ai tab is open, create a new tab
-    const url = "http://app.marketinganywhere.info/login/chromeextension/logout.html";
+    const url = "https://ma.marketinganywhere.info/login/chromeextension/logout.html";
     let newTab = await chrome.tabs.create({ url: url });
   }
 };

@@ -14,7 +14,7 @@
   "keyword_search_menu": { "message": "키워드 검색" },
   "search_engine_menu": { "message": "검색 엔진 관리" },
   "bookmark_menu": { "message": "북마크 관리" },
-  "utility_menu": { "message": "유틸리티" },
+  "real_life_utility_menu": { "message": "실생활 유틸리티" },
   "price_menu": { "message": "가격" },
   "ai_collection_menu": { "message": "생성형 Ai 모음" },
   "community_menu": { "message": "크랜베리 마케팅" },
