@@ -1,14 +1,6 @@
-(async () => {
-  let { generalSearchWordValue } = await chrome.storage.local.get(["generalSearchWordValue"]);
-
-  document.querySelector("#general-search-word").value = generalSearchWordValue ? generalSearchWordValue : "";
-})();
-
 // Event listener for input box changes
-document.querySelector("#general-search-word").addEventListener("input", async () => {
-  // Store the current input box value
-  const generalSearchWordValue = document.querySelector("#general-search-word").value;
-  await chrome.storage.local.set({ generalSearchWordValue });
+document.querySelector("#search-word").addEventListener("input", async () => {
+  await chrome.storage.local.set({ searchValue: document.querySelector("#search-word").value });
 });
 
 const fetchSearchEngines = async () => {
@@ -40,35 +32,8 @@ const fetchSearchEngines = async () => {
       engineLink.style.cssText = "color: blue; cursor: pointer; text-decoration: underline; margin: 2px;";
 
       engineLink.addEventListener("click", async () => {
-        query = document.querySelector("#general-search-word").value.trim();
-        if (!query) {
-          //alert("검색어를 입력하세요.");
-          let searchUrl = '';
-          if (engine.homeUrl) {
-            searchUrl = engine.homeUrl;
-          }
-          else {
-            searchUrl = engine.url.replace("{query}", "");
-          }
-          await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
-          return;
-        }
-
-        if (query.includes(",")) {
-          const splitQueries = query.split(",").map(q => q.trim()); // Split and trim each part
-          let i = 0;
-          for (const splitQuery of splitQueries) {
-            const searchUrl = engine.url.replace("{query}", encodeURIComponent(splitQuery));
-            await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
-            if (i != splitQueries.length - 1) {
-              await sleep(1000);
-            }
-            i++;
-          }
-        } else {
-          const searchUrl = engine.url.replace("{query}", encodeURIComponent(query));
-          await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
-        }        
+        let query = document.querySelector("#search-word").value.trim();
+        search(engine, query);
       });  
 
       document.querySelector("#engine-list").appendChild(engineLink);
@@ -90,7 +55,7 @@ const search = async (engine, query) => {
     //const engine = searchEngines[searchEngines.length -1]; // Get the first search engine
     //const engine = searchEngines[0]; // Get the first search engine
 
-    //let query = document.querySelector("#general-search-word").value.trim();
+    //let query = document.querySelector("#search-word").value.trim();
     if (!query) {
       //alert("검색어를 입력하세요.");
       let searchUrl = '';
@@ -121,11 +86,11 @@ const search = async (engine, query) => {
     }  
 }
 // Add keydown event listener to the input box for Enter key
-document.querySelector("#general-search-word").addEventListener("keydown", async (event) => {
+document.querySelector("#search-word").addEventListener("keydown", async (event) => {
   if (event.key === "Enter") {
     //const engine = searchEngines[searchEngines.length -1]; // Get the first search engine
     const engine = searchEngines[0]; // Get the first search engine
-    let query = document.querySelector("#general-search-word").value.trim();
+    let query = document.querySelector("#search-word").value.trim();
     search(engine, query);
   }
 });
@@ -133,7 +98,7 @@ document.querySelector("#general-search-word").addEventListener("keydown", async
 document.querySelector("#search").addEventListener("click", async (event) => {
     //const engine = searchEngines[searchEngines.length -1]; // Get the first search engine
     const engine = searchEngines[0]; // Get the first search engine
-    let query = document.querySelector("#general-search-word").value.trim();
+    let query = document.querySelector("#search-word").value.trim();
     search(engine, query);
 });
 
@@ -320,8 +285,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       const searchValue = message.selectedText
       await chrome.storage.local.set({ searchValue: searchValue });
 
-      document.querySelector("#general-search-word").value = searchValue;
-      document.querySelector("#general-search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
+      document.querySelector("#search-word").value = searchValue;
+      document.querySelector("#search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
 
       sendResponse("addSearch response");
     })();
@@ -335,6 +300,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   let { searchValue } = await chrome.storage.local.get("searchValue");
   searchValue = searchValue ? searchValue : "";
 
-  document.querySelector("#general-search-word").value = searchValue;
-  document.querySelector("#general-search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
+  document.querySelector("#search-word").value = searchValue;
+  document.querySelector("#search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
 })();
