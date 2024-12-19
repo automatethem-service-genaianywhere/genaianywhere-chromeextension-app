@@ -329,3 +329,28 @@ document.getElementById("capture-scroll-screen").addEventListener("click", async
   const response = await chrome.runtime.sendMessage({ action: "captureScrollScreen" });
   console.log(response);
 });
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "addSearch") {
+    (async () => {
+      const searchValue = message.selectedText
+      await chrome.storage.local.set({ searchValue: searchValue });
+
+      document.querySelector("#general-search-word").value = searchValue;
+      document.querySelector("#general-search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
+
+      sendResponse("addSearch response");
+    })();
+    return true;
+  }
+});
+
+//
+
+(async () => {
+  let { searchValue } = await chrome.storage.local.get("searchValue");
+  searchValue = searchValue ? searchValue : "";
+
+  document.querySelector("#general-search-word").value = searchValue;
+  document.querySelector("#general-search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
+})();

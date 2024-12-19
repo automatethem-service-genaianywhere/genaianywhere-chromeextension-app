@@ -24,6 +24,10 @@ const add = async (tab, selectedText) => {
   }
 };
 
+const addSearch = async (selectedText) => {
+  await chrome.runtime.sendMessage({ action: "addSearch", selectedText: selectedText });
+};
+
 const mark = () => {
   const selectedText = window.getSelection().toString().trim();
   if (selectedText.length > 0) {
@@ -179,29 +183,63 @@ const handleSelection = async (pageX, pageY, controlA) => {
 
     //
 
-    const memoAddIcon = document.createElement("button");
-    memoAddIcon.style.cssText = `
+    const addMemoIcon = document.createElement("button");
+    addMemoIcon.style.cssText = `
       width: 24px;
       height: 24px;
       margin-right: 2px;
       margin-bottom: 0px;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/memo-add.png);
+      background-image: url(chrome-extension://${chrome.runtime.id}/images/add-memo.png);
       cursor: pointer;
       border: 1px solid black; 
     `;
 
-    memoAddIcon.addEventListener("mouseover", () => {
-      memoAddIcon.style.border = "2px solid black";
+    addMemoIcon.addEventListener("mouseover", () => {
+      addMemoIcon.style.border = "2px solid black";
     });
 
-    memoAddIcon.addEventListener("mouseout", () => {
-      memoAddIcon.style.border = "1px solid black";
+    addMemoIcon.addEventListener("mouseout", () => {
+      addMemoIcon.style.border = "1px solid black";
     });
 
-    memoAddIcon.addEventListener("click", async () => {
+    addMemoIcon.addEventListener("click", async () => {
       await add("memo-tab", selectedText);
+
+      //
+
+      if (closeDropdown && closeDropdownCreated) {
+        closeDropdown.style.display = "none";
+        closeDropdownCreated = false; // Reset the flag so it can be recreated
+      }
+    });
+
+    //
+
+    const addSearchIcon = document.createElement("button");
+    addSearchIcon.style.cssText = `
+      width: 24px;
+      height: 24px;
+      margin-right: 2px;
+      margin-bottom: 0px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(chrome-extension://${chrome.runtime.id}/images/add-search.png);
+      cursor: pointer;
+      border: 1px solid black; 
+    `;
+
+    addSearchIcon.addEventListener("mouseover", () => {
+      addSearchIcon.style.border = "2px solid black";
+    });
+
+    addSearchIcon.addEventListener("mouseout", () => {
+      addSearchIcon.style.border = "1px solid black";
+    });
+
+    addSearchIcon.addEventListener("click", async () => {
+      await addSearch(selectedText);
 
       //
 
@@ -427,7 +465,8 @@ const handleSelection = async (pageX, pageY, controlA) => {
           iconContainer.removeChild(homeIcon);
           //iconContainer.removeChild(inputIcon);
           iconContainer.removeChild(addIcon);
-          iconContainer.removeChild(memoAddIcon);
+          iconContainer.removeChild(addMemoIcon);
+          iconContainer.removeChild(addSearchIcon);
           iconContainer.removeChild(markIcon);
           iconContainer.removeChild(copyIcon);
           iconContainer.removeChild(downloadIcon);
@@ -464,7 +503,8 @@ const handleSelection = async (pageX, pageY, controlA) => {
           iconContainer.removeChild(homeIcon);
           //iconContainer.removeChild(inputIcon);
           iconContainer.removeChild(addIcon);
-          iconContainer.removeChild(memoAddIcon);
+          iconContainer.removeChild(addMemoIcon);
+          iconContainer.removeChild(addSearchIcon);
           iconContainer.removeChild(markIcon);
           iconContainer.removeChild(copyIcon);
           iconContainer.removeChild(downloadIcon);
@@ -511,7 +551,8 @@ const handleSelection = async (pageX, pageY, controlA) => {
     iconContainer.appendChild(homeIcon);
     //iconContainer.appendChild(inputIcon);
     iconContainer.appendChild(addIcon);
-    iconContainer.appendChild(memoAddIcon);
+    iconContainer.appendChild(addMemoIcon);
+    iconContainer.appendChild(addSearchIcon);
     iconContainer.appendChild(markIcon);
     iconContainer.appendChild(copyIcon);
     iconContainer.appendChild(downloadIcon);
@@ -552,7 +593,8 @@ const handleSelection = async (pageX, pageY, controlA) => {
         //if (iconContainer.contains(inputIcon))
         //  iconContainer.removeChild(inputIcon);
         if (iconContainer.contains(addIcon)) iconContainer.removeChild(addIcon);
-        if (iconContainer.contains(memoAddIcon)) iconContainer.removeChild(memoAddIcon);
+        if (iconContainer.contains(addMemoIcon)) iconContainer.removeChild(addMemoIcon);
+        if (iconContainer.contains(addSearchIcon)) iconContainer.removeChild(addSearchIcon);
         if (iconContainer.contains(markIcon)) iconContainer.removeChild(markIcon);
         if (iconContainer.contains(copyIcon)) iconContainer.removeChild(copyIcon);
         if (iconContainer.contains(downloadIcon)) iconContainer.removeChild(downloadIcon);

@@ -77,6 +77,21 @@ chrome.runtime.onInstalled.addListener(async (details) => {
     contexts: ["selection"]
   });
 
+  chrome.contextMenus.create({
+    id: "add-to-search",
+    parentId: parentId,
+    //title: "검색에 추가",
+    title: chrome.i18n.getMessage("add_to_search"),
+    contexts: ["selection"]
+  });
+
+  chrome.contextMenus.create({
+    id: "separator2-4",
+    parentId: parentId,
+    type: "separator",
+    contexts: ["selection"]
+  });
+
   
   chrome.contextMenus.create({
     id: "mark",
@@ -87,7 +102,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
   });
   
   chrome.contextMenus.create({
-    id: "separator2-4",
+    id: "separator2-5",
     parentId: parentId,
     type: "separator",
     contexts: ["selection"]
@@ -102,7 +117,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
   });
   
   chrome.contextMenus.create({
-    id: "separator2-5",
+    id: "separator2-6",
     parentId: parentId,
     type: "separator",
     contexts: ["selection"]
@@ -117,7 +132,7 @@ chrome.runtime.onInstalled.addListener(async (details) => {
   });
   
   chrome.contextMenus.create({
-    id: "separator2-6",
+    id: "separator2-7",
     parentId: parentId,
     type: "separator",
     contexts: ["selection"]
@@ -262,6 +277,24 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
       args: [selectedText],
       function: async (selectedText) => {
         await add("memo-tab", selectedText);
+      }
+    });
+  } else if (info.menuItemId === "add-to-search") {
+    let selectedText = info.selectionText;
+    // 예시: 문장 끝 구두점 뒤에 개행 추가
+    // . 또는 ! 또는 ? 뒤에 개행 문자 추가
+    selectedText = selectedText.replace(/([.!?])\s*/g, "$1\n");
+    // 인위적으로 개행이 추가된 텍스트를 저장하거나 패널로 전송
+    await chrome.storage.local.set({ selectedText });
+
+    const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
+    const currentTab = currentTabs[0];
+
+    await chrome.scripting.executeScript({
+      target: { tabId: currentTab.id },
+      args: [selectedText],
+      function: async (selectedText) => {
+        await addSearch(selectedText);
       }
     });
   } else if (info.menuItemId === "mark") {
