@@ -1,21 +1,8 @@
 (async () => {
-  let { generalSearchTargetValue, generalSearchWordValue } = await chrome.storage.local.get(["generalSearchTargetValue", "generalSearchWordValue"]);
-
-  // Set the initial checked state for the radio buttons
-  document.querySelector(`input[name="general-search-target"][value="${generalSearchTargetValue || "search-word-input"}"]`).checked = true;
-  // Trigger an input event to update related states
-  document.querySelector(`input[name="general-search-target"][value="${generalSearchTargetValue || "search-word-input"}"]`).dispatchEvent(new Event("input"));
+  let { generalSearchWordValue } = await chrome.storage.local.get(["generalSearchWordValue"]);
 
   document.querySelector("#general-search-word").value = generalSearchWordValue ? generalSearchWordValue : "";
 })();
-
-// Event listener for radio button changes
-document.querySelectorAll('input[name="general-search-target"]').forEach((radio) => {
-  radio.addEventListener("input", async (event) => {
-    const generalSearchTargetValue = event.target.value;
-    await chrome.storage.local.set({ generalSearchTargetValue });
-  });
-});
 
 // Event listener for input box changes
 document.querySelector("#general-search-word").addEventListener("input", async () => {
@@ -53,39 +40,18 @@ const fetchSearchEngines = async () => {
       engineLink.style.cssText = "color: blue; cursor: pointer; text-decoration: underline; margin: 2px;";
 
       engineLink.addEventListener("click", async () => {
-        const searchTarget = document.querySelector('input[name="general-search-target"]:checked').value;
-        //console.log(searchTarget);
-
-        let query = "";
-
-        if (searchTarget === "selected-text") {
-          query = await chrome.runtime.sendMessage({ action: "getSelectedText" });
-          if (!query) {
-            //alert("선택된 텍스트가 없습니다.");
-            let searchUrl = '';
-            if (engine.homeUrl) {
-              searchUrl = engine.homeUrl;
-            }
-            else {
-              searchUrl = engine.url.replace("{query}", "");
-            }
-            await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
-            return;
+        query = document.querySelector("#general-search-word").value.trim();
+        if (!query) {
+          //alert("검색어를 입력하세요.");
+          let searchUrl = '';
+          if (engine.homeUrl) {
+            searchUrl = engine.homeUrl;
           }
-        } else if (searchTarget === "search-word-input") {
-          query = document.querySelector("#general-search-word").value.trim();
-          if (!query) {
-            //alert("검색어를 입력하세요.");
-            let searchUrl = '';
-            if (engine.homeUrl) {
-              searchUrl = engine.homeUrl;
-            }
-            else {
-              searchUrl = engine.url.replace("{query}", "");
-            }
-            await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
-            return;
+          else {
+            searchUrl = engine.url.replace("{query}", "");
           }
+          await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
+          return;
         }
 
         if (query.includes(",")) {
@@ -120,37 +86,55 @@ const fetchSearchEngines = async () => {
   }
 };
 
+const search = async (engine, query) => {
+    //const engine = searchEngines[searchEngines.length -1]; // Get the first search engine
+    //const engine = searchEngines[0]; // Get the first search engine
+
+    //let query = document.querySelector("#general-search-word").value.trim();
+    if (!query) {
+      //alert("검색어를 입력하세요.");
+      let searchUrl = '';
+      if (engine.homeUrl) {
+        searchUrl = engine.homeUrl;
+      }
+      else {
+        searchUrl = engine.url.replace("{query}", "");
+      }
+      await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
+      return;
+    }
+
+    if (query.includes(",")) {
+      const splitQueries = query.split(",").map(q => q.trim()); // Split and trim each part
+      let i = 0;
+      for (const splitQuery of splitQueries) {
+        const searchUrl = engine.url.replace("{query}", encodeURIComponent(splitQuery));
+        await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
+        if (i != splitQueries.length - 1) {
+          await sleep(1000);
+        }
+        i++;
+      }
+    } else {
+      const searchUrl = engine.url.replace("{query}", encodeURIComponent(query));
+      await chrome.runtime.sendMessage({ action: "openLinkTab", url: searchUrl });
+    }  
+}
 // Add keydown event listener to the input box for Enter key
 document.querySelector("#general-search-word").addEventListener("keydown", async (event) => {
   if (event.key === "Enter") {
-    const searchTarget = document.querySelector('input[name="general-search-target"]:checked').value;
-    //console.log(searchTarget);
-
-    let query = "";
-
-    if (searchTarget === "selected-text") {
-      query = await chrome.runtime.sendMessage({ action: "getSelectedText" });
-      if (!query) {
-        //alert("선택된 텍스트가 없습니다.");
-        return;
-      }
-    } else if (searchTarget === "search-word-input") {
-      query = document.querySelector("#general-search-word").value.trim();
-      if (!query) {
-        //alert("검색어를 입력하세요.");
-        return;
-      }
-    }
-
-    if (searchEngines.length > 0) {
-      //const firstEngine = searchEngines[searchEngines.length -1]; // Get the first search engine
-      const firstEngine = searchEngines[0]; // Get the first search engine
-      if (firstEngine) {
-        const searchUrl = firstEngine.url.replace("{query}", encodeURIComponent(query));
-        await chrome.runtime.sendMessage({ action: "openTab", url: searchUrl });
-      }
-    }
+    //const engine = searchEngines[searchEngines.length -1]; // Get the first search engine
+    const engine = searchEngines[0]; // Get the first search engine
+    let query = document.querySelector("#general-search-word").value.trim();
+    search(engine, query);
   }
+});
+
+document.querySelector("#search").addEventListener("click", async (event) => {
+    //const engine = searchEngines[searchEngines.length -1]; // Get the first search engine
+    const engine = searchEngines[0]; // Get the first search engine
+    let query = document.querySelector("#general-search-word").value.trim();
+    search(engine, query);
 });
 
 (async () => {
