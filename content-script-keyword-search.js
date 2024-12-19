@@ -1,5 +1,5 @@
-const startSearch = async () => {
-  const keywords = document.querySelector("#keywords").value;
+const startSearch = async (keywords) => {
+  //const keywords = document.querySelector("#keywords").value;
   const searchEngines = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map((cb) => cb.value);
   const priority = document.querySelector('input[name="priority"]:checked').value; //engine, keyword
   const delay = parseInt(document.querySelector("#delay").value);
@@ -30,10 +30,54 @@ const startSearch = async () => {
 
 document.querySelector("#keywords").addEventListener("keyup", async (event) => {
   if (event.key === "Enter") {
-    await startSearch(); // 검색 시작 함수 호출
+    const keywords = document.querySelector("#keywords").value;
+    await startSearch(keywords); // 검색 시작 함수 호출
   }
 });
 
 document.querySelector("#start-search").addEventListener("click", async (event) => {
-  await startSearch();
+  const keywords = document.querySelector("#keywords").value;
+  await startSearch(keywords);
 });
+
+//
+
+// Update links dynamically as keywords are entered
+const updateKeywordLinks = () => {
+  const keywords = document.getElementById("keywords").value.split(",").map(kw => kw.trim()).filter(kw => kw);
+  document.getElementById("keyword-links").innerHTML = ""; // Clear existing links
+
+  if (keywords.length > 0) {
+    document.getElementById("keyword-links").style.marginBottom = "12px";
+  }
+  else {
+    document.getElementById("keyword-links").style.marginBottom = "0px";
+  }
+
+  keywords.forEach(keyword => {
+    const link = document.createElement("a");
+    link.textContent = keyword;
+    link.href = "#";
+    link.style.display = "inline-block";
+    link.style.marginRight = "10px";
+    link.style.textDecoration = "underline";
+    link.style.color = "blue";
+
+    link.addEventListener("click", async (event) => {
+      event.preventDefault();
+      await startSearch(keyword);
+    });
+
+    document.getElementById("keyword-links").appendChild(link);
+  });
+};
+
+// Listen for input events on the keyword input
+document.getElementById("keywords").addEventListener("input", updateKeywordLinks);
+
+document.getElementById("keywords").addEventListener("paste", updateKeywordLinks);
+
+// Initial render if input already contains value
+setTimeout(() => {
+  updateKeywordLinks();
+}, 1000);
