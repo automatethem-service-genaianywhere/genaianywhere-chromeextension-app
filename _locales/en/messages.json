@@ -14,11 +14,12 @@
   "keyword_search_menu": { "message": "Keyword search" },
   "search_engine_menu": { "message": "Search engine management" },
   "bookmark_menu": { "message": "Bookmark management" },
-  "life_tool_menu": { "message": "Life tool" },
+  "freeonlinetool_menu": { "message": "Free on line tool" },
   "price_menu": { "message": "Price" },
   "ai_collection_menu": { "message": "Generative Ai collection" },
-  "community_menu": { "message": "Cranberry marketing" },
+  "cafe_menu": { "message": "Cafe" },
   "youtube_menu": { "message": "Youtube channel" },
+  "blog_menu": { "message": "Cranberry marketing" },
   "admin_menu": { "message": "Admin" },
   "login_menu": { "message": "Login/Register" },
   "logout_menu": { "message": "Logout" },
@@ -94,9 +95,7 @@
   "add_page_source_to_memo": { "message": "Add title + url + source to memo" },
   "add_movie_script_to_memo": { "message": "Add title + url + movie script to memo" },
 
-  "tistory_search_label": { "message": "Search in blog" },
   "search_placeholder": { "message": "fan, heater" },
-  "search_word_input": { "message": "Enter search word" },
 
   "add_to_search": { "message": "Add to search" },
 
