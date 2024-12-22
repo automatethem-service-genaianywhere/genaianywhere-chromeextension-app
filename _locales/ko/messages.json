@@ -17,7 +17,7 @@
   "freeonlinetool_menu": { "message": "무료 온라인 도구" },
   "price_menu": { "message": "가격" },
   "ai_collection_menu": { "message": "생성형 Ai 모음" },
-  "cafe_menu": { "message": "카페" },
+  "cafe_menu": { "message": "네이버 카페" },
   "youtube_menu": { "message": "유튜브 채널" },
   "blog_menu": { "message": "크랜베리 마케팅" },
   "admin_menu": { "message": "관리" },
