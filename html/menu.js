@@ -109,7 +109,7 @@ document.querySelector("#bookmark-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#freeonlinetool-menu").addEventListener("click", async () => {
-  const url = "https://www.marketinganywhere.ai/freeonlinetool.html";
+  const url = "https://freeonlinetool.marketinganywhere.ai/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -124,7 +124,7 @@ document.querySelector("#ai-collection-menu").addEventListener("click", async ()
 });
 
 document.querySelector("#blog-menu").addEventListener("click", async () => {
-  const url = "https://blog.marketinganywhere.ai/";
+  const url = "https://cranberry.marketinganywhere.ai/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
