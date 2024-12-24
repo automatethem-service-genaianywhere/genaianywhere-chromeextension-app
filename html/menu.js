@@ -108,11 +108,6 @@ document.querySelector("#bookmark-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#freeonlinetool-menu").addEventListener("click", async () => {
-  const url = "https://freeonlinetool.marketinganywhere.ai/";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
 document.querySelector("#price-menu").addEventListener("click", async () => {
   const url = "https://www.marketinganywhere.ai/price.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
