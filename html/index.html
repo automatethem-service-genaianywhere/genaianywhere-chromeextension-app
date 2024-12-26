@@ -156,6 +156,12 @@
       li {
         font-size: 15px;
       }
+
+      .box {
+        border: 1px solid #8B008B; /* 자주색 테두리 */
+        border-radius: 4px;
+        padding: 10px;
+      }      
     </style>
   </head>
   <body>
@@ -369,7 +375,7 @@
     </div>
     <!-- 설정 탭 끝 -->
 
-    <div style="margin-bottom: 8px">
+    <div class="box" style="margin-bottom: 8px">
       <div style="margin-bottom: 6px">
       <b><span data-i18n="tool">도구</span></b>:
       </div>
@@ -391,15 +397,15 @@
       </span>     
     </div>
 
-    <div id="link-section" style="margin-bottom: 8px; display: none;">
+    <div class="box" id="bookmark-section" style="margin-bottom: 8px; display: none;">
       <div style="margin-bottom: 6px">
       <b><span data-i18n="bookmark" style="margin-bottom: 6px;">북마크</span></b>:
       </div>
       <span id="link-list" style="display: flex; flex-wrap: wrap; gap: 4px;"></span>
     </div>
 
-    <div style="display: flex; align-items: center; margin-top: 5x;">
-      <span id="search-part" style="display: none;">
+    <div id="search-section" class="box" style="display: none; align-items: center; margin-top: 5x;">
+      <span>
         <b><span data-i18n="search" style="margin-bottom: 6px;">검색</span></b>:<br/>
         <input type="text" id="search-word" placeholder="선풍기, 난로" data-i18n="search_placeholder" style="padding: 5px; border: 1px solid #ddd; border-radius: 4px; margin-top: 5px; margin-bottom: 5px; width: 80%">
         <button id="search" data-i18n="search"/>검색</button>

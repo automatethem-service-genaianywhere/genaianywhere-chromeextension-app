@@ -45,7 +45,7 @@ const fetchSearchEngines = async () => {
   userId = userId ? userId : "";
   if (userId) {
     // Select the element
-    const searchPart = document.getElementById('search-part');
+    const searchPart = document.getElementById('search-section');
     // Method 1: Show by updating the style
     searchPart.style.display = 'block';
 
@@ -81,7 +81,7 @@ const fetchSearchEngines = async () => {
     });
   }
   else {
-    const searchPart = document.getElementById('search-part');
+    const searchPart = document.getElementById('search-section');
     searchPart.style.display = 'none';
   }
 };

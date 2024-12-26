@@ -34,7 +34,7 @@ const fetchLinks = async () => {
   userId = userId ? userId : "";
   if (userId) {
     // Select the element
-    const linkSection = document.getElementById('link-section');
+    const linkSection = document.getElementById('bookmark-section');
     // Method 1: Show by updating the style
     linkSection.style.display = 'block';
 
@@ -57,7 +57,7 @@ const fetchLinks = async () => {
       linkList.removeChild(linkList.firstChild);
     }
 
-    const linkSection = document.getElementById('link-section');
+    const linkSection = document.getElementById('bookmark-section');
     linkSection.style.display = 'none';
   }
 };
