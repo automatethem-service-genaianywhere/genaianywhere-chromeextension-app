@@ -133,11 +133,6 @@ document.querySelector("#freeonlinetool-menu").addEventListener("click", async (
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#lifeinfo-menu").addEventListener("click", async () => {
-  const url = "https://lifeinfo.marketinganywhere.ai/";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
 document.querySelector("#cafe-menu").addEventListener("click", async () => {
   const url = "https://cafe.naver.com/marketinganywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
@@ -149,7 +144,7 @@ document.querySelector("#youtube-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#github-menu").addEventListener("click", async () => {
-  const url = "https://github.com/automatethem/marketinganywhere";
+  const url = "https://github.com/automatethem/marketinganywhere-chromeextension-app";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
