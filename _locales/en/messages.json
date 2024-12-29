@@ -20,7 +20,7 @@
   "freeonlinetool_menu": { "message": "Free online tool" },
   "cafe_menu": { "message": "Naver cafe" },
   "youtube_menu": { "message": "Youtube channel" },
-  "blog_menu": { "message": "Cranberry marketing" },
+  "cranberry_marketing_homepage_menu": { "message": "Cranberry marketing homepage" },
   "admin_menu": { "message": "Admin" },
   "login_menu": { "message": "Login/Register" },
   "logout_menu": { "message": "Logout" },
