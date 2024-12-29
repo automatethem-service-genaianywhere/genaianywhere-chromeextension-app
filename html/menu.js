@@ -123,16 +123,6 @@ document.querySelector("#cranberry-marketing-homepage-menu").addEventListener("c
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#freeonlinecalculator-menu").addEventListener("click", async () => {
-  const url = "https://freeonlinecalculator.marketinganywhere.ai/";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#freeonlinetool-menu").addEventListener("click", async () => {
-  const url = "https://freeonlinetool.marketinganywhere.ai/";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
 document.querySelector("#cafe-menu").addEventListener("click", async () => {
   const url = "https://cafe.naver.com/marketinganywhere";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
