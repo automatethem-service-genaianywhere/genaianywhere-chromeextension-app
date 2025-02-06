@@ -1,3 +1,4 @@
+/*
 document.querySelectorAll("a").forEach(async (link) => {
   //console.log(link.href);
   //console.log(link.innerText);
@@ -12,3 +13,4 @@ document.querySelectorAll("a").forEach(async (link) => {
     }
   });
 });
+*/
