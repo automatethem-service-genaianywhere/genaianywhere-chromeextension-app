@@ -109,7 +109,9 @@ document.querySelector("#search").addEventListener("click", async (event) => {
     document.querySelector("#split-character-count").value = splitCharacterCountValue;
   }
 
+  /*
   await fetchSearchEngines();
+  */
 })();
 
 /*
