@@ -63,6 +63,7 @@ document.querySelector("#prompt-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
+/*
 document.querySelector("#realtime-popular-search-word-menu").addEventListener("click", async () => {
   const url = "https://www.marketinganywhere.ai/realtime-popular-search-word.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
@@ -102,6 +103,7 @@ document.querySelector("#search-engine-menu").addEventListener("click", async ()
   const url = "https://www.marketinganywhere.ai/search-engine.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
+*/
 
 document.querySelector("#bookmark-menu").addEventListener("click", async () => {
   const url = "https://www.marketinganywhere.ai/bookmark.html";
@@ -115,6 +117,11 @@ document.querySelector("#price-menu").addEventListener("click", async () => {
 
 document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
   const url = "https://www.marketinganywhere.ai/generative-ai-collection.html";
+  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
+});
+
+document.querySelector("#freeonlineutility-menu").addEventListener("click", async () => {
+  const url = "https://www.freeonlineutility.com/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 

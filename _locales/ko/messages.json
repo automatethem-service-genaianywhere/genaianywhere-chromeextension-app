@@ -16,6 +16,7 @@
   "bookmark_menu": { "message": "북마크 관리" },
   "price_menu": { "message": "가격" },
   "ai_collection_menu": { "message": "생성형 Ai 모음" },
+  "freeonlineutility_menu": { "message": "무료 온라인 유틸리티" },
   "cafe_menu": { "message": "네이버 카페" },
   "youtube_menu": { "message": "유튜브 채널" },
   "cranberry_marketing_homepage_menu": { "message": "크랜베리 마케팅 홈페이지" },

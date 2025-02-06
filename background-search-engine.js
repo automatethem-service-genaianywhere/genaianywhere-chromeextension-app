@@ -21,7 +21,7 @@ const fetchSearchEngines = async () => {
   } catch (error) {
     console.error("Error fetching search engines:", error);
   }
-  //console.log(searchEngines);
+  console.log(searchEngines);
 };
 
 // Listen for messages from content scripts to create search sub-menus

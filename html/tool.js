@@ -1,3 +1,4 @@
+/*
 // Event listener for input box changes
 document.querySelector("#search-word").addEventListener("input", async () => {
   await chrome.storage.local.set({ searchWordValue: document.querySelector("#search-word").value });
@@ -50,13 +51,11 @@ const fetchSearchEngines = async () => {
     searchPart.style.display = 'block';
 
     // Fetch available search engines
-    /*
-    let searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
-    if (searchEngines.length === 0) {
-      await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
-      searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
-    }
-    */
+    //let searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
+    //if (searchEngines.length === 0) {
+    //  await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
+    //  searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
+    //}
     await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
     searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
 
@@ -102,6 +101,7 @@ document.querySelector("#search").addEventListener("click", async (event) => {
     let query = document.querySelector("#search-word").value.trim();
     search(engine, query);
 });
+*/
 
 (async () => {
   const { splitCharacterCountValue } = await chrome.storage.local.get("splitCharacterCountValue");
@@ -112,6 +112,7 @@ document.querySelector("#search").addEventListener("click", async (event) => {
   await fetchSearchEngines();
 })();
 
+/*
 document.querySelector("#mark").addEventListener("click", async (event) => {
   const currentTabs = await chrome.tabs.query({ active: true, currentWindow: true });
   const currentTab = currentTabs[0];
@@ -153,6 +154,7 @@ document.querySelector("#clipboard-download").addEventListener("click", async (e
   const text = await navigator.clipboard.readText(); // 클립보드에서 텍스트 읽기
   downloadTextAsFile(text, "text.txt");
 });
+*/
 
 document.querySelector("#copy-prompt-division-input-text").addEventListener("click", async () => {
   const prompt = document.querySelector("#prompt");
@@ -270,6 +272,7 @@ document.querySelector("#split-character-count").addEventListener("change", asyn
 
 //
 
+/*
 document.getElementById("capture-full-screen").addEventListener("click", async function() {
   const response = await chrome.runtime.sendMessage({ action: "captureFullScreen" });
   console.log(response);
@@ -279,7 +282,9 @@ document.getElementById("capture-scroll-screen").addEventListener("click", async
   const response = await chrome.runtime.sendMessage({ action: "captureScrollScreen" });
   console.log(response);
 });
+*/
 
+/*
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "addSearch") {
     (async () => {
@@ -304,3 +309,4 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   document.querySelector("#search-word").value = searchWordValue;
   document.querySelector("#search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
 })();
+*/
