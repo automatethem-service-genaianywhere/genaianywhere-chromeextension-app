@@ -131,12 +131,12 @@ document.querySelector("#cranberry-marketing-homepage-menu").addEventListener("c
 });
 
 document.querySelector("#cafe-menu").addEventListener("click", async () => {
-  const url = "https://cafe.naver.com/marketinganywhere";
+  const url = "https://cafe.naver.com/cranberrymarketing";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#youtube-menu").addEventListener("click", async () => {
-  const url = "https://www.youtube.com/@marketinganywhere";
+  const url = "https://www.youtube.com/@cranberrymarketing";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
