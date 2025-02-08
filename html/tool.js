@@ -1,4 +1,4 @@
-/*
+///*
 // Event listener for input box changes
 document.querySelector("#search-word").addEventListener("input", async () => {
   await chrome.storage.local.set({ searchWordValue: document.querySelector("#search-word").value });
@@ -42,13 +42,15 @@ const search = async (engine, query) => {
 const fetchSearchEngines = async () => {
  // Populate the search engines list
  document.querySelector("#engine-list").innerHTML = ""; // Clear loading text
-  let { userId } = await chrome.storage.local.get(["userId"]);
-  userId = userId ? userId : "";
-  if (userId) {
+//  let { userId } = await chrome.storage.local.get(["userId"]);
+//  userId = userId ? userId : "";
+//  if (userId) {
+    /*
     // Select the element
     const searchPart = document.getElementById('search-section');
     // Method 1: Show by updating the style
     searchPart.style.display = 'block';
+    */
 
     // Fetch available search engines
     //let searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
@@ -56,8 +58,60 @@ const fetchSearchEngines = async () => {
     //  await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
     //  searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
     //}
+    /*
     await chrome.runtime.sendMessage({ action: "fetchSearchEngines" });
     searchEngines = await chrome.runtime.sendMessage({ action: "getSearchEngines" });
+    */
+    ///*
+    let languageCode = chrome.i18n.getUILanguage();
+    //console.log(languageCode); //en //ko //en-US 
+    if (languageCode.includes("-")) {
+      languageCode = languageCode.split("-")[0]
+    }
+    if (languageCode == "ko") {
+      searchEngines = [
+        {
+          "name": "네이버",
+          "url": "https://search.naver.com/search.naver?query={query}",
+          "homeUrl": "https://www.naver.com"
+        },
+        {
+          "name": "구글",
+          "url": "https://www.google.com/search?q={query}",
+          "homeUrl": "https://www.google.com"
+        },
+        {
+          "name": "빙",
+          "url": "https://www.bing.com/search?q={query}",
+          "homeUrl": "https://www.bing.com"
+        },
+        {
+          "name": "무료 온라인 유틸리티",
+          "url": "https://www.google.com/search?q=site%3Awww.freeonlineutility.com+{query}",
+          "homeUrl": "https://www.freeonlineutility.com/"
+        }
+      ];
+    }
+    else {
+      searchEngines = [
+        {
+          "name": "Google",
+          "url": "https://www.google.com/search?q={query}",
+          "homeUrl": "https://www.google.com"
+        },
+        {
+          "name": "Bing",
+          "url": "https://www.bing.com/search?q={query}",
+          "homeUrl": "https://www.bing.com"
+        },
+        {
+          "name": "Free Online Utility",
+          "url": "https://www.google.com/search?q=site%3Awww.freeonlineutility.com+{query}",
+          "homeUrl": "https://www.freeonlineutility.com/"
+        }
+      ];
+    }
+    //*/
 
     searchEngines.forEach((engine, index) => {
       const engineLink = document.createElement("a");
@@ -78,11 +132,13 @@ const fetchSearchEngines = async () => {
         document.querySelector("#engine-list").append(" | ");
       }
     });
-  }
-  else {
-    const searchPart = document.getElementById('search-section');
-    searchPart.style.display = 'none';
-  }
+//  }
+//  else {
+//    /*
+//    const searchPart = document.getElementById('search-section');
+//    searchPart.style.display = 'none';
+//    */
+//  }
 };
 
 // Add keydown event listener to the input box for Enter key
@@ -101,7 +157,7 @@ document.querySelector("#search").addEventListener("click", async (event) => {
     let query = document.querySelector("#search-word").value.trim();
     search(engine, query);
 });
-*/
+//*/
 
 (async () => {
   const { splitCharacterCountValue } = await chrome.storage.local.get("splitCharacterCountValue");
@@ -109,9 +165,7 @@ document.querySelector("#search").addEventListener("click", async (event) => {
     document.querySelector("#split-character-count").value = splitCharacterCountValue;
   }
 
-  /*
   await fetchSearchEngines();
-  */
 })();
 
 /*

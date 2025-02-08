@@ -95,7 +95,7 @@
   "add_page_source_to_memo": { "message": "메모에 제목 + 주소 + 소스 추가" },
   "add_movie_script_to_memo": { "message": "메모에 제목 + 주소 + 동영상 스크립트 추가" },
 
-  "search_placeholder": { "message": "선풍기, 난로" }, 
+  "search_placeholder": { "message": "생성형 ai, 챗지피티" }, 
 
   "add_to_search": { "message": "검색에 추가" },
 
