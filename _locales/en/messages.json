@@ -70,6 +70,7 @@
   "split_character_count_per_generative_ai": { "message": "Split character count" },
   "tool": { "message": "Tool" },
   "bookmark": { "message": "Bookmark" },
+  "must_log_in_to_use_bookmarks": { "message": "You must log in to use bookmarks." },
   "__________keyword_search_html": { "message": "" },
   "empty_alert": { "message": "Fill required fields." },
 

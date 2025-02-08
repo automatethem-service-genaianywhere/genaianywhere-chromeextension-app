@@ -33,11 +33,6 @@ const fetchLinks = async () => {
   let { userId } = await chrome.storage.local.get(["userId"]);
   userId = userId ? userId : "";
   if (userId) {
-    // Select the element
-    const linkSection = document.getElementById('bookmark-section');
-    // Method 1: Show by updating the style
-    linkSection.style.display = 'block';
-
     let languageCode = chrome.i18n.getUILanguage();
     //console.log(languageCode); //en //ko //en-US 
     if (languageCode.includes("-")) {
@@ -53,12 +48,7 @@ const fetchLinks = async () => {
     }
   } else {
     const linkList = document.querySelector("#link-list");
-    while (linkList.firstChild) {
-      linkList.removeChild(linkList.firstChild);
-    }
-
-    const linkSection = document.getElementById('bookmark-section');
-    linkSection.style.display = 'none';
+    linkList.textContent = chrome.i18n.getMessage("must_log_in_to_use_bookmarks");
   }
 };
 

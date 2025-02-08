@@ -70,6 +70,7 @@
   "split_character_count_per_generative_ai": { "message": "분할 글자 수" },
   "tool": { "message": "도구" },
   "bookmark": { "message": "북마크" },
+  "must_log_in_to_use_bookmarks": { "message": "북마크를 사용하려면 로그인이 필요합니다." },
   "__________keyword_search_html": { "message": "" },
   "empty_alert": { "message": "필수 필드를 입력해 주세요." },
 
