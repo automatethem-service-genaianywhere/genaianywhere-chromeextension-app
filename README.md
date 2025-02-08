@@ -17,7 +17,7 @@
 스크롤 화면 캡처: 긴 페이지를 스크롤 캡처해 저장.<br/>
 프롬프트 분할: 프롬프트가 길 경우 작은 프롬프트들로 잘라 생성형 Ai에게 질문.<br/>
 <br/>
-지텁: <a href="https://github.com/automatethem/marketinganywhere-chromeextension-app" target="_blank">https://github.com/automatethem/marketinganywhere-chromeextension-app</a>
+지텁: <a href="https://github.com/automatethem/genaianywhere-chromeextension-app" target="_blank">https://github.com/automatethem/genaianywhere-chromeextension-app</a>
 
 ## Marketing Anywhere
 
@@ -36,7 +36,7 @@ Character Count: Check the number of characters in content in real time.<br/>
 Scroll Screen Capture: Scroll and capture long pages to save them.<br/>
 Split Prompt: If the prompt is long, break it into smaller prompts and ask the generative AI questions.<br/>
 <br/>
-Github: <a href="https://github.com/automatethem/marketinganywhere-chromeextension-app" target="_blank">https://github.com/automatethem/marketinganywhere-chromeextension-app</a>
+Github: <a href="https://github.com/automatethem/genaianywhere-chromeextension-app" target="_blank">https://github.com/automatethem/genaianywhere-chromeextension-app</a>
 
 ## 화면 캡처 (Screen Capture)
 

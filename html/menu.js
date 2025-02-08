@@ -141,7 +141,7 @@ document.querySelector("#youtube-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#github-menu").addEventListener("click", async () => {
-  const url = "https://github.com/automatethem/marketinganywhere-chromeextension-app";
+  const url = "https://github.com/automatethem/genaianywhere-chromeextension-app";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
