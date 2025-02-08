@@ -1,4 +1,4 @@
-서비스 페이지 (Service page): https://www.marketinganywhere.ai/
+서비스 페이지 (Service page): https://www.genaianywhere.com/
 
 ## 마케팅 애니웨어
 

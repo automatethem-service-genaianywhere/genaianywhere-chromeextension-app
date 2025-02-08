@@ -1,6 +1,6 @@
 {
-  "extensionName": { "message": "Marketing Anywhere" },
-  "extensionDescription": { "message": "Marketing Anywhere is a free, open-source, meta-generating Ai Chrome extension that helps you easily perform marketing work, anywhere on the webpage." },
+  "extensionName": { "message": "Generative Ai Anywhere" },
+  "extensionDescription": { "message": "Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that makes it easy to work with generative Ai anywhere on the web." },
   "home_menu": { "message": "Home" },
   "public_prompt_menu": { "message": "Public prompt" },
   "private_shared_prompt_menu": { "message": "Private shared prompt" },
@@ -71,6 +71,7 @@
   "tool": { "message": "Tool" },
   "bookmark": { "message": "Bookmark" },
   "must_log_in_to_use_bookmarks": { "message": "You must log in to use bookmarks." },
+  "add_bookmark": { "message": "Add bookmark" },
   "__________keyword_search_html": { "message": "" },
   "empty_alert": { "message": "Fill required fields." },
 

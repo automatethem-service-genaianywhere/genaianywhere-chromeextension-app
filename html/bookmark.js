@@ -22,11 +22,31 @@ const createLinks = (links) => {
     });
     linkList.appendChild(aTag); // Add button to the container
 
+    /*
     // Add '|' between links except the last one
     if (index < links.length - 1) {
       linkList.append(" | ");
     }
+    */
+    ///*
+    linkList.append(" | ");
+    //*/
   });
+
+  //
+
+  const aTagLast = document.createElement("a");
+  aTagLast.innerHTML = chrome.i18n.getMessage("add_bookmark")
+  aTagLast.style.cssText = `
+        margin: 2px;
+        color: blue;                /* 파란색 글자 */
+        text-decoration: underline; /* 기본적으로 언더라인 표시 */
+        cursor: pointer;            /* 호버 시 손 모양 커서 */
+      `;
+  aTagLast.addEventListener("click", () => {
+    chrome.runtime.sendMessage({ action: "openLinkTab", url: "https://www.genaianywhere.com/bookmark.html" });
+  });
+  linkList.appendChild(aTagLast); 
 };
 
 const fetchLinks = async () => {
@@ -38,7 +58,7 @@ const fetchLinks = async () => {
     if (languageCode.includes("-")) {
       languageCode = languageCode.split("-")[0]
     }
-    const url = `https://www.marketinganywhere.ai/api/link?userId=${userId}&languageCode=${languageCode}`;
+    const url = `https://www.genaianywhere.com/api/link?userId=${userId}&languageCode=${languageCode}`;
     try {
       const response = await fetch(url);
       linkList = await response.json(); // Get the list of links
@@ -48,6 +68,9 @@ const fetchLinks = async () => {
     }
   } else {
     const linkList = document.querySelector("#link-list");
+    while (linkList.firstChild) {
+      linkList.removeChild(linkList.firstChild);
+    }
     linkList.textContent = chrome.i18n.getMessage("must_log_in_to_use_bookmarks");
   }
 };

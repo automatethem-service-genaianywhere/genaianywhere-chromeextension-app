@@ -1,6 +1,6 @@
 {
-  "extensionName": { "message": "마케팅 애니웨어" },
-  "extensionDescription": { "message": "마케팅 애니웨어는 웹페이지 어디서나 마케팅 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장입니다." },
+  "extensionName": { "message": "생성형 Ai 애니웨어" },
+  "extensionDescription": { "message": "생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai로 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장입니다." },
   "home_menu": { "message": "홈" },
   "public_prompt_menu": { "message": "공개 프롬프트" },
   "private_shared_prompt_menu": { "message": "개인 공유 프롬프트" },
@@ -71,6 +71,7 @@
   "tool": { "message": "도구" },
   "bookmark": { "message": "북마크" },
   "must_log_in_to_use_bookmarks": { "message": "북마크를 사용하려면 로그인이 필요합니다." },
+  "add_bookmark": { "message": "북마크 추가" },
   "__________keyword_search_html": { "message": "" },
   "empty_alert": { "message": "필수 필드를 입력해 주세요." },
 

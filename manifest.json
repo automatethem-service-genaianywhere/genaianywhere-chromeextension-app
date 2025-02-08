@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",  
-  "version": "0.0.65",
+  "version": "0.0.66",
   "description": "__MSG_extensionDescription__",
   "default_locale": "ko",    
   "icons": {
@@ -21,14 +21,14 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["https://www.marketinganywhere.ai/",
-                  "https://www.marketinganywhere.ai/index.html"],
+      "matches": ["https://www.genaianywhere.com/",
+                  "https://www.genaianywhere.com/index.html"],
        "js": ["content-script-login.js"],
        "run_at": "document_end"
      },
     {
       "type": "module",
-      "matches": ["https://www.marketinganywhere.ai/keyword-search.html*"],
+      "matches": ["https://www.genaianywhere.com/keyword-search.html*"],
       "js": ["content-script-keyword-search.js"],
       "run_at": "document_end"
     },
