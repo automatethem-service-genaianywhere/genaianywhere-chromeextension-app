@@ -345,7 +345,6 @@ document.getElementById("capture-scroll-screen").addEventListener("click", async
 });
 */
 
-/*
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "addSearch") {
     (async () => {
@@ -370,4 +369,3 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   document.querySelector("#search-word").value = searchWordValue;
   document.querySelector("#search-word").dispatchEvent(new Event("input")); // input 이벤트 발생
 })();
-*/

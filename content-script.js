@@ -28,55 +28,6 @@ const addSearch = async (selectedText) => {
   await chrome.runtime.sendMessage({ action: "addSearch", selectedText: selectedText });
 };
 
-const mark = () => {
-  const selectedText = window.getSelection().toString().trim();
-  if (selectedText.length > 0) {
-    const selection = window.getSelection();
-    const range = selection.getRangeAt(0);
-
-    // 이미 마크된 텍스트 제거 함수
-    const unwrapHighlight = (element) => {
-      const parent = element.parentNode;
-      while (element.firstChild) {
-        parent.insertBefore(element.firstChild, element);
-      }
-      parent.removeChild(element);
-    };
-
-    // 이미 마크된 텍스트가 있는지 확인
-    const markElements = Array.from(document.querySelectorAll('span[style*="background-color: yellow"]'));
-    let isHighlighted = false;
-
-    markElements.forEach((span) => {
-      const spanRange = document.createRange();
-      spanRange.selectNodeContents(span);
-
-      // 선택한 텍스트가 이미 마크된 경우, 마크 제거
-      if (
-        range.compareBoundaryPoints(Range.END_TO_START, spanRange) < 0 &&
-        range.compareBoundaryPoints(Range.START_TO_END, spanRange) > 0
-      ) {
-        unwrapHighlight(span);
-        isHighlighted = true;
-      }
-    });
-
-    // 마크가 없을 경우 새로 추가
-    if (!isHighlighted) {
-      const span = document.createElement("span");
-      span.style.backgroundColor = "yellow";
-
-      const clonedContent = range.cloneContents();
-      span.appendChild(clonedContent);
-
-      range.deleteContents();
-      range.insertNode(span);
-    }
-  }
-};
-
-//
-
 let floatingIconUseInThisPage = true;
 
 const handleSelection = async (pageX, pageY, controlA) => {
@@ -251,153 +202,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
 
     //
 
-    const markIcon = document.createElement("button"); //다른데도 적용하기
-    markIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/mark.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    markIcon.addEventListener("mouseover", () => {
-      markIcon.style.border = "2px solid black";
-    });
-
-    markIcon.addEventListener("mouseout", () => {
-      markIcon.style.border = "1px solid black";
-    });
-
-    markIcon.addEventListener("click", async () => {
-      mark();
-
-      //
-
-      if (closeDropdown && closeDropdownCreated) {
-        closeDropdown.style.display = "none";
-        closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
-    const copyIcon = document.createElement("button");
-    copyIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/copy.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    copyIcon.addEventListener("mouseover", () => {
-      copyIcon.style.border = "2px solid black";
-    });
-
-    copyIcon.addEventListener("mouseout", () => {
-      copyIcon.style.border = "1px solid black";
-    });
-
-    copyIcon.addEventListener("click", async () => {
-      await navigator.clipboard.writeText(selectedText);
-
-      //
-
-      if (closeDropdown && closeDropdownCreated) {
-        closeDropdown.style.display = "none";
-        closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
-    const downloadIcon = document.createElement("button");
-    downloadIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/download.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    downloadIcon.addEventListener("mouseover", () => {
-      downloadIcon.style.border = "2px solid black";
-    });
-
-    downloadIcon.addEventListener("mouseout", () => {
-      downloadIcon.style.border = "1px solid black";
-    });
-
-    downloadIcon.addEventListener("click", async () => {
-      const blob = new Blob([selectedText], { type: "text/plain" });
-      const url = URL.createObjectURL(blob);
-
-      // 백그라운드 스크립트로 메시지 전송
-      chrome.runtime.sendMessage({
-        action: "download",
-        url: url,
-        filename: "text.txt"
-      });
-
-      //
-
-      if (closeDropdown && closeDropdownCreated) {
-        closeDropdown.style.display = "none";
-        closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
-    const openUrlIcon = document.createElement("button");
-    openUrlIcon.style.cssText = `
-      width: 24px;
-      height: 24px;
-      margin-right: 2px;
-      margin-bottom: 0px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/open-url.png);
-      cursor: pointer;
-      border: 1px solid black; 
-    `;
-
-    openUrlIcon.addEventListener("mouseover", () => {
-      openUrlIcon.style.border = "2px solid black";
-    });
-
-    openUrlIcon.addEventListener("mouseout", () => {
-      openUrlIcon.style.border = "1px solid black";
-    });
-
-    openUrlIcon.addEventListener("click", async () => {
-      let url = selectedText;
-      if (!url.startsWith("http://") && !url.startsWith("https://")) {
-        url = "https://www.google.com/search?q={query}";
-        url = url.replace("{query}", encodeURIComponent(selectedText));
-      }
-      await chrome.runtime.sendMessage({ action: "openTab", url: url });
-
-      if (closeDropdown && closeDropdownCreated) {
-        closeDropdown.style.display = "none";
-        closeDropdownCreated = false; // Reset the flag so it can be recreated
-      }
-    });
-
-    //
-
     const closeIcon = document.createElement("button");
     closeIcon.style.cssText = `
       width: 24px;
@@ -467,10 +271,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
           iconContainer.removeChild(addIcon);
           iconContainer.removeChild(addMemoIcon);
           iconContainer.removeChild(addSearchIcon);
-          iconContainer.removeChild(markIcon);
-          iconContainer.removeChild(copyIcon);
-          iconContainer.removeChild(downloadIcon);
-          iconContainer.removeChild(openUrlIcon);
           iconContainer.removeChild(closeIcon);
           document.body.removeChild(iconContainer);
 
@@ -505,10 +305,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
           iconContainer.removeChild(addIcon);
           iconContainer.removeChild(addMemoIcon);
           iconContainer.removeChild(addSearchIcon);
-          iconContainer.removeChild(markIcon);
-          iconContainer.removeChild(copyIcon);
-          iconContainer.removeChild(downloadIcon);
-          iconContainer.removeChild(openUrlIcon);
           iconContainer.removeChild(closeIcon);
           document.body.removeChild(iconContainer);
 
@@ -553,10 +349,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
     iconContainer.appendChild(addIcon);
     iconContainer.appendChild(addMemoIcon);
     iconContainer.appendChild(addSearchIcon);
-    iconContainer.appendChild(markIcon);
-    iconContainer.appendChild(copyIcon);
-    iconContainer.appendChild(downloadIcon);
-    iconContainer.appendChild(openUrlIcon);
     iconContainer.appendChild(closeIcon);
 
     // Add container to the document body
@@ -595,10 +387,6 @@ const handleSelection = async (pageX, pageY, controlA) => {
         if (iconContainer.contains(addIcon)) iconContainer.removeChild(addIcon);
         if (iconContainer.contains(addMemoIcon)) iconContainer.removeChild(addMemoIcon);
         if (iconContainer.contains(addSearchIcon)) iconContainer.removeChild(addSearchIcon);
-        if (iconContainer.contains(markIcon)) iconContainer.removeChild(markIcon);
-        if (iconContainer.contains(copyIcon)) iconContainer.removeChild(copyIcon);
-        if (iconContainer.contains(downloadIcon)) iconContainer.removeChild(downloadIcon);
-        if (iconContainer.contains(openUrlIcon)) iconContainer.removeChild(openUrlIcon);
         if (iconContainer.contains(closeIcon)) iconContainer.removeChild(closeIcon);
         if (document.body.contains(iconContainer)) document.body.removeChild(iconContainer);
       }
