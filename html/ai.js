@@ -45,6 +45,11 @@ const populateAiList = (aiServices, more) => {
     document.querySelector("#attach-checkbox").checked = attachCheckboxChecked;
   }
   
+  const { usePreviousWindowCheckbox } = await chrome.storage.local.get("usePreviousWindowCheckbox");
+  if (usePreviousWindowCheckbox !== undefined) {
+    document.querySelector("#use-previous-window-checkbox").checked = usePreviousWindowCheckbox;
+  }
+
   const aiServices = await chrome.runtime.sendMessage({ action: "getAiServices" });
   populateAiList(aiServices, false);
 
@@ -115,6 +120,11 @@ document.querySelector("#attach-checkbox").addEventListener("change", async () =
   await chrome.storage.local.set({ attachCheckboxChecked: checked });
 });
 
+document.querySelector("#use-previous-window-checkbox").addEventListener("change", async () => {
+  const checked = document.querySelector("#use-previous-window-checkbox").checked;
+  await chrome.storage.local.set({ usePreviousWindowCheckbox: checked });
+});
+
 //
 
 const sendToAi = async (text) => {
@@ -133,6 +143,7 @@ const sendToAi = async (text) => {
   }
 
   const attach = document.querySelector("#attach-checkbox").checked;
+  const usePreviousWindow = document.querySelector("#use-previous-window-checkbox").checked;
 
   //await sleep(1000);
   
@@ -147,7 +158,8 @@ const sendToAi = async (text) => {
         action: "sendToAi",
         id: aiServices[i].id,
         text: text,
-        attach
+        attach,
+        usePreviousWindow
       });
 
       // 남은 AI 서비스 중에서 체크된 것이 있으면 대기

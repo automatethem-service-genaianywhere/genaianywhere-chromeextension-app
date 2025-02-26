@@ -48,6 +48,7 @@
   "input_text_placeholder": { "message": "입력 텍스트를 입력하세요..." },
   "prompt_input_text_character_count": { "message": "프롬프트 + 구분+입력텍스트 글자 수" },
   "attach_checkbox": { "message": "자료 첨부 대기 (제출 버튼 미클릭)" },
+  "use_previous_ai_window_checkbox": { "message": "이전 창 사용" },
   "pdf_example": { "message": "pdf 예시" },
   "image_example": { "message": "이미지 예시" },
   "music_example": { "message": "음악 예시" },

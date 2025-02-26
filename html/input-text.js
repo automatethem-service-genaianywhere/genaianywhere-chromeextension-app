@@ -1,4 +1,9 @@
 document.querySelector("#example-input-text").addEventListener("click", async (event) => {
+  if (promptList.length == 0) {
+    document.querySelector("#input-text").value = "111";
+    document.querySelector("#input-text").dispatchEvent(new Event("input")); // input 이벤트 발생;
+    return;
+  }
   const value = document.querySelector("#prompts").value;
   for (const promptElement of promptList) {
     //document.querySelector('#prompt').id

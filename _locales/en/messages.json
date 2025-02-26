@@ -48,6 +48,7 @@
   "input_text_placeholder": { "message": "Enter input text..." },
   "prompt_input_text_character_count": { "message": "Prompt + divider + input text character count" },
   "attach_checkbox": { "message": "Wait to attach data (Do not click submit)" },
+  "use_previous_ai_window_checkbox": { "message": "Use previous window" },
   "pdf_example": { "message": "Pdf eample" },
   "image_example": { "message": "Image example" },
   "music_example": { "message": "Music example" },

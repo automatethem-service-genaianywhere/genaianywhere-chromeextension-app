@@ -147,7 +147,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }  
   else if (message.action == "sendToAi") {
     (async () => {
-      await sendToAi(message.id, text, message.attach);
+      await sendToAi(message.id, text, message.attach, message.usePreviousWindow);
       sendResponse("sendToAi response");
     })();
     return true;
@@ -160,7 +160,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 });
 
-const sendToAi = async (id, text, attach = false) => {
+const sendToAi = async (id, text, attach = false, usePreviousWindow) => {
   let service = findAiServiceById(id);
   if (service == null) {
     service = findMoreAiServiceById(id);
@@ -193,6 +193,9 @@ const sendToAi = async (id, text, attach = false) => {
 
   // 최근 탭 중 주어진 url 포함하는 탭을 찾음
   let foundTab = tabs.find((tab) => tab.url.includes(rootUrl));
+  if (!usePreviousWindow) {
+      foundTab = false;
+  }
 
   if (id == "chatgpt") {
     if (foundTab) {
