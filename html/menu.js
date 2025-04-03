@@ -115,11 +115,6 @@ document.querySelector("#price-menu").addEventListener("click", async () => {
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-document.querySelector("#ai-collection-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/generative-ai-collection.html";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
 document.querySelector("#freeonlineutility-menu").addEventListener("click", async () => {
   const url = "https://www.freeonlineutility.com/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
