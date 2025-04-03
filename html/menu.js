@@ -126,7 +126,7 @@ document.querySelector("#freeonlineutility-menu").addEventListener("click", asyn
 });
 
 document.querySelector("#cranberry-marketing-homepage-menu").addEventListener("click", async () => {
-  const url = "https://cranberry.marketinganywhere.ai/";
+  const url = "https://www.cranberry-marketing.com/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 

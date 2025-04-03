@@ -92,8 +92,8 @@ const fetchSearchEngines = async () => {
         },
         {
           "name": "크랜베리 마케팅",
-          "url": "https://cranberry.marketinganywhere.ai/?s={query}",
-          "homeUrl": "https://cranberry.marketinganywhere.ai/"
+          "url": "https://www.google.com/search?q=site%3Awww.cranberry-marketing+{query}",
+          "homeUrl": "https://www.cranberry-marketing.com/"
         }
       ];
     }
