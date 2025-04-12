@@ -433,7 +433,8 @@ const getTabTitleUrl = async () => {
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
     // 타이틀과 URL을 반환
-    return `${tab.title}\n${tab.url}`;
+    //return `${tab.title}\n${tab.url}`;
+    return `${tab.title}  \n${tab.url}  `;
   } catch (error) {
     console.log(error);
     return null; // 오류가 발생하면 null 반환
@@ -453,7 +454,8 @@ const getTabTitleUrlText = async () => {
       }
     });
 
-    return `${tab.title}\n${tab.url}\n\n${result[0].result}`;
+    //return `${tab.title}\n${tab.url}\n\n${result[0].result}`;
+    return `${tab.title}  \n${tab.url}  \n\n${result[0].result}`;
   } catch (error) {
     console.log(error);
     return null; // 오류가 발생하면 null 반환
@@ -474,7 +476,8 @@ const getTabTitleUrlSource = async () => {
       }
     });
 
-    return `${tab.title}\n${tab.url}\n\n${result[0].result}`;
+    //return `${tab.title}\n${tab.url}\n\n${result[0].result}`;
+    return `${tab.title}  \n${tab.url}  \n\n${result[0].result}`;
   } catch (error) {
     console.log(error);
     return null; // 오류가 발생하면 null 반환
@@ -586,7 +589,8 @@ const getTabTitleUrlYoutubeScript = async () => {
     }
   });
 
-  return `${currentTab.title}\n${currentTab.url}\n\n${result}`;
+  //return `${currentTab.title}\n${currentTab.url}\n\n${result}`;
+  return `${currentTab.title}  \n${currentTab.url}  \n\n${result}`;
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
