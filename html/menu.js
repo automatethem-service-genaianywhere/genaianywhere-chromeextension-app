@@ -121,7 +121,7 @@ document.querySelector("#freeonlineutility-menu").addEventListener("click", asyn
 });
 
 document.querySelector("#cranberry-marketing-homepage-menu").addEventListener("click", async () => {
-  const url = "https://www.cranberry-marketing.com/";
+  const url = "https://www.aweb.kr/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
