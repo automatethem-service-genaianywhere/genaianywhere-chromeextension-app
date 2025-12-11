@@ -93,7 +93,7 @@ const fetchSearchEngines = async () => {
         {
           "name": "크랜베리 마케팅",
           "url": "https://www.google.com/search?q=site%3Aaweb.kr+{query}",
-          "homeUrl": "https://www.cranberry-marketing.com/"
+          "homeUrl": "https://www.aweb.kr/"
         }
       ];
     }
