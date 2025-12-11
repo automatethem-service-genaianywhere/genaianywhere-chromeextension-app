@@ -44,22 +44,22 @@
 //
 
 document.querySelector("#home-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/";
+  const url = "https://ko.ai.genaianywhere.com/";
   await chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#public-prompt-list-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/public-prompt.html";
+  const url = "https://ko.ai.genaianywhere.com/public-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#private-shared-prompt-list-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/private-shared-prompt.html";
+  const url = "https://ko.ai.genaianywhere.com/private-shared-prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#prompt-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/prompt.html";
+  const url = "https://ko.ai.genaianywhere.com/prompt.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -106,17 +106,17 @@ document.querySelector("#search-engine-menu").addEventListener("click", async ()
 */
 
 document.querySelector("#bookmark-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/bookmark.html";
+  const url = "https://ko.ai.genaianywhere.com/bookmark.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#price-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/price.html";
+  const url = "https://ko.ai.genaianywhere.com/price.html";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 document.querySelector("#freeonlineutility-menu").addEventListener("click", async () => {
-  const url = "https://www.freeonlineutility.com/";
+  const url = "https://kr.ai.freeonlineutility.com/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
@@ -141,14 +141,14 @@ document.querySelector("#github-menu").addEventListener("click", async () => {
 });
 
 document.querySelector("#admin-menu").addEventListener("click", async () => {
-  const url = "https://www.genaianywhere.com/admin/";
+  const url = "https://ko.ai.genaianywhere.com/admin/";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
 //
 
 const openLoginLinkTab = async () => {
-  const chatUrl = "https://www.genaianywhere.com/";
+  const chatUrl = "https://ko.ai.genaianywhere.com/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -207,7 +207,7 @@ const openLoginLinkTab = async () => {
 };
 
 const openLogoutLinkTab = async () => {
-  const chatUrl = "https://www.genaianywhere.com/";
+  const chatUrl = "https://ko.ai.genaianywhere.com/";
 
   /*
     // 현재 열려 있는 모든 탭 검색
@@ -230,11 +230,11 @@ const openLogoutLinkTab = async () => {
     // 이미 열려 있는 탭을 찾으면 해당 탭을 활성화
     await chrome.windows.update(foundTab.windowId, { focused: true });
     await chrome.tabs.update(foundTab.id, { active: true });
-    const url = "https://www.genaianywhere.com/login/chromeextension/logout.html";
+    const url = "https://ko.ai.genaianywhere.com/login/chromeextension/logout.html";
     await chrome.tabs.update(foundTab.id, { active: true, url: url }); //
   } else {
     // If no ai tab is open, create a new tab
-    const url = "https://www.genaianywhere.com/login/chromeextension/logout.html";
+    const url = "https://ko.ai.genaianywhere.com/login/chromeextension/logout.html";
     let newTab = await chrome.tabs.create({ url: url });
   }
 };
