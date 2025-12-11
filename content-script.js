@@ -67,6 +67,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
     iconContainer.style.cssText = iconContainerStyle;
 
     const homeIcon = document.createElement("button");
+    homeIcon.title = chrome.i18n.getMessage("home_icon_title"); //"사이드 패널 열기/닫기";
     homeIcon.style.cssText = `
       width: 24px;
       height: 24px;
@@ -74,7 +75,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
       margin-bottom: 0px;
       background-size: contain;
       background-repeat: no-repeat;
-      background-image: url(chrome-extension://${chrome.runtime.id}/images/icon.png);
+      background-image: url(chrome-extension://${chrome.runtime.id}/images/icon-128x128.png);
       cursor: pointer;
       border: 1px solid black; 
     `;
@@ -101,6 +102,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
     //
 
     const addIcon = document.createElement("button");
+    addIcon.title = chrome.i18n.getMessage("add_icon_title"); //"입력 텍스트 입력";
     addIcon.style.cssText = `
       width: 24px;
       height: 24px;
@@ -135,6 +137,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
     //
 
     const addMemoIcon = document.createElement("button");
+    addMemoIcon.title = chrome.i18n.getMessage("add_memo_icon_title"); //"메모 입력";
     addMemoIcon.style.cssText = `
       width: 24px;
       height: 24px;
@@ -169,6 +172,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
     //
 
     const addSearchIcon = document.createElement("button");
+    addSearchIcon.title = chrome.i18n.getMessage("add_search_icon_title"); //"검색어 입력";
     addSearchIcon.style.cssText = `
       width: 24px;
       height: 24px;
@@ -203,6 +207,7 @@ const handleSelection = async (pageX, pageY, controlA) => {
     //
 
     const closeIcon = document.createElement("button");
+    closeIcon.title = chrome.i18n.getMessage("close_icon_title"); //"팝업 메뉴 닫기";
     closeIcon.style.cssText = `
       width: 24px;
       height: 24px;

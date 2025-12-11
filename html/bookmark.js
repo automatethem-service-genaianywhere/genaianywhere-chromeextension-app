@@ -52,7 +52,7 @@ const createLinks = (links) => {
 const fetchLinks = async () => {
   let { userId } = await chrome.storage.local.get(["userId"]);
   userId = userId ? userId : "";
-  if (userId) {
+  //if (userId) {
     let languageCode = chrome.i18n.getUILanguage();
     //console.log(languageCode); //en //ko //en-US 
     if (languageCode.includes("-")) {
@@ -66,13 +66,13 @@ const fetchLinks = async () => {
     } catch (error) {
       console.error(error);
     }
-  } else {
-    const linkList = document.querySelector("#link-list");
-    while (linkList.firstChild) {
-      linkList.removeChild(linkList.firstChild);
-    }
-    linkList.textContent = chrome.i18n.getMessage("must_log_in_to_use_bookmarks");
-  }
+  //} else {
+  //  const linkList = document.querySelector("#link-list");
+  //  while (linkList.firstChild) {
+  //    linkList.removeChild(linkList.firstChild);
+  //  }
+  //  linkList.textContent = chrome.i18n.getMessage("must_log_in_to_use_bookmarks");
+  //}
 };
 
 (async () => {

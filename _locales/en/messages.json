@@ -101,7 +101,13 @@
 
   "add_to_search": { "message": "Add to search" },
 
-  "capture_screen": { "message": "Capture screen " },
+  "capture_screen": { "message": "Capture screen" },
   "capture_full_screen": { "message": "Full" },
-  "capture_scroll_screen": { "message": "Scroll" }
+  "capture_scroll_screen": { "message": "Scroll" },
+
+  "home_icon_title": { "message": "Open/Close side panel" },
+  "add_icon_title": { "message": "Input input text" },
+  "add_memo_icon_title": { "message": "Input memo" },
+  "add_search_icon_title": { "message": "Input search word" },
+  "close_icon_title": { "message": "Close popup menu" }
 }

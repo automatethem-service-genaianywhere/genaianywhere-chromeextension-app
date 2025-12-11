@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",  
-  "version": "0.0.76",
+  "version": "0.0.77",
   "description": "__MSG_extensionDescription__",
   "default_locale": "ko",    
   "icons": {
-    "48": "images/icon.png",
-    "128": "images/icon.png"
+    "48": "images/icon-128x128.png",
+    "128": "images/icon-128x128.png"
   },
   "background": {
     "type": "module",

@@ -103,6 +103,11 @@
 
   "capture_screen": { "message": "화면 캡처" },
   "capture_full_screen": { "message": "전체" },
-  "capture_scroll_screen": { "message": "스크롤" }
-  
+  "capture_scroll_screen": { "message": "스크롤" },
+
+  "home_icon_title": { "message": "사이드 패널 열기/닫기" },
+  "add_icon_title": { "message": "입력 텍스트 입력" },
+  "add_memo_icon_title": { "message": "메모 입력" },
+  "add_search_icon_title": { "message": "검색어 입력" },
+  "close_icon_title": { "message": "팝업 메뉴 닫기" }
 }

@@ -10,7 +10,7 @@ const createOpenerIcon = () => {
     margin-bottom: 0px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-image: url(chrome-extension://${chrome.runtime.id}/images/icon.png);
+    background-image: url(chrome-extension://${chrome.runtime.id}/images/icon-128x128.png);
     cursor: pointer;
     border: 1px solid black; 
     //

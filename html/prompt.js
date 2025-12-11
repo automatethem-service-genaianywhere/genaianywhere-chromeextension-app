@@ -3,7 +3,7 @@ let promptList = [];
 const fetchPrompts = async () => {
   let { userId } = await chrome.storage.local.get(["userId"]);
   userId = userId ? userId : "";
-  if (userId) {
+  //if (userId) {
     let languageCode = chrome.i18n.getUILanguage();
     //console.log(languageCode); //en //ko //en-US 
     if (languageCode.includes("-")) {
@@ -18,9 +18,9 @@ const fetchPrompts = async () => {
     } catch (error) {
       console.error(error);
     }
-  } else {
-    promptList = [];
-  }
+  //} else {
+  //  promptList = [];
+  //}
 };
 
 const updatePromptInputTextCharacterCount = () => {
@@ -62,10 +62,10 @@ const updatePromptInputTextCharacterCount = () => {
   await fetchPrompts();
 
   let key = "prompt_direct_input_option";
-  const { email } = await chrome.storage.local.get(["email"]);
-  if (email) {
+  //const { email } = await chrome.storage.local.get(["email"]);
+  //if (email) {
     key = "prompt_direct_input_option_after_login";
-  }
+  //}
   const label = chrome.i18n.getMessage(key);  
 
   document.querySelector("#prompts").innerHTML =
