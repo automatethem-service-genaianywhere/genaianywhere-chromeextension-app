@@ -13,7 +13,7 @@ const fetchSearchEngines = async () => {
     languageCode = languageCode.split("-")[0]
   }
   //
-  const url = `https://www.genaianywhere.com/api/search-engine?userId=${userId}&languageCode=${languageCode}`;
+  const url = `https://ko.ai.genaianywhere.com/api/search-engine?userId=${userId}&languageCode=${languageCode}`;
 
   try {
     const response = await fetch(url);
