@@ -105,6 +105,11 @@ const fetchSearchEngines = async () => {
           "url": "https://yandex.com/search/?text={query}",
           "homeUrl": "https://yandex.com"
         },
+        {
+          "name": "베이두",
+          "url": "https://www.baidu.com/s?wd={query}",
+          "homeUrl": "https://www.baidu.com/"
+        },
 
         {
           "name": "네이버 스마트 플레이스",
@@ -131,6 +136,38 @@ const fetchSearchEngines = async () => {
           "url": "https://www.google.com/maps/search/{query}",
           "homeUrl": "https://www.google.com/maps/"
         },
+
+        {
+          "name": "네이버 쇼핑",
+          "url": "https://search.shopping.naver.com/search/all?query={query}",
+          "homeUrl": "https://shopping.naver.com/"
+        },
+        {
+          "name": "쿠팡",
+          "url": "https://www.coupang.com/np/search?q={query}",
+          "homeUrl": "https://www.coupang.com/"
+        },
+        {
+          "name": "도매꾹",
+          "url": "https://domeggook.com/main/item/itemList.php?sw={query}",
+          "homeUrl": "https://domeggook.com/main/"
+        },
+        {
+          "name": "알리바바",
+          "url": "https://www.alibaba.com/trade/search?SearchText={query}",
+          "homeUrl": "https://www.alibaba.com/"
+        },
+        {
+          "name": "타오바오",
+          "url": "https://s.taobao.com/search?q={query}",
+          "homeUrl": "https://s.taobao.com/"
+        },
+        {
+          "name": "1688",
+          "url": "https://s.1688.com/selloffer/offer_search.htm?keywords={query}",
+          "homeUrl": "https://s.1688.com/"
+        },
+
         /*
         {
           "name": "무료 온라인 유틸리티",
