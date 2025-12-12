@@ -44,7 +44,7 @@ const createLinks = (links) => {
         cursor: pointer;            /* 호버 시 손 모양 커서 */
       `;
   aTagLast.addEventListener("click", () => {
-    chrome.runtime.sendMessage({ action: "openLinkTab", url: "https://ko.ai.genaianywhere.com/bookmark.html" });
+    chrome.runtime.sendMessage({ action: "openLinkTab", url: "https://ko.sidepanel.genaianywhere.com/bookmark.html" });
   });
   linkList.appendChild(aTagLast); 
 };
@@ -58,7 +58,7 @@ const fetchLinks = async () => {
     if (languageCode.includes("-")) {
       languageCode = languageCode.split("-")[0]
     }
-    const url = `https://ko.ai.genaianywhere.com/api/link?userId=${userId}&languageCode=${languageCode}`;
+    const url = `https://ko.sidepanel.genaianywhere.com/api/link?userId=${userId}&languageCode=${languageCode}`;
     try {
       const response = await fetch(url);
       linkList = await response.json(); // Get the list of links

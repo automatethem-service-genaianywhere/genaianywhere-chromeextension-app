@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",  
-  "version": "0.0.78",
+  "version": "0.0.79",
   "description": "__MSG_extensionDescription__",
   "default_locale": "ko",    
   "icons": {
@@ -21,14 +21,14 @@
       "run_at": "document_end"
     },
     {
-      "matches": ["https://ko.ai.genaianywhere.com/",
-                  "https://ko.ai.genaianywhere.com/index.html"],
+      "matches": ["https://ko.sidepanel.genaianywhere.com/",
+                  "https://ko.sidepanel.genaianywhere.com/index.html"],
        "js": ["content-script-login.js"],
        "run_at": "document_end"
      },
     {
       "type": "module",
-      "matches": ["https://ko.ai.genaianywhere.com/keyword-search.html*"],
+      "matches": ["https://ko.sidepanel.genaianywhere.com/keyword-search.html*"],
       "js": ["content-script-keyword-search.js"],
       "run_at": "document_end"
     },
