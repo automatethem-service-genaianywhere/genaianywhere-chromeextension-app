@@ -90,6 +90,32 @@ const fetchSearchEngines = async () => {
           "url": "https://yandex.com/search/?text={query}",
           "homeUrl": "https://yandex.com"
         },
+
+        {
+          "name": "네이버 스마트 플레이스",
+          "url": "https://map.naver.com/p/search/{query}",
+          "homeUrl": "https://map.naver.com/"
+        },
+        {
+          "name": "구글 지도",
+          "url": "https://www.google.com/maps/search/{query}",
+          "homeUrl": "https://www.google.com/maps/"
+        },
+        {
+          "name": "카카오 맵",
+          "url": "https://map.kakao.com/?q={query}",
+          "homeUrl": "https://map.kakao.com/"
+        },
+        {
+          "name": "티 맵",
+          "url": "https://www.tmap.co.kr/my_tmap/my_map_tip/map_tip.do?searchKeyword={query}",
+          "homeUrl": "https://www.tmap.co.kr/my_tmap/my_map_tip/map_tip.do"
+        },
+        {
+          "name": "당근 동네업체",
+          "url": "https://www.daangn.com/kr/local-profile/?search={query}",
+          "homeUrl": "https://www.daangn.com/kr/local-profile"
+        },
         /*
         {
           "name": "무료 온라인 유틸리티",
