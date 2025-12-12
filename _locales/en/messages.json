@@ -1,5 +1,5 @@
 {
-  "extensionName": { "message": "Generative Ai Anywhere" },
+  "extensionName": { "message": "Generative Ai Anywhere Side Panel" },
   "extensionDescription": { "message": "Generative Ai Anywhere is a free, open source meta-generative Ai Chrome extension that makes it easy to work with generative Ai anywhere on the web." },
   "home_menu": { "message": "Home" },
   "public_prompt_menu": { "message": "Public prompt" },

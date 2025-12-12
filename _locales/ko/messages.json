@@ -1,5 +1,5 @@
 {
-  "extensionName": { "message": "생성형 Ai 애니웨어" },
+  "extensionName": { "message": "생성형 Ai 애니웨어 사이드패널" },
   "extensionDescription": { "message": "생성형 Ai 애니웨어는 웹페이지 어디서나 생성형 Ai로 작업을 쉽게 할 수 있게 도와주는 무료 오픈 소스 메타 생성형 Ai 크롬확장입니다." },
   "home_menu": { "message": "홈" },
   "public_prompt_menu": { "message": "공개 프롬프트" },

@@ -13,7 +13,7 @@ const fetchMarkUrls = async () => {
     languageCode = languageCode.split("-")[0]
   }
   //
-  const apiUrl = `https://ko.ai.genaianywhere.com/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
+  const apiUrl = `https://ko.sidepanel.genaianywhere.com/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
 
   try {
     const response = await fetch(apiUrl);
@@ -46,7 +46,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
           languageCode = languageCode.split("-")[0]
         }   
         //
-        const url = `https://ko.ai.genaianywhere.com/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
+        const url = `https://ko.sidepanel.genaianywhere.com/api/mark-url?userId=${userId}&languageCode=${languageCode}`;
         //console.log(url);
 
         try {
