@@ -86,15 +86,22 @@ const fetchSearchEngines = async () => {
           "homeUrl": "https://www.bing.com"
         },
         {
+          "name": "얀덱스",
+          "url": "https://yandex.com/search/?text={query}",
+          "homeUrl": "https://yandex.com"
+        },
+        /*
+        {
           "name": "무료 온라인 유틸리티",
-          "url": "https://www.google.com/search?q=site%3Afreeonlineutility.com+{query}",
-          "homeUrl": "https://www.freeonlineutility.com/"
+          "url": "https://www.google.com/search?q=site%3Agenaianywhere.com+{query}",
+          "homeUrl": "https://www.genaianywhere.com/"
         },
         {
           "name": "크랜베리 마케팅",
           "url": "https://www.google.com/search?q=site%3Aaweb.kr+{query}",
           "homeUrl": "https://www.aweb.kr/"
         }
+          */
       ];
     }
     else {
@@ -110,10 +117,17 @@ const fetchSearchEngines = async () => {
           "homeUrl": "https://www.bing.com"
         },
         {
+          "name": "Yandex",
+          "url": "https://yandex.com/search/?text={query}",
+          "homeUrl": "https://yandex.com"
+        },
+        /*
+        {
           "name": "Free Online Utility",
-          "url": "https://www.google.com/search?q=site%3Afreeonlineutility.com+{query}",
-          "homeUrl": "https://www.freeonlineutility.com/"
+          "url": "https://www.google.com/search?q=site%3Agenaianywhere.com+{query}",
+          "homeUrl": "https://www.genaianywhere.com/"
         }
+        */
       ];
     }
     //*/
