@@ -76,6 +76,21 @@ const fetchSearchEngines = async () => {
           "homeUrl": "https://www.naver.com"
         },
         {
+          "name": "다음",
+          "url": "https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q={query}",
+          "homeUrl": "https://www.daum.net/"
+        },
+        {
+          "name": "줌",
+          "url": "https://search.zum.com/search.zum?query={query}",
+          "homeUrl": "https://www.zum.com/"
+        },
+        {
+          "name": "네이트",
+          "url": "https://search.daum.net/nate?thr=sbma&w=tot&q={query}",
+          "homeUrl": "https://www.nate.com/"
+        },
+        {
           "name": "구글",
           "url": "https://www.google.com/search?q={query}",
           "homeUrl": "https://www.google.com"
@@ -97,11 +112,6 @@ const fetchSearchEngines = async () => {
           "homeUrl": "https://map.naver.com/"
         },
         {
-          "name": "구글 지도",
-          "url": "https://www.google.com/maps/search/{query}",
-          "homeUrl": "https://www.google.com/maps/"
-        },
-        {
           "name": "카카오 맵",
           "url": "https://map.kakao.com/?q={query}",
           "homeUrl": "https://map.kakao.com/"
@@ -115,6 +125,11 @@ const fetchSearchEngines = async () => {
           "name": "당근 동네업체",
           "url": "https://www.daangn.com/kr/local-profile/?search={query}",
           "homeUrl": "https://www.daangn.com/kr/local-profile"
+        },
+        {
+          "name": "구글 지도",
+          "url": "https://www.google.com/maps/search/{query}",
+          "homeUrl": "https://www.google.com/maps/"
         },
         /*
         {
