@@ -120,23 +120,6 @@ document.querySelector("#genaianywhere-menu").addEventListener("click", async ()
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
 });
 
-/*
-document.querySelector("#cranberry-marketing-homepage-menu").addEventListener("click", async () => {
-  const url = "https://www.aweb.kr/";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#cafe-menu").addEventListener("click", async () => {
-  const url = "https://cafe.naver.com/cranberrymarketing";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-
-document.querySelector("#youtube-menu").addEventListener("click", async () => {
-  const url = "https://www.youtube.com/@cranberrymarketing";
-  chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
-});
-*/
-
 document.querySelector("#github-menu").addEventListener("click", async () => {
   const url = "https://github.com/automatethem/genaianywhere-chromeextension-app";
   chrome.runtime.sendMessage({ action: "openLinkTab", url: url });
